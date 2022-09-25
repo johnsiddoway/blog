@@ -1,6 +1,0 @@
-- name: /home
-  link: /
-- name: /archive
-  link: /archive.html
-- name: /about
-  link: /about.html
