@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Date from '../../components/date';
 import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
-import utilStyles from '../../styles/utils.module.css';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -26,13 +25,12 @@ export default function Post({ postData }) {
       <Layout>
         <Head>
             <title>{postData.title}</title>
-            <link href="/blog/favicon-16x16.png" rel="icon" type="image/png" />
         </Head>
         <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
+        <h1>{postData.title}</h1>
+        <small>
           <Date dateString={postData.date} />
-        </div>
+        </small>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
       </Layout>
