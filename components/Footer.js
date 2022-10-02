@@ -1,7 +1,7 @@
 export function Footer() {
     return (
-        <footer class="bg-dark text-white mt-auto">
-            <p>John Siddoway © 2018-{new Date().getFullYear()}</p>
+        <footer class="container-fluid mt-auto bg-dark text-light">
+            <div class="py-3 text-center">© {new Date().getFullYear()} John Siddoway</div>
         </footer>
     );
 }
