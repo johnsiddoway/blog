@@ -1,16 +1,16 @@
 export function Navbar() {
     return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">Maps and Gold</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div className="container-fluid">
+                <a className="navbar-brand" href="/">Maps and Gold</a>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="navbar-nav ms-auto">
-                        <a class="nav-link" href="/">/home</a>
-                        <a class="nav-link" href="/archive">/archive</a>
-                        <a class="nav-link" href="/about">/about</a>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div className="navbar-nav ms-auto">
+                        <a className="nav-link" href="/">/home</a>
+                        <a className="nav-link" href="/archive">/archive</a>
+                        <a className="nav-link" href="/about">/about</a>
                     </div>
                 </div>
             </div>
