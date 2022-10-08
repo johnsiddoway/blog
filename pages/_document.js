@@ -11,7 +11,7 @@ export default function Document() {
         </Head>
         <body className="d-flex flex-column h-100">
             <Navbar />
-            <main><Main /></main>
+            <main className="container"><Main /></main>
             <NextScript />
             <Footer />
         </body>
