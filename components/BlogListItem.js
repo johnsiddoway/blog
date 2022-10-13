@@ -5,7 +5,7 @@ import { Date } from './Date';
 
 export function BlogListItem(props) {
     return <li className="d-flex border-bottom border-dark mb-2 pb-2">
-        <div className="h4 mb-0">
+        <div className="h4 mb-0 text-decoration-none">
             <Link href={`/posts/${props.id}`}>
                 <a className="text-decoration-none">{props.title}</a>
             </Link>
