@@ -5,15 +5,7 @@ body {
     background-color: $gray-100;
 }
 
-main {
-    padding: 1.25rem;
-    margin-bottom: 1.5rem;
-    border-radius: .25rem;
-}
-
 nav {
     border-top: 3px $primary solid;
-    border-bottom: 1px $black solid;
-
     font-family: $headings-font-family;
 }

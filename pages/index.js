@@ -20,7 +20,7 @@ export default function Home({ allPostsData }) {
             {listItems}
         </ul>
         <h3 className="text-center">
-            <Link href='/archive'><a>Blog Archive</a></Link>
+            <Link href='/archive'>Blog Archive</Link>
         </h3>
     </article>;
 }
