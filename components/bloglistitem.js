@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
-import { Date } from './Date';
+import { Date } from './date';
 
 export function BlogListItem(props) {
     return <li className="d-flex border-bottom border-dark mb-2 pb-2">
@@ -10,7 +10,7 @@ export function BlogListItem(props) {
                 <a className="text-decoration-none">{props.title}</a>
             </Link>
         </div>
-        <div className="d-none d-sm-block ms-auto mt-auto">
+        <div className="d-none d-md-block ms-auto mt-auto">
             <Date dateString={props.date} />
             <FontAwesomeIcon icon={faCalendarAlt} fixedWidth className="ms-1" />
         </div>
