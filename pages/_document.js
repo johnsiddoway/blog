@@ -1,6 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { Footer, Header } from '../components'
-import Container from 'react-bootstrap/Container';
 
 export default function Document() {
     return <Html lang="en" className="h-100">
@@ -11,11 +9,7 @@ export default function Document() {
             <meta name="og:title" content="John Siddoway Blog: Maps and Gold" />
         </Head>
         <body className="d-flex flex-column h-100">
-            <Header />
-            <Container as="main">
-                <Main />
-            </Container>
-            <Footer />
+            <Main />
             <NextScript />
         </body>
     </Html>;

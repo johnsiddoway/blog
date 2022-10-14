@@ -1,4 +1,4 @@
-import { BlogListItem } from '../components';
+import { BlogListItem } from '../components/bloglistitem';
 import { getSortedPostsData } from '../lib/posts';
 
 export async function getStaticProps() {
