@@ -1,4 +1,6 @@
 import '../styles/global.scss'
+import "../styles/prism.css"
+
 import Head from 'next/head'
 import SSRProvider from 'react-bootstrap/SSRProvider'
 import { Layout } from '../components/layout'
