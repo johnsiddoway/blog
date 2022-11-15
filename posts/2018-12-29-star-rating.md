@@ -4,10 +4,8 @@ title: 'Star Rating'
 date: '2018-12-29'
 description: 'Creating a basic star rating using some custom CSS and Font Awesome 5'
 tags: css font-awesome-5
-custom-js:
-    - "assets/js/star-rating.js"
-custom-css:
-    - "assets/css/star-rating.css"
+customJavascript: '/js/star-rating.js'
+customStylesheet: '/css/star-rating.css'
 ---
 On Font Awesome's [4.7 Examples](https://fontawesome.com/v4.7.0/examples/) page, they included an example of how to implement a basic star rating using their `star` icon. They also linked out to [this great article](https://css-tricks.com/star-ratings/). When Font Awesome 5 came out, I noticed that their docs didn't include an Example page anymore, so I thought I'd recreate this simple feature.
 
@@ -15,21 +13,21 @@ On Font Awesome's [4.7 Examples](https://fontawesome.com/v4.7.0/examples/) page,
 
 You can also see this on [CodePen](https://codepen.io/pezmotion/pen/RQERdm)
 
-<div class="rating" style="width: 20rem">
-    <input id="rating-5" type="radio" name="rating" value="5"/><label for="rating-5"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-4" type="radio" name="rating" value="4"/><label for="rating-4"><i class="fas fa-2x fa-star"></i></label>
-    <input id="rating-3" type="radio" name="rating" value="3" checked /><label for="rating-3"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-2" type="radio" name="rating" value="2"/><label for="rating-2"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-1" type="radio" name="rating" value="1"/><label for="rating-1"><i class="fas fa-2x fa-star"></i></label>
+<div class="rating d-inline-block" id="example-one">
+    <input id="example-one-5" type="radio" name="example-one" value="5"/><label for="example-one-5"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-one-4" type="radio" name="example-one" value="4"/><label for="example-one-4"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-one-3" type="radio" name="example-one" value="3" checked /><label for="example-one-3"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-one-2" type="radio" name="example-one" value="2"/><label for="example-one-2"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-one-1" type="radio" name="example-one" value="1"/><label for="example-one-1"><i class="fas fa-2x fa-star"></i></label>
 </div>
-Current Rating: <span id="star-value"></span>
+<div>
+    Current Rating: <span id="example-one-value"></span>
+</div>
 
 ### Explanation
 There are two basic CSS features being used here. We are listing out the inputs highest to lowest value, but then setting the directionality of the items so that they render lowest to highest. This lets us use a subsequent sibling selector to style the lower values the same as the currently-selected value.
 
 #### Directionality override
-> HTML
-{:.filename}
 ```html
 <div class="rating">
     <input id="rating-5" type="radio" name="rating" value="5"/>
@@ -40,8 +38,6 @@ There are two basic CSS features being used here. We are listing out the inputs 
 </div>
 ```
 
-> CSS
-{:.filename}
 ```css
 .rating {
     direction: rtl;
@@ -51,18 +47,19 @@ There are two basic CSS features being used here. We are listing out the inputs 
 
 Star Ratings are typically viewed with the lowest score on the left, and the highest score on the right. In our case, 1 to 5. By setting this to "right to left" and then putting our elements highest-to-lowest when we define them, they are *rendered* left to right. By itself this isn't that useful. Here's what our Star Ratings would look like without it, though:
 
-<div class="rating-ltr" style="width: 20rem">
-    <input id="rating-ltr-5" type="radio" name="rating-ltr" value="5"/><label for="rating-ltr-5"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-ltr-4" type="radio" name="rating-ltr" value="4"/><label for="rating-ltr-4"><i class="fas fa-2x fa-star"></i></label>
-    <input id="rating-ltr-3" type="radio" name="rating-ltr" value="3" checked /><label for="rating-ltr-3"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-ltr-2" type="radio" name="rating-ltr" value="2"/><label for="rating-ltr-2"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-ltr-1" type="radio" name="rating-ltr" value="1"/><label for="rating-ltr-1"><i class="fas fa-2x fa-star"></i></label>
+<div class="rating-ltr d-inline-block" id="example-two">
+    <input id="example-two-5" type="radio" name="example-two" value="5"/><label for="example-two-5"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-two-4" type="radio" name="example-two" value="4"/><label for="example-two-4"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-two-3" type="radio" name="example-two" value="3" checked /><label for="example-two-3"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-two-2" type="radio" name="example-two" value="2"/><label for="example-two-2"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-two-1" type="radio" name="example-two" value="1"/><label for="example-two-1"><i class="fas fa-2x fa-star"></i></label>
 </div>
-Current Rating: <span id="star-ltr-value"></span>  <span class="text-muted"><em>Note: this is still using the next feature. It's just had it's directonality left at the default (left-to-right)</em></span>
+<div>
+    Current Rating: <span id="example-two-value"></span>
+    <span class="text-muted"><em>Note: this is still using the next feature. It's just had it's directonality left at the default (left-to-right)</em></span>
+</div>
 
 #### Subsequent-sibling combinator
-> CSS
-{:.filename}
 ```css
 .rating label:hover,
 .rating label:hover ~ label,
@@ -78,18 +75,19 @@ The `.rating input:checked + label ~ label` line uses the `~` selector, which is
 
 The `.rating label:hover` line and the `.rating label:hover ~ label` are used to apply the same style to "possible" star ratings. For the example below, I've removed these lines as well.
 
-<div class="rating-single" style="width: 20rem">
-    <input id="rating-single-5" type="radio" name="rating-single" value="5"/><label for="rating-single-5"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-single-4" type="radio" name="rating-single" value="4"/><label for="rating-single-4"><i class="fas fa-2x fa-star"></i></label>
-    <input id="rating-single-3" type="radio" name="rating-single" value="3" checked /><label for="rating-single-3"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-single-2" type="radio" name="rating-single" value="2"/><label for="rating-single-2"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-single-1" type="radio" name="rating-single" value="1"/><label for="rating-single-1"><i class="fas fa-2x fa-star"></i></label>
+<div class="rating-single d-inline-block" id="example-three">
+    <input id="example-three-5" type="radio" name="example-three" value="5"/><label for="example-three-5"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-three-4" type="radio" name="example-three" value="4"/><label for="example-three-4"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-three-3" type="radio" name="example-three" value="3" checked /><label for="example-three-3"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-three-2" type="radio" name="example-three" value="2"/><label for="example-three-2"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-three-1" type="radio" name="example-three" value="1"/><label for="example-three-1"><i class="fas fa-2x fa-star"></i></label>
 </div>
-Current Rating: <span id="star-single-value"></span> <span class="text-muted"><em>Note: this is still using the directionality feature. It's just had its selectors trimmed down to just the currently-selected rating value</em></span>
+<div>
+    Current Rating: <span id="example-three-value"></span>
+    <span class="text-muted"><em>Note: this is still using the directionality feature. It's just had its selectors trimmed down to just the currently-selected rating value</em></span>
+</div>
 
 #### All Together
->HTML
-{:.filename}
 ```html
 <div class="rating">
     <input id="rating-5" type="radio" name="rating" value="5"/>
@@ -105,8 +103,6 @@ Current Rating: <span id="star-single-value"></span> <span class="text-muted"><e
 </div>
 ```
 
->CSS
-{:.filename}
 ```css
  /* Color here is used for labels higher than your current value. */
  /* Color choice is up to you */
@@ -131,20 +127,20 @@ Current Rating: <span id="star-single-value"></span> <span class="text-muted"><e
 }
 ```
 
-<div class="rating" style="width: 20rem">
-    <input id="rating-final-5" type="radio" name="rating-final" value="5"/><label for="rating-final-5"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-final-4" type="radio" name="rating-final" value="4"/><label for="rating-final-4"><i class="fas fa-2x fa-star"></i></label>
-    <input id="rating-final-3" type="radio" name="rating-final" value="3" checked /><label for="rating-final-3"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-final-2" type="radio" name="rating-final" value="2"/><label for="rating-final-2"><i class="fas fa-2x fa-star"></i></label>
-	<input id="rating-final-1" type="radio" name="rating-final" value="1"/><label for="rating-final-1"><i class="fas fa-2x fa-star"></i></label>
+<div class="rating d-inline-block" id="example-four">
+    <input id="example-four-5" type="radio" name="example-four" value="5"/><label for="example-four-5"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-four-4" type="radio" name="example-four" value="4"/><label for="example-four-4"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-four-3" type="radio" name="example-four" value="3" checked /><label for="example-four-3"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-four-2" type="radio" name="example-four" value="2"/><label for="example-four-2"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-four-1" type="radio" name="example-four" value="1"/><label for="example-four-1"><i class="fas fa-2x fa-star"></i></label>
 </div>
-Current Rating: <span id="star-final-value"></span>
+<div>
+    Current Rating: <span id="example-four-value"></span>
+</div>
 
 #### Javascript
 If you are including the star rating in a form with an explicit `submit` button, then the currently selected value will automatically get posted along with the rest of the form inputs.  But maybe you want to do some custom event handling, like handling the rating asynchronously without reloading the page. On this page, for example, I'm displaying the currently selected rating below the stars. The javascript for that is fairly straight-forward:
 
->javascript
-{:.filename}
 ```javascript
 $(document).ready(function() { // using jQuery is not required
     // on page load, display the default value
@@ -159,8 +155,6 @@ $(document).ready(function() { // using jQuery is not required
 ```
 
 Or, for the [VanillaJS](http://vanilla-js.com/) crowd:
->javascript
-{:.filename}
 ```javascript
 document.addEventListener("DOMContentLoaded", function() {
     // on page load, display the default value
