@@ -5,6 +5,10 @@ body {
     background-color: $gray-100;
 }
 
+main {
+    padding-bottom: 56px; // To ensure fixed-bottom footer doesn't overlap content
+}
+
 nav {
     border-top: 3px $primary solid;
     font-family: $headings-font-family;
