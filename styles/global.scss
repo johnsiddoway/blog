@@ -5,8 +5,11 @@ body {
     background-color: $gray-100;
 }
 
-main {
-    padding-bottom: 56px; // To ensure fixed-bottom footer doesn't overlap content
+// This is created by nextjs, and seems to mess with my ability to apply styles to <html> and <body>
+#__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 nav {
