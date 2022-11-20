@@ -34,10 +34,12 @@ export default function Post({ postData }) {
         {script}
         {style}
         <article>
-            <h1>{postData.title}</h1>
-            <small>
-                <Date dateString={postData.date} />
-            </small>
+            <div className="d-flex border-bottom border-dark mb-2 pb-2">
+                <h1 className="mb-0">{postData.title}</h1>
+                <div className="ms-auto mt-auto">
+                    <Date dateString={postData.date} />
+                </div>
+            </div>
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
     </>;

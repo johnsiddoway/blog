@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
-    return <Html lang="en" className="h-100">
+    return <Html lang="en">
         <Head>
             <link rel="icon" href="/favicon.png" type="image/png" />
             <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Exo+2|Fira+Code|Open+Sans|Source+Sans+Pro" />
@@ -11,7 +11,7 @@ export default function Document() {
             <meta name="description" content="John Siddoway Blog" />
             <meta name="og:title" content="John Siddoway Blog: Maps and Gold" />
         </Head>
-        <body className="d-flex flex-column h-100">
+        <body>
             <Main />
             <NextScript />
         </body>
