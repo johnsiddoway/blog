@@ -4,10 +4,12 @@ import { Date } from '../../components';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
 export async function getStaticProps({ params }) {
+    const environmentVariable = process.env.TEST_VARIABLE;
     const postData = await getPostData(params.id);
     return {
         props: {
             postData,
+            environmentVariable
         },
     };
 }
@@ -20,7 +22,7 @@ export async function getStaticPaths() {
     };
 }
 
-export default function Post({ postData }) {
+export default function Post({ postData, environmentVariable }) {
     var script = postData.customJavascript
         ? <Script src={postData.customJavascript}/>
         : undefined;
@@ -40,6 +42,7 @@ export default function Post({ postData }) {
                     <Date dateString={postData.date} />
                 </div>
             </div>
+            <div>Environment Variable? {environmentVariable}</div>
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
     </>;
