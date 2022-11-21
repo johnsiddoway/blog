@@ -42,7 +42,6 @@ export default function Post({ postData, environmentVariable }) {
                     <Date dateString={postData.date} />
                 </div>
             </div>
-            <div>Environment Variable? {environmentVariable}</div>
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
     </>;

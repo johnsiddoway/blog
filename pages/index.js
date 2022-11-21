@@ -18,7 +18,6 @@ export default function Home({ allPostsData, environmentVariable }) {
         <BlogListItem key={post.id} id={post.id} title={post.title} date={post.date}/>
     );
     return <article>
-        <div>Environment Variable? {environmentVariable}</div>
         <ul className="list-unstyled">
             {listItems}
         </ul>
