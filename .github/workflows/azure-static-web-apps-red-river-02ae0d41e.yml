@@ -31,6 +31,8 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "out" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env: # Or as an environment variable
+          TEST_VARIABLE: ${{ secrets.TEST_VARIABLE }}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
