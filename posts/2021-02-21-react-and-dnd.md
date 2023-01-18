@@ -1,13 +1,8 @@
 ---
-layout: post
 title: 'React and Monsters and AWS Oh My'
 date: '2021-02-21'
 description: Learning React through a small D&D app
 tags: react aws dnd
-# custom-js:
-#     - "assets/js/magnify.js"
-# custom-css:
-#     - "assets/css/magnify.css"
 ---
 
 ### Overview
