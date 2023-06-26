@@ -1,4 +1,4 @@
-import { Link, To } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { PostDetail } from "../lib/posts";
 
 export interface PostListItemProps {
