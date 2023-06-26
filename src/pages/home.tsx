@@ -1,17 +1,14 @@
-import { Link } from "react-router-dom";
 import { PostDetail, getRecentPosts } from "../lib/posts";
+import PostListItem from "../components/post-list-item";
+import { Link } from "react-router-dom";
 
 export default function Home() {
-	const items = getRecentPosts(5).map((route: PostDetail) => {
-		return <div key={route.name} className="blog-post-link">
-			<div>URL</div><div><Link to={route.url}>{route.url}</Link></div>
-			<div>Name</div><div>{route.name}</div>
-			<div>Path</div><div>{route.path}</div>
-			<div>Title</div><div>{route.title}</div>
-			<div>Date</div><div>{route.date}</div>
-		</div>
-	});
-	return <>
+	const items = getRecentPosts(5).map((post: PostDetail) => <PostListItem key={post.url} post={post} />);
+
+	return <div className="post-list">
 		{items}
-	</>;
+		<div className="post-list-item">
+			<h1><Link to="/archive">Archived Posts</Link></h1>
+		</div>
+	</div>;
 }

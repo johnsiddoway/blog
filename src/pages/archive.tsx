@@ -1,22 +1,10 @@
-// import { BlogListItem } from '../components/bloglistitem';
-// import { getSortedPostsData } from '../lib/posts';
-
-// export async function getStaticProps() {
-//     const allPostsData = getSortedPostsData();
-//     return {
-//         props: {
-//             allPostsData,
-//         },
-//     };
-// }
+import { PostDetail, getRecentPosts } from "../lib/posts";
+import PostListItem from "../components/post-list-item";
 
 export default function Archive() {
-	// const listItems = allPostsData.map((post) =>
-	//     <div key={post.id} id={post.id} title={post.title} date={post.date}/>
-	// );
-	return <article>
-		<ul className="list-unstyled">
-			<li>List items go here</li>
-		</ul>
-	</article>;
+	const items = getRecentPosts().map((post: PostDetail) => <PostListItem key={post.url} post={post} />);
+
+	return <div className="post-list">
+		{items}
+	</div>;
 }
