@@ -17,7 +17,7 @@ header {
 	@include make-flex($justify-content: space-between, $align-items: baseline);
 	padding: 1rem;
 
-	h1 {
+	h1, h2 {
 		margin: 0;
 	}
 

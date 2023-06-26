@@ -1,6 +1,8 @@
+import matter from "gray-matter";
+
 // https://vitejs.dev/guide/features.html#glob-import
 const _postGlobs = import.meta.glob('../posts/*.md', { as: 'raw', eager: true });
-const _allPosts = Object.keys(_postGlobs)
+const _allPosts: PostDetail[] = Object.keys(_postGlobs)
 	.map(post => getPostDetail(post, _postGlobs[post]))
 	.sort(sortPosts);
 
@@ -12,9 +14,8 @@ export interface PostDetail {
 	date: string;
 	title: string;
 }
-export function getPostContent(id: string): string {
-	const posts = _allPosts.filter(post => post.title === id)[0];
-	return posts.content;
+export function getPost(url: string): PostDetail {
+	return _allPosts.filter(post => post.url === url)[0];
 }
 export function getRecentPosts(count?: number): PostDetail[] {
 	return _allPosts.slice(0, count);
@@ -22,15 +23,14 @@ export function getRecentPosts(count?: number): PostDetail[] {
 // path: ../posts/2022-11-19-goodbye-jekyll-hello-nextjs.md
 function getPostDetail(path: string, content: string): PostDetail {
 	const name = path.slice(3, -3);
-	const date = name.match(/(\d{4}(-\d{2})+)/)![1];
-	const title = name.slice(17);
 	const url = getUrl(name);
+	const matterResult = matter(content);
 	return {
-		content,
+		content: matterResult.content,
 		path,
 		name,
-		date,
-		title,
+		date: matterResult.data.date,
+		title: matterResult.data.title,
 		url,
 	};
 }

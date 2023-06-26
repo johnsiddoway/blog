@@ -1,6 +1,5 @@
-import { useParams } from "react-router";
-import { getPostContent } from "../lib/posts";
-import matter from 'gray-matter';
+import { useLocation } from "react-router";
+import { getPost } from "../lib/posts";
 import markdownIt from 'markdown-it';
 import highlight from 'markdown-it-highlightjs';
 
@@ -11,18 +10,17 @@ const markdown = markdownIt({
 });
 
 export default function Post() {
-	const params = useParams();
-	const rawContent = getPostContent(params.id!);
+	const { pathname } = useLocation();
 
-	const matterResult = matter(rawContent);
+	const post = getPost(pathname);
 	// Use markdown-it to convert markdown into HTML string
 	const html = markdown.use(highlight)
-		.render(matterResult.content);
+		.render(post.content);
 
 	return <article className="post">
 		<div className="post-header">
-			<h1>{matterResult.data.title}</h1>
-			<div>{matterResult.data.date}</div>
+			<h1>{post.title}</h1>
+			<div>{post.date}</div>
 		</div>
 		<div dangerouslySetInnerHTML={{ __html: html }} />
 	</article>;
