@@ -1,0 +1,33 @@
+@import "./john-siddoway.scss";
+@import 'highlight.js/styles/a11y-dark.css';
+
+// Enhance the default main flex grid to work a little better for the blog
+main {
+	flex-direction: row;
+	> * {
+		flex: 1 1 auto;
+	}
+}
+
+.blog-post-link {
+	@include make-panel();
+	padding: 0.5rem;
+
+	display: grid;
+	grid-template-columns: 5rem 1fr;
+	width: 50%;
+}
+
+.post {
+	@include make-panel();
+	padding: 1rem;
+
+	.post-header {
+		@include make-flex( $justify-content: space-between, $align-items: flex-end );
+		@include solid-border($dark, border-bottom);
+
+		h1 {
+			margin: 0;
+		}
+	}
+}
