@@ -1,0 +1,85 @@
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+
+    // Webkit/Blink -based browsers
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        margin-top: ($input-range-track-height - $input-range-thumb-height) * .5; // Webkit specific
+        width: $input-range-thumb-width;
+        height: $input-range-thumb-height;
+        background-color: $input-range-thumb-bg;
+        @include solid-border($input-range-thumb-border-color, border);
+        border-radius: $input-range-thumb-border-radius;
+        cursor: $input-range-thumb-cursor;
+
+        &:focus-visible,
+        &:hover {
+            outline: none;
+            box-shadow: $input-range-thumb-focus-box-shadow;
+        }
+    }
+
+    &::-webkit-slider-runnable-track {
+        width: $input-range-track-width;
+        height: $input-range-track-height;
+        background: $input-range-track-bg;
+        cursor: pointer;
+    }
+
+    // Mozilla-based browsers
+    &::-moz-range-thumb {
+        appearance: none;
+        -webkit-appearance: none;
+        width: $input-range-thumb-width;
+        height: $input-range-thumb-height;
+        background-color: $input-range-thumb-bg;
+        @include solid-border($input-range-thumb-border-color, border);
+        border-radius: $input-range-thumb-border-radius;
+        cursor: $input-range-thumb-cursor;
+
+        &:focus-visible,
+        &:hover {
+            outline: none;
+            box-shadow: $input-range-thumb-focus-box-shadow;
+        }
+    }
+
+    &::-moz-range-track {
+        width: $input-range-track-width;
+        height: $input-range-track-height;
+        background: $input-range-track-bg;
+        cursor: pointer;
+    }
+
+    // IE
+    &::-ms-thumb {
+        appearance: none;
+        -webkit-appearance: none;
+        width: $input-range-thumb-width;
+        height: $input-range-thumb-height;
+        background-color: $input-range-thumb-bg;
+        @include solid-border($input-range-thumb-border-color, border);
+        border-radius: $input-range-thumb-border-radius;
+        cursor: $input-range-thumb-cursor;
+
+        &:focus-visible,
+        &:hover {
+            outline: none;
+            box-shadow: $input-range-thumb-focus-box-shadow;
+        }
+    }
+
+    &::-ms-track {
+        width: $input-range-track-width;
+        height: $input-range-track-height;
+        background: $input-range-track-bg;
+        cursor: pointer;
+        /* Hides the slider so custom styles can be added */
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+}
