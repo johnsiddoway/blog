@@ -6,6 +6,7 @@ header {
 		@include make-flex($justify-content: start, $column-gap: 1rem);
 	}
 }
+
 .post-list {
 	max-width: 40rem;
 	margin-left: auto;
@@ -39,5 +40,17 @@ header {
 		h1 {
 			margin: 0;
 		}
+	}
+}
+
+pre {
+	min-width: 425px;
+	width: calc(10vw - 2.5rem);
+	overflow: auto;
+
+	code {
+		overflow: auto;
+		word-wrap: nowrap;
+		white-space: pre;
 	}
 }
