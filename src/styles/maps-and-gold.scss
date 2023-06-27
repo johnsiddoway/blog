@@ -44,11 +44,14 @@ header {
 }
 
 pre {
+	display: block;
 	min-width: 425px;
-	width: calc(10vw - 2.5rem);
+	max-width: calc(100vw - 2.5rem);
+	width: 100%;
 	overflow: auto;
 
 	code {
+		display: inline-block;
 		overflow: auto;
 		word-wrap: nowrap;
 		white-space: pre;
