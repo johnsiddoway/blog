@@ -4,6 +4,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build --outDir dist/client",
+		"preview": "vite preview --outDir dist/client",
 		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
 	},
 	"dependencies": {
