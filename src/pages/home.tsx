@@ -8,7 +8,7 @@ export default function Home() {
 	return <div className="post-list">
 		{items}
 		<div className="post-list-item">
-			<h1><Link to="/archive">Archived Posts</Link></h1>
+			<h2><Link to="/archive">Archived Posts</Link></h2>
 		</div>
 	</div>;
 }
