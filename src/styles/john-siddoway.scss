@@ -52,7 +52,7 @@ header {
 
 	nav {
 		@extend .container;
-		@include make-flex($align-items: baseline, $justify-content: space-between);
+		@include make-flex($align-items: baseline, $justify-content: space-between, $column-gap: 1rem);
 	}
 
 	.js-brand {
@@ -64,11 +64,6 @@ header {
 
 main {
 	@extend .container;
-	@include make-flex($flex-wrap: wrap);
-
-	> * {
-		flex: 1 1;
-	}
 }
 
 footer {
@@ -126,6 +121,7 @@ button {
 	padding-left: 0.75rem;
 	margin-right: auto;
 	margin-left: auto;
+	width: 100%;
 }
 
 @each $breakpoint, $container-max-width in $container-max-widths {

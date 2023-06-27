@@ -3,7 +3,7 @@
 
 header {
 	nav {
-		@include make-flex($justify-content: start, $column-gap: 1rem);
+		@include make-flex($justify-content: start);
 	}
 }
 
@@ -40,20 +40,5 @@ header {
 		h1 {
 			margin: 0;
 		}
-	}
-}
-
-pre {
-	display: block;
-	min-width: 425px;
-	max-width: calc(100vw - 2.5rem);
-	width: 100%;
-	overflow: auto;
-
-	code {
-		display: inline-block;
-		overflow: auto;
-		word-wrap: nowrap;
-		white-space: pre;
 	}
 }
