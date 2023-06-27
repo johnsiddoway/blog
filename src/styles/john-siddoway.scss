@@ -3,6 +3,10 @@
 @import "./mixins";
 @import "./input_range";
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background-color: $background-color;
 	color: $foreground-color;
@@ -11,10 +15,6 @@ body {
 	font-weight: $font-weight-base;
 	line-height: $line-height-base;
 	text-align: start;
-}
-
-div {
-	box-sizing: border-box;
 }
 
 #root {

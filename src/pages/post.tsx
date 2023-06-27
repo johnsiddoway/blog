@@ -14,7 +14,8 @@ export default function Post() {
 
 	const post = getPost(pathname);
 	// Use markdown-it to convert markdown into HTML string
-	const html = markdown.use(highlight)
+	const html = markdown
+		.use(highlight)
 		.render(post.content);
 
 	return <article className="post">
