@@ -37,9 +37,7 @@ function getPostDetail(path: string, content: string): PostDetail {
 function getUrl(name: string): string {
 	const datePart = name.slice(0, 17).replaceAll('-', '/');
 	const namePart = name.slice(17);
-	const url = `/${datePart}${namePart}`;
-	console.info(`URL for ${name}: ${url}`);
-	return url;
+	return `/${datePart}${namePart}`;
 }
 function sortPosts(a: PostDetail, b: PostDetail) {
 	if (a.date < b.date) {
