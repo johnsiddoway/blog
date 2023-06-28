@@ -14,7 +14,7 @@ class StarRating {
         //      to change the displayed value
         let inputs = document.getElementById(inputId).getElementsByTagName('input');
         for (var i = 0; i < inputs.length; i++) {
-            inputs[i].onchange = function() {
+            inputs[i].onchange = function () {
                 valueElement.innerHTML = this.value;
             }
         }
