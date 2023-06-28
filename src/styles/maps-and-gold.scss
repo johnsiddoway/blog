@@ -1,4 +1,4 @@
-@import "./john-siddoway.scss";
+@import "@pezmotion/john-siddoway-sass";
 @import 'highlight.js/styles/a11y-dark.css';
 
 header {
@@ -29,9 +29,6 @@ header {
 }
 
 .post {
-	@include make-panel();
-	padding: 1rem;
-
 	.post-header {
 		@include make-flex($justify-content: space-between, $align-items: baseline);
 		@include solid-border($dark, border-bottom);
@@ -41,8 +38,24 @@ header {
 			margin: 0;
 		}
 	}
+
+	@media (min-width: map-get($grid-breakpoints, md)) {
+		@include make-panel();
+		margin: 0;
+		padding: 1rem;
+	}
 }
 
 .hljs {
 	background-color: $dark;
+}
+
+// hacks to simplify look on small screens
+@media (max-width: map-get($grid-breakpoints, md)) {
+	body:has(.post) {
+		background-color: $white;
+	}
+	main {
+		width: 100%;
+	}
 }
