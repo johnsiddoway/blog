@@ -2,6 +2,16 @@
 @import 'highlight.js/styles/a11y-dark.css';
 
 header {
+
+	.js-brand {
+		background: linear-gradient(#B38728, #BF953F, #FCF6BA, #BF953F, #B38728);
+		background-clip: text;
+		color: transparent;
+		font-weight: 600;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
 	nav {
 		@include make-flex($justify-content: start);
 	}
