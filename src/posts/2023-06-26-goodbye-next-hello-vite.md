@@ -72,7 +72,7 @@ dist/client/assets/vendor-fd9eadec.js  1,314.43 kB │ gzip: 426.60 kB
 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
 ✓ built in 5.11s
-````
+```
 
 I was kind of upset about Next.js including 87.1 kB on every page, but I'm currently pushing out **500% more javascript** than before. There were actually a few small "hacks" I had to implement just to get this to work at all.
 
