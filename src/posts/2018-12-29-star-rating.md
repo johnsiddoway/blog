@@ -3,8 +3,8 @@ title: 'Star Rating'
 date: '2018-12-29'
 description: 'Creating a basic star rating using some custom CSS and Font Awesome 5'
 tags: css font-awesome-5
-customJavascript: '/assets/js/star-rating.js'
-customStylesheet: '/assets/css/star-rating.css'
+customJavascript: '/js/star-rating.js'
+customStylesheet: '/css/star-rating.css'
 ---
 On Font Awesome's [4.7 Examples](https://fontawesome.com/v4.7.0/examples/) page, they included an example of how to implement a basic star rating using their `star` icon. They also linked out to [this great article](https://css-tricks.com/star-ratings/). When Font Awesome 5 came out, I noticed that their docs didn't include an Example page anymore, so I thought I'd recreate this simple feature.
 
@@ -12,12 +12,12 @@ On Font Awesome's [4.7 Examples](https://fontawesome.com/v4.7.0/examples/) page,
 
 You can also see this on [CodePen](https://codepen.io/pezmotion/pen/RQERdm)
 
-<div class="rating" id="example-one">
-    <input id="example-one-5" type="radio" name="example-one" value="5"/><label for="example-one-5">&#9733;</label>
-    <input id="example-one-4" type="radio" name="example-one" value="4"/><label for="example-one-4">&#9733;</label>
-    <input id="example-one-3" type="radio" name="example-one" value="3" checked /><label for="example-one-3">&#9733;</label>
-    <input id="example-one-2" type="radio" name="example-one" value="2"/><label for="example-one-2">&#9733;</label>
-    <input id="example-one-1" type="radio" name="example-one" value="1"/><label for="example-one-1">&#9733;</label>
+<div class="rating d-inline-block" id="example-one">
+    <input id="example-one-5" type="radio" name="example-one" value="5"/><label for="example-one-5"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-one-4" type="radio" name="example-one" value="4"/><label for="example-one-4"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-one-3" type="radio" name="example-one" value="3" checked /><label for="example-one-3"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-one-2" type="radio" name="example-one" value="2"/><label for="example-one-2"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-one-1" type="radio" name="example-one" value="1"/><label for="example-one-1"><i class="fas fa-2x fa-star"></i></label>
 </div>
 <div>
     Current Rating: <span id="example-one-value"></span>
@@ -46,12 +46,12 @@ There are two basic CSS features being used here. We are listing out the inputs 
 
 Star Ratings are typically viewed with the lowest score on the left, and the highest score on the right. In our case, 1 to 5. By setting this to "right to left" and then putting our elements highest-to-lowest when we define them, they are *rendered* left to right. By itself this isn't that useful. Here's what our Star Ratings would look like without it, though:
 
-<div class="rating-ltr" id="example-two">
-    <input id="example-two-5" type="radio" name="example-two" value="5"/><label for="example-two-5">&#9733;</label>
-    <input id="example-two-4" type="radio" name="example-two" value="4"/><label for="example-two-4">&#9733;</label>
-    <input id="example-two-3" type="radio" name="example-two" value="3" checked /><label for="example-two-3">&#9733;</label>
-    <input id="example-two-2" type="radio" name="example-two" value="2"/><label for="example-two-2">&#9733;</label>
-    <input id="example-two-1" type="radio" name="example-two" value="1"/><label for="example-two-1">&#9733;</label>
+<div class="rating-ltr d-inline-block" id="example-two">
+    <input id="example-two-5" type="radio" name="example-two" value="5"/><label for="example-two-5"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-two-4" type="radio" name="example-two" value="4"/><label for="example-two-4"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-two-3" type="radio" name="example-two" value="3" checked /><label for="example-two-3"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-two-2" type="radio" name="example-two" value="2"/><label for="example-two-2"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-two-1" type="radio" name="example-two" value="1"/><label for="example-two-1"><i class="fas fa-2x fa-star"></i></label>
 </div>
 <div>
     Current Rating: <span id="example-two-value"></span>
@@ -74,12 +74,12 @@ The `.rating input:checked + label ~ label` line uses the `~` selector, which is
 
 The `.rating label:hover` line and the `.rating label:hover ~ label` are used to apply the same style to "possible" star ratings. For the example below, I've removed these lines as well.
 
-<div class="rating-single" id="example-three">
-    <input id="example-three-5" type="radio" name="example-three" value="5"/><label for="example-three-5">&#9733;</label>
-    <input id="example-three-4" type="radio" name="example-three" value="4"/><label for="example-three-4">&#9733;</label>
-    <input id="example-three-3" type="radio" name="example-three" value="3" checked /><label for="example-three-3">&#9733;</label>
-    <input id="example-three-2" type="radio" name="example-three" value="2"/><label for="example-three-2">&#9733;</label>
-    <input id="example-three-1" type="radio" name="example-three" value="1"/><label for="example-three-1">&#9733;</label>
+<div class="rating-single d-inline-block" id="example-three">
+    <input id="example-three-5" type="radio" name="example-three" value="5"/><label for="example-three-5"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-three-4" type="radio" name="example-three" value="4"/><label for="example-three-4"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-three-3" type="radio" name="example-three" value="3" checked /><label for="example-three-3"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-three-2" type="radio" name="example-three" value="2"/><label for="example-three-2"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-three-1" type="radio" name="example-three" value="1"/><label for="example-three-1"><i class="fas fa-2x fa-star"></i></label>
 </div>
 <div>
     Current Rating: <span id="example-three-value"></span>
@@ -127,11 +127,11 @@ The `.rating label:hover` line and the `.rating label:hover ~ label` are used to
 ```
 
 <div class="rating d-inline-block" id="example-four">
-    <input id="example-four-5" type="radio" name="example-four" value="5"/><label for="example-four-5">&#9733;</label>
-    <input id="example-four-4" type="radio" name="example-four" value="4"/><label for="example-four-4">&#9733;</label>
-    <input id="example-four-3" type="radio" name="example-four" value="3" checked /><label for="example-four-3">&#9733;</label>
-    <input id="example-four-2" type="radio" name="example-four" value="2"/><label for="example-four-2">&#9733;</label>
-    <input id="example-four-1" type="radio" name="example-four" value="1"/><label for="example-four-1">&#9733;</label>
+    <input id="example-four-5" type="radio" name="example-four" value="5"/><label for="example-four-5"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-four-4" type="radio" name="example-four" value="4"/><label for="example-four-4"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-four-3" type="radio" name="example-four" value="3" checked /><label for="example-four-3"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-four-2" type="radio" name="example-four" value="2"/><label for="example-four-2"><i class="fas fa-2x fa-star"></i></label>
+    <input id="example-four-1" type="radio" name="example-four" value="1"/><label for="example-four-1"><i class="fas fa-2x fa-star"></i></label>
 </div>
 <div>
     Current Rating: <span id="example-four-value"></span>
