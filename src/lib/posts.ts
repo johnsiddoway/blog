@@ -13,7 +13,6 @@ export interface PostDetail {
 	url: string; // url to render this post under
 	date: string;
 	title: string;
-	metadata: { [key: string]: any };
 }
 export function getPost(url: string): PostDetail {
 	return _allPosts.filter(post => post.url === url)[0];
@@ -33,7 +32,6 @@ function getPostDetail(path: string, content: string): PostDetail {
 		date: matterResult.data.date,
 		title: matterResult.data.title,
 		url,
-		metadata: matterResult.data
 	};
 }
 function getUrl(name: string): string {
