@@ -2,13 +2,9 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "node server",
-		"build": "npm run build:client && npm run build:server",
-		"build:client": "vite build --outDir dist/client",
+		"dev": "vite",
 		"build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
-		"build:static": "vite build --outDir dist/static && npm run build:server && node prerender",
-		"serve": "SET NODE_ENV=production&& node server",
-		"debug": "node --inspect-brk server"
+		"build:static": "vite build --outDir dist/static && npm run build:server && node prerender"
 	},
 	"dependencies": {
 		"react": "^18.2.0",
@@ -20,6 +16,7 @@
 		"@types/markdown-it": "^12.2.3",
 		"@types/react": "^18.2.14",
 		"@types/react-dom": "^18.2.6",
+		"@types/react-router-dom": "^5.3.3",
 		"@typescript-eslint/eslint-plugin": "^5.60.1",
 		"@typescript-eslint/parser": "^5.60.1",
 		"@vitejs/plugin-react": "^4.0.1",
