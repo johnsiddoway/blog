@@ -1,4 +1,4 @@
-import { RouteObject, useRoutes } from 'react-router-dom';
+import { Route, RouteObject, Routes, useRoutes } from 'react-router-dom';
 import Layout from './components/layout';
 import About from './pages/about';
 import Archive from './pages/archive';
@@ -33,7 +33,7 @@ export const routes: RouteObject[] = [
 				ErrorBoundary: NoPostFound
 			},
 			{
-				path: "/404",
+				path: "404",
 				Component: NoPageFound
 			},
 			{
@@ -45,5 +45,13 @@ export const routes: RouteObject[] = [
 ];
 
 export default function App() {
-	return useRoutes(routes);
+	return <Routes>
+		<Route element={<Layout />} errorElement={<NoPageFound />}>
+			<Route index element={<Home />} />
+			<Route path='/about' element={<About />} />
+			<Route path='/archive' element={<Archive />} />
+			<Route path='/posts/:year/:month/:day/:id' element={<Post />} errorElement={<NoPostFound />} />
+			<Route path="*" element={<NoPageFound />} />
+		</Route>
+	</Routes>;
 }

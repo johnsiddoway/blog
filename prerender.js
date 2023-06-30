@@ -14,7 +14,7 @@ const { render } = await import('./dist/server/entry-server.js');
 
 async function prerenderPages() {
     // determine routes to pre-render from src/pages
-    const routesToPrerender = ['/', '/about', '/archive'];
+    const routesToPrerender = ['/', '/about', '/archive', '/404'];
 
     for (const url of routesToPrerender) {
         const context = {};
