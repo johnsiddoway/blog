@@ -1,4 +1,4 @@
-@import "@pezmotion/john-siddoway-sass";
+@import "@johnsiddoway/sass";
 @import 'highlight.js/styles/a11y-dark.css';
 
 header {
@@ -41,7 +41,7 @@ header {
 .post {
 	.post-header {
 		@include make-flex($justify-content: space-between, $align-items: baseline);
-		@include solid-border($border-color: $dark, $property: border-bottom);
+		@include solid-border($property: border-bottom);
 		padding-bottom: 1rem;
 
 		h1 {
@@ -49,9 +49,8 @@ header {
 		}
 	}
 
-	@media (min-width: map-get($grid-breakpoints, md)) {
+	@media (min-width: map-get($grid-breakpoints, sm)) {
 		@include make-panel();
-		margin: 0;
 		padding: 1rem;
 	}
 }
@@ -60,12 +59,9 @@ header {
 	background-color: $dark;
 }
 
-// hacks to simplify look on small screens
-@media (max-width: map-get($grid-breakpoints, md)) {
+// hack to simplify look on small screens
+@media (max-width: map-get($grid-breakpoints, sm)) {
 	body:has(.post) {
 		background-color: $white;
-	}
-	main {
-		width: 100%;
 	}
 }
