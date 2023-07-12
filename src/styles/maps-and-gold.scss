@@ -41,7 +41,7 @@ header {
 .post {
 	.post-header {
 		@include make-flex($justify-content: space-between, $align-items: baseline);
-		@include solid-border($dark, border-bottom);
+		@include solid-border($border-color: $dark, $property: border-bottom);
 		padding-bottom: 1rem;
 
 		h1 {
