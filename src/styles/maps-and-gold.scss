@@ -2,7 +2,6 @@
 @import 'highlight.js/styles/a11y-dark.css';
 
 header {
-
 	.js-brand {
 		background: linear-gradient(#B38728, #BF953F, #FCF6BA, #BF953F, #B38728);
 		background-clip: text;
@@ -27,14 +26,15 @@ header {
 	@include make-panel();
 	@include make-flex($justify-content: space-between, $align-items: baseline);
 	padding: 1rem;
+	color: $primary;
+	text-decoration: none;
 
 	h1, h2 {
 		margin: 0;
 	}
 
-	a {
-		color: $primary;
-		text-decoration: none;
+	.date {
+		color: $dark;
 	}
 }
 
