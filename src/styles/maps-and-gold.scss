@@ -16,6 +16,18 @@ header {
 	}
 }
 
+code {
+	background-color: $background-color;
+}
+
+.date-with-icon {
+	@include make-flex($column-gap: 0.5rem, $align-items: baseline);
+
+	svg {
+		height: 0.8rem;
+	}
+}
+
 .post-list {
 	max-width: 40rem;
 	margin-left: auto;
@@ -33,7 +45,7 @@ header {
 		margin: 0;
 	}
 
-	.date {
+	.date-with-icon {
 		color: $dark;
 	}
 }
@@ -47,6 +59,10 @@ header {
 		h1 {
 			margin: 0;
 		}
+
+		// .svg-inline--fa {
+		// 	vertical-align: -0.05rem;
+		// }
 	}
 
 	@media (min-width: map-get($grid-breakpoints, sm)) {
