@@ -6,8 +6,8 @@ export interface PostListItemProps {
 	post: PostDetail;
 }
 export default function PostListItem({ post }: PostListItemProps) {
-	return <div className="post-list-item">
-		<Link to={post.url}><h2>{post.title}</h2></Link>
-		<div>{post.date}</div>
-	</div>;
+	return <Link to={post.url} className="post-list-item">
+		<h2>{post.title}</h2>
+		<div className="date">{post.date}</div>
+	</Link>;
 }
