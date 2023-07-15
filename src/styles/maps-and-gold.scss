@@ -1,5 +1,5 @@
 @import "@johnsiddoway/sass";
-@import 'highlight.js/styles/a11y-dark.css';
+@import "hljs.scss";
 
 header {
 	.js-brand {
@@ -69,10 +69,6 @@ code {
 		@include make-panel();
 		padding: 1rem;
 	}
-}
-
-.hljs {
-	background-color: $dark;
 }
 
 // hack to simplify look on small screens

@@ -4,6 +4,7 @@ import markdownIt from 'markdown-it';
 import highlight from 'markdown-it-highlightjs';
 import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import highlightjs from "highlight.js";
 
 const markdown = markdownIt({
 	html: true,
@@ -17,7 +18,7 @@ export default function Post() {
 	const post = getPost(pathname);
 	// Use markdown-it to convert markdown into HTML string
 	const html = markdown
-		.use(highlight)
+		.use(highlight, { hljs: highlightjs })
 		.render(post.content);
 
 	return <article className="post">
