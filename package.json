@@ -3,6 +3,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
+		"preview": "npm run build:server && node server",
 		"build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
 		"build:static": "vite build --outDir dist/static && npm run build:server && node prerender"
 	},

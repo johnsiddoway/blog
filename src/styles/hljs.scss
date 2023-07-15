@@ -1,0 +1,101 @@
+@import "@johnsiddoway/sass/_variables";
+
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em
+}
+
+/*
+    Based on the a11y-dark theme: https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-dark.css
+*/
+.hljs {
+    background-color: $dark;
+    color: $light;
+}
+
+/* Comment */
+.hljs-comment,
+.hljs-quote {
+    color: #d4d0ab;
+}
+
+/* Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+    color: $red;
+}
+
+/* Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+    color: $orange;
+}
+
+/* Yellow */
+.hljs-attribute {
+    color: $yellow;
+}
+
+/* Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+    color: $green;
+}
+
+/* Blue */
+.hljs-title,
+.hljs-section {
+    color: $azure;
+}
+
+/* Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+    color: $magenta;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+@media screen and (-ms-high-contrast: active) {
+    .hljs-addition,
+    .hljs-attribute,
+    .hljs-built_in,
+    .hljs-bullet,
+    .hljs-comment,
+    .hljs-link,
+    .hljs-literal,
+    .hljs-meta,
+    .hljs-number,
+    .hljs-params,
+    .hljs-string,
+    .hljs-symbol,
+    .hljs-type,
+    .hljs-quote {
+        color: highlight;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag {
+        font-weight: bold;
+    }
+}
