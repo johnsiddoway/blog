@@ -20,6 +20,11 @@ code {
 	background-color: $background-color;
 }
 
+img {
+	width: 100%;
+	height: auto;
+}
+
 .date-with-icon {
 	@include make-flex($column-gap: 0.5rem, $align-items: baseline);
 
