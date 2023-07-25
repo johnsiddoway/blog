@@ -2,8 +2,6 @@ import { useLocation } from "react-router";
 import { getPost } from "../lib/posts";
 import markdownIt from 'markdown-it';
 import highlight from 'markdown-it-highlightjs';
-import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import highlightjs from "highlight.js";
 
 const markdown = markdownIt({
@@ -26,7 +24,6 @@ export default function Post() {
 			<h1>{post.title}</h1>
 			<div className="date-with-icon">
 				{post.date}
-				<FontAwesomeIcon icon={faCalendarDays} />
 			</div>
 		</div>
 		<div dangerouslySetInnerHTML={{ __html: html }} />
