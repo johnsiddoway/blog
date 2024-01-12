@@ -1,6 +1,12 @@
 @import "@johnsiddoway/sass";
 @import "hljs.scss";
 
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 header {
 	.js-brand {
 		background: linear-gradient(#B38728, #BF953F, #FCF6BA, #BF953F, #B38728);
@@ -64,10 +70,6 @@ img {
 		h1 {
 			margin: 0;
 		}
-
-		// .svg-inline--fa {
-		// 	vertical-align: -0.05rem;
-		// }
 	}
 
 	@media (min-width: map-get($grid-breakpoints, sm)) {
