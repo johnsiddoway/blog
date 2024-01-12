@@ -1,0 +1,14 @@
+---
+layout: layout.html
+---
+
+<div class="post-list">
+	{% for post in collections.posts reversed %}
+	<a href="{{ post.url }}" class="post-list-item">
+		<h2>{{ post.data.title }}</h2>
+		<div class="date-with-icon">
+			{{ post.date | date: "%Y-%m-%d" }}
+		</div>
+	</a>
+	{% endfor %}
+</div>

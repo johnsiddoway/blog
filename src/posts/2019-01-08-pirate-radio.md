@@ -15,4 +15,4 @@ Fast forward to September 2017. .NET Core 2.0 was released [in August](https://b
 
 And so, in September of 2017, I started building a .NET Core version of my personal music site, Pirate Radio. The website itself is pretty basic, but it does its basic job quite well. The two primary functions I want it to perform: allow myself or my wife play our home music library anywhere we have internet access, and don't let anyone else in. And it does those two jobs fairly well. Between Sept 2017 and March 2018, I rewrote / copied the important functionality, and haven't really had a chance to work on it since. There are a few updates I'd like to make, and the plan is to record my experiences making those updates as I make those changes.
 
-<img src="{{ '/assets/img/2019-01-08-pirate-radio-01.png' | relative_url }}" class="img-fluid" alt="Pirate Radio Screenshot">
+<img src="/assets/img/2019-01-08-pirate-radio-01.png" class="img-fluid" alt="Pirate Radio Screenshot">
