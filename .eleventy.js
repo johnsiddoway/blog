@@ -17,7 +17,7 @@ module.exports = function (eleventyConfig) {
 		timezoneOffset: 0 // https://liquidjs.com/tutorials/options.html#Date, set the timezone to UTC
 	});
 
-	eleventyConfig.addPassthroughCopy({ "src/styles/*.css": "assets" });
+	eleventyConfig.addPassthroughCopy({ "src/styles/*.css": "/" });
 
 	eleventyConfig.addPlugin(sassPlugin);
 

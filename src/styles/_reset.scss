@@ -1,0 +1,46 @@
+// This is additional 'baseline' config that normalize.css doesn't provide
+// Equivalent to Bootstrap's Reboot: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/_reboot.scss
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $background-color;
+	color: $foreground-color;
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-base;
+	font-weight: $font-weight-base;
+	line-height: $line-height-base;
+	text-align: start;
+}
+
+button {
+	display: inline-block;
+	padding: 0.375rem 0.75rem;
+	background-color: transparent;
+	color: inherit;
+	@include solid-border($border-color: transparent, $property: border);
+	cursor: pointer;
+
+	&:disabled {
+		cursor: default;
+	}
+}
+
+form {
+	margin-bottom: 0.5rem;
+}
+
+hr {
+	margin: 0;
+	border: none;
+	border-top: 1px solid currentColor;
+}
+
+input,
+textarea {
+    width: 100%;
+	padding: 0.375rem;
+	line-height: 1.5;
+	@include solid-border($property: border);
+}
