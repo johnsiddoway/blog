@@ -12,7 +12,7 @@ This block highlights a few places you can change:
 * How many C-Bills you start with
 * The random collection of rewards at the end of the Career period (defaults to 1200 days)
 
-```bash
+```
 {
 	"Story" : {
 		"DefaultRoninHiringChance" : 0.08, // Bump this up
@@ -54,8 +54,8 @@ This block highlights a few places you can change:
 
 There are multiple files under `C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH\BattleTech_Data\StreamingAssets\data\itemCollections` that are used to generate random lances on game start. The last number is weight, change to get an individual mech is the weight divided by the combined weight for that slot. So you've got a `4/11 ~= .36 = 36%` chance to get a Blackjack in slot 0.
 
-itemCollection_Mechs_Starting_0.csv {.title}
-```bash
+> itemCollection_Mechs_Starting_0.csv
+```
 itemCollection_Mechs_Starting_0,,,
 mechdef_blackjack_BJ-1,Mech,1,4
 mechdef_vindicator_VND-1R,Mech,1,3
@@ -66,8 +66,8 @@ mechdef_enforcer_ENF-4R,Mech,1,2
 ### Changing Mech found in the Argo
 You can change the 'Mech reward found inside the Argo by tweaking `milestone_202_notify_centurion.json`'s Action Results. The below example changes it from an unequipped Centurion, to one with a full weapon compliment.
 
-milestone_202_notify_centurion.json {.title}
-```bash
+> milestone_202_notify_centurion.json
+```
 "Actions" : [
 	{
 		"Type" : "System_PauseNotification",
@@ -92,8 +92,8 @@ milestone_202_notify_centurion.json {.title}
 
 You can update any one of the milestone files, but a good one is `milestone_305_sim_argo_start.json`, which is when you get to use the Argo. Add the following two tages: `map_travel_3` and `SYSTEM_UseFlashpoints`.
 
-milestone_305_sim_argo_start.json {.title}
-```bash
+> milestone_305_sim_argo_start.json
+```
 "Results" : [
 {
 	"Scope" : "Company",
@@ -117,8 +117,8 @@ milestone_305_sim_argo_start.json {.title}
 ### Change Reward from Grave Robbing
 I like to add the Star League era Black Knight to the list of rewards from Grave Robbing, so that I can get all of the Star League 'Mechs through the course of the game.
 
-milestone_423_notify_highlander.json {.title}
-```bash
+> milestone_423_notify_highlander.json
+```
 "Results" : [{
 	"Actions" : [
 		{

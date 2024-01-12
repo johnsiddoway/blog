@@ -27,7 +27,6 @@ There are several ways to create the search service and index. I found that the 
 Once you have the service and index defined, you can start shoving data into it. To start, you'll end up pushing all of your existing records into the index, but once the index is set up you'll just need to figure out a way to push updates to Azure. To seed my index, I needed to first define a class that matched the format of the index model, and then push data to Azure in this format.
 
 > TrackDocument.cs
-{:.filename}
 ```csharp
 public class TrackDocument {
     public string TrackKey { get; set; }
@@ -39,7 +38,6 @@ public class TrackDocument {
 ```
 
 > Backfill.cs
-{:.filename}
 ```csharp
 using Microsoft.Azure.Search;
 using Microsoft.Azure.Search.Models;
@@ -95,7 +93,6 @@ Now that we've got data pushed into the index, we need to use it for real. To go
 To isolate the rest of my code from understanding what's powering search externally, I put the Azure clients behind an interface which I hoped would be generic enough that I could reuse it if I decided to test out the other Search As A Service offerings later. This also meant creating a small POCO in my namespace for the search results. Again, for my use case this didn't need to be a big complex entity. I just wanted to know the current set of search results, and the total number of possible results.
 
 > SearchResult.cs
-{:.filename}
 ```csharp
 using System.Collections.Generic;
 
@@ -111,7 +108,6 @@ public class SearchResult {
 ```
 
 > ISearchService.cs
-{:.filename}
 ```csharp
 using System.Collections.Generic;
 
@@ -125,7 +121,6 @@ public interface ISearchService {
 Now I just needed to implement the interface, using Azure as the backing search engine. This class also includes a constructor that can be used by .NET's build in [Dependency Injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2) framework.
 
 > AzureSearchService.cs
-{:.filename}
 ```csharp
 using Microsoft.Azure.Search;
 using Microsoft.Azure.Search.Models;
@@ -172,7 +167,6 @@ public class AzureSearchService : ISearchService
 ```
 
 > SearchOptions.cs
-{:.filename}
 ```csharp
 public class SearchOptions {
     public string SearchServiceName { get; set; }
@@ -192,7 +186,6 @@ Configuration.GetSection() requires the Microsoft.Extensions.Options.Configurati
 </div>
 
 > Startup.cs
-{:.filename}
 ```csharp
 using PirateRadio.Search; // The namespace I put all of the code samples from above
 
@@ -208,7 +201,6 @@ public class Startup {
 This Controller code isn't the cleanest because there's a bit of math and multiple object transformations going on directly in the Controller. In my actual code I would probably make a little helper class to encapsulate this bit of code to make it more re-usable. However, for this blog I moved all the code into the controller to make it easier to understand what changes I needed to make to swap out the old code and replace it with the new code.  I also rolled my own pagination implementation in the web app, but I'd recommend checking out [the X.PagedList Github project](https://github.com/dncuug/X.PagedList) if you want something pre-built.
 
 > TrackController.cs
-{:.filename}
 ```csharp
 using PirateRadio.Search;
 
@@ -254,7 +246,6 @@ Console apps by default don't include the Microsoft.Extensions.DependencyInjecti
 </div>
 
 > Program.cs
-{:.filename}
 ```csharp
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -281,7 +272,6 @@ class Program {
 ```
 
 > Processor.cs
-{:.filename}
 ```csharp
 public class Processor {
     private PirateRadioContext Context { get; set; }

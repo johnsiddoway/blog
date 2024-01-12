@@ -1,6 +1,6 @@
 const markdownItAttrs = require("markdown-it-attrs");
 const sassPlugin = require('./sassPlugin.js');
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const syntaxHighlight = require("markdown-it-highlightjs");
 
 module.exports = function (eleventyConfig) {
 	// Get the first `n` elements of a collection.
@@ -15,16 +15,15 @@ module.exports = function (eleventyConfig) {
 		return array.slice(0, n);
 	});
 
-	eleventyConfig.addPassthroughCopy({ "src/styles/*.css": "/" });
+	// Copy anything in the src/assets folder over to ${outputDir}/assets
+	eleventyConfig.addPassthroughCopy({ "src/assets": "/assets" });
 
 	eleventyConfig.addPlugin(sassPlugin);
 
-	eleventyConfig.addPlugin(syntaxHighlight);
-
-	eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownItAttrs));
+	eleventyConfig.amendLibrary("md", mdLib => mdLib.use(syntaxHighlight));
 
 	eleventyConfig.setLiquidOptions({
-		timezoneOffset: 0 // https://liquidjs.com/tutorials/options.html#Date, set the timezone to UTC
+		timezoneOffset: 0 // https://liquidjs.com/tutorials/options.html#Date, set the timezone to UTC when reading dates out of front matter
 	});
 
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
