@@ -1,0 +1,6 @@
+// Copied from Bootstrap v5.2.3: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_text-truncate.scss
+@mixin text-truncate() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
