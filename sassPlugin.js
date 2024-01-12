@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
 			permalink: function (contents, inputPath) {
 				let parsed = path.parse(inputPath);
 				return (data) => {
-					return `/assets/${parsed.name}.css`;
+					return `/${parsed.name}.css`;
 				}
 			}
 		},
