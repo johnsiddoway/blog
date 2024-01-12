@@ -7,7 +7,9 @@
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@johnsiddoway/sass": "^1.0.5",
+		"markdown-it-attrs": "^4.1.6",
 		"normalize.css": "^8.0.1",
 		"sass": "^1.63.6"
 	}
