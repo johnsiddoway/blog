@@ -1,3 +1,5 @@
+const sassPlugin = require('./sassPlugin.js');
+
 module.exports = function (eleventyConfig) {
 	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("head", (array, n) => {
@@ -14,6 +16,10 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.setLiquidOptions({
 		timezoneOffset: 0 // https://liquidjs.com/tutorials/options.html#Date, set the timezone to UTC
 	});
+
+	eleventyConfig.addPassthroughCopy({ "src/styles/*.css": "assets" });
+
+	eleventyConfig.addPlugin(sassPlugin);
 
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
