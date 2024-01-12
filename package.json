@@ -1,39 +1,14 @@
 {
 	"private": true,
-	"type": "module",
+	"type": "commonjs",
 	"scripts": {
-		"dev": "vite",
-		"preview": "npm run build:server && node server",
-		"build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
-		"build:static": "vite build --mode production --outDir dist/static && npm run build:server && node prerender"
-	},
-	"dependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-router-dom": "^6.14.0"
+		"build": "npx eleventy",
+		"dev": "npx eleventy --serve"
 	},
 	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1",
 		"@johnsiddoway/sass": "^1.0.5",
-		"@types/markdown-it": "^12.2.3",
-		"@types/react": "^18.2.14",
-		"@types/react-dom": "^18.2.6",
-		"@types/react-router-dom": "^5.3.3",
-		"@typescript-eslint/eslint-plugin": "^5.60.1",
-		"@typescript-eslint/parser": "^5.60.1",
-		"@vitejs/plugin-react": "^4.0.1",
-		"compression": "^1.7.4",
-		"eslint": "^8.43.0",
-		"eslint-plugin-react-hooks": "^4.6.0",
-		"eslint-plugin-react-refresh": "^0.4.1",
-		"express": "^4.18.2",
-		"gray-matter": "^4.0.3",
-		"highlight.js": "^11.8.0",
-		"markdown-it": "^13.0.1",
-		"markdown-it-highlightjs": "^4.0.1",
-		"sass": "^1.63.6",
-		"serve-static": "^1.15.0",
-		"typescript": "^5.1.3",
-		"vite": "^4.3.9",
-		"vite-plugin-node-polyfills": "^0.9.0"
+		"normalize.css": "^8.0.1",
+		"sass": "^1.63.6"
 	}
 }

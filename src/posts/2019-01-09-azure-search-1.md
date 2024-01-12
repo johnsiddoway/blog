@@ -82,7 +82,7 @@ public class Backfill {
 
 After running this script (or something like it), you should be able to see the index full of data. You can also use the Search Explorer to start messing around with querying your data. Here's a screenshot of me searching the index for 'exactly Yellow Submarine' with double quotes, and finding only 19 search results. These include 13 tracks from the [Yellow Submarine soundtrack](https://en.wikipedia.org/wiki/Yellow_Submarine_(album)), the original track from [Revolver](https://en.wikipedia.org/wiki/Revolver_(Beatles_album)), the re-release on the [1](https://en.wikipedia.org/wiki/1_(Beatles_album)) compilation album, and 4 covers.
 
-<img src="{{ '/assets/img/2019-01-09-azure-search-01.png' | relative_url }}" class="img-fluid" alt="Azure Search Explorer">
+<img src="/assets/img/2019-01-09-azure-search-01.png" class="img-fluid" alt="Azure Search Explorer">
 
 #### Integrating into our Code
 Now that we've got data pushed into the index, we need to use it for real. To go from our little test code up above to code that looks a bit more like the real world, I had to make quite a bit of changes:
@@ -243,7 +243,7 @@ public class SearchController : Controller {
 
 I could keep going and write up all the code on the UI side as well, but I decided against it. The UI is just rendering the search results that come back from the service, regardless of the backing engine. In fact, since I had already built a primitive search function on my primary database, I had already built this UI. And because the returned view model didn't change at all, I was able to fire up my web server, and test out the search page. Just as expected, searching for `"Yellow Submarine"` returned exactly 19 results, while `Yellow Submarine` returned a lot more, including Coldplay's "Yellow" and Björk's "Submarine."
 
-<img src="{{ '/assets/img/2019-01-09-azure-search-02.png' | relative_url }}" class="img-fluid" alt="Azure Search Explorer">
+<img src="/assets/img/2019-01-09-azure-search-02.png" class="img-fluid" alt="Azure Search Explorer">
 
 #### Integrating Into Console App
 

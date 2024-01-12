@@ -1,0 +1,19 @@
+---
+layout: layout.html
+---
+
+{% assign recent = collections.posts | reverse | head: 5 %}
+
+<div class="post-list">
+	{% for post in recent %}
+	<a href="{{ post.url }}" class="post-list-item">
+		<h2>{{ post.data.title }}</h2>
+		<div class="date-with-icon">
+			{{ post.date | date: "%Y-%m-%d" }}
+		</div>
+	</a>
+	{% endfor %}
+	<a href="/archive/" class="post-list-item">
+		<h2>Archived Posts</h2>
+	</a>
+</div>
