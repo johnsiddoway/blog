@@ -10,6 +10,7 @@
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@johnsiddoway/sass": "^1.0.5",
 		"markdown-it-attrs": "^4.1.6",
+		"markdown-it-highlightjs": "^4.0.1",
 		"normalize.css": "^8.0.1",
 		"sass": "^1.63.6"
 	}

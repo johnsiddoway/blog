@@ -1,0 +1,30 @@
+.rating,
+.rating-ltr,
+.rating-single {
+    color: #fff; /* Personal choice */
+}
+
+.rating,
+.rating-single {
+	display: inline-block;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+.rating input,
+.rating-ltr input,
+.rating-single input {
+    display: none;
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked + label,
+.rating input:checked + label ~ label,
+.rating-ltr label:hover,
+.rating-ltr label:hover ~ label,
+.rating-ltr input:checked + label,
+.rating-ltr input:checked + label ~ label,
+.rating-single input:checked + label {
+    color: #ffc107; /* Personal color choice. Lifted from Bootstrap 4 */
+}

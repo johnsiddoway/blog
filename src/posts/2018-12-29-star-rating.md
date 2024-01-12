@@ -3,16 +3,19 @@ title: 'Star Rating'
 date: '2018-12-29'
 description: 'Creating a basic star rating using some custom CSS and Font Awesome 5'
 tags: css font-awesome-5
-customJavascript: '/js/star-rating.js'
-customStylesheet: '/css/star-rating.css'
+links:
+ - <link rel="stylesheet" href="/assets/star-rating.css">
+ - <script type="module" crossorigin defer src="/assets/star-rating.js"></script>
+ - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 ---
+
 On Font Awesome's [4.7 Examples](https://fontawesome.com/v4.7.0/examples/) page, they included an example of how to implement a basic star rating using their `star` icon. They also linked out to [this great article](https://css-tricks.com/star-ratings/). When Font Awesome 5 came out, I noticed that their docs didn't include an Example page anymore, so I thought I'd recreate this simple feature.
 
 ### Demo
 
 You can also see this on [CodePen](https://codepen.io/pezmotion/pen/RQERdm)
 
-<div class="rating d-inline-block" id="example-one">
+<div class="rating" id="example-one">
     <input id="example-one-5" type="radio" name="example-one" value="5"/><label for="example-one-5"><i class="fas fa-2x fa-star"></i></label>
     <input id="example-one-4" type="radio" name="example-one" value="4"/><label for="example-one-4"><i class="fas fa-2x fa-star"></i></label>
     <input id="example-one-3" type="radio" name="example-one" value="3" checked /><label for="example-one-3"><i class="fas fa-2x fa-star"></i></label>
@@ -46,7 +49,7 @@ There are two basic CSS features being used here. We are listing out the inputs 
 
 Star Ratings are typically viewed with the lowest score on the left, and the highest score on the right. In our case, 1 to 5. By setting this to "right to left" and then putting our elements highest-to-lowest when we define them, they are *rendered* left to right. By itself this isn't that useful. Here's what our Star Ratings would look like without it, though:
 
-<div class="rating-ltr d-inline-block" id="example-two">
+<div class="rating-ltr" id="example-two">
     <input id="example-two-5" type="radio" name="example-two" value="5"/><label for="example-two-5"><i class="fas fa-2x fa-star"></i></label>
     <input id="example-two-4" type="radio" name="example-two" value="4"/><label for="example-two-4"><i class="fas fa-2x fa-star"></i></label>
     <input id="example-two-3" type="radio" name="example-two" value="3" checked /><label for="example-two-3"><i class="fas fa-2x fa-star"></i></label>
@@ -74,7 +77,7 @@ The `.rating input:checked + label ~ label` line uses the `~` selector, which is
 
 The `.rating label:hover` line and the `.rating label:hover ~ label` are used to apply the same style to "possible" star ratings. For the example below, I've removed these lines as well.
 
-<div class="rating-single d-inline-block" id="example-three">
+<div class="rating-single" id="example-three">
     <input id="example-three-5" type="radio" name="example-three" value="5"/><label for="example-three-5"><i class="fas fa-2x fa-star"></i></label>
     <input id="example-three-4" type="radio" name="example-three" value="4"/><label for="example-three-4"><i class="fas fa-2x fa-star"></i></label>
     <input id="example-three-3" type="radio" name="example-three" value="3" checked /><label for="example-three-3"><i class="fas fa-2x fa-star"></i></label>
@@ -126,7 +129,7 @@ The `.rating label:hover` line and the `.rating label:hover ~ label` are used to
 }
 ```
 
-<div class="rating d-inline-block" id="example-four">
+<div class="rating" id="example-four">
     <input id="example-four-5" type="radio" name="example-four" value="5"/><label for="example-four-5"><i class="fas fa-2x fa-star"></i></label>
     <input id="example-four-4" type="radio" name="example-four" value="4"/><label for="example-four-4"><i class="fas fa-2x fa-star"></i></label>
     <input id="example-four-3" type="radio" name="example-four" value="3" checked /><label for="example-four-3"><i class="fas fa-2x fa-star"></i></label>
