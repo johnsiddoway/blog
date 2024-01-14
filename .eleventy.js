@@ -15,8 +15,36 @@ module.exports = function (eleventyConfig) {
 		return array.slice(0, n);
 	});
 
+	let idCounter = 0;
+	// copy all our /components to the output directory
+	// so Vite can find them. Very important step!
+	eleventyConfig.addPassthroughCopy('components')
+
+	eleventyConfig.addShortcode('react', function (componentPath) {
+		// we'll use idCounter to generate unique IDs for each "root" div
+		// this lets us use multiple components / shortcodes on the same page 👍
+		idCounter += 1;
+		console.info(componentPath);
+		const componentRootId = `component-root-${idCounter}`
+		return `<div id="${componentRootId}"></div>
+	<script type="module">
+	  import Component from ${JSON.stringify(componentPath)};
+	  import React from 'react';
+	  import ReactDOM from 'react-dom';
+	  const componentRoot = document.getElementById('${componentRootId}');
+	  ReactDOM.render(React.createElement(Component), componentRoot);
+	</script>`;
+	})
+
+	eleventyConfig.on('beforeBuild', function () {
+		// reset the counter for each new build
+		// otherwise, it'll count up higher and higher on every live reload
+		idCounter = 0;
+	})
+
 	// Copy anything in the src/assets folder over to ${outputDir}/assets
 	eleventyConfig.addPassthroughCopy({ "src/assets": "/assets" });
+	eleventyConfig.addPassthroughCopy({ "src/components": "/components" });
 
 	eleventyConfig.addPlugin(sassPlugin);
 
