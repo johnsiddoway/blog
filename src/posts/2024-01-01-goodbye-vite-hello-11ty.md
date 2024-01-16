@@ -1,6 +1,6 @@
 ---
-title: 'Goodbye Next, Hello Vite'
-date: '2023-06-26'
+title: 'Goodbye Vite, Hello 11ty'
+date: '2024-01-01'
 ---
 
 This is the 3rd post in a series I think I'm calling "Oh my god why are there so many static site generators?" The previous entries in this series are:
@@ -15,3 +15,22 @@ First of all, let me say that Vite seems to be a perfect fit for what I'm lookin
 # Enter 11ty
 
 [11ty](https://11ty.dev/) seemed to be exactly what I was looking for. It starts off **very** simple, but supports the basic functionality that I was looking for; it converts [Markdown to HTML](https://www.11ty.dev/docs/languages/markdown/) using [markdown-it](https://www.npmjs.com/package/markdown-it), and has support for [layouts](https://www.11ty.dev/docs/layouts/) so each blog post can remain simple markdown files. This made it relatively straightforward to convert from Vite to 11ty and have most of the site working exactly the same as before.
+
+# Partial Hydration
+
+One thing that took me quite a while to figure out (and I'm still working on smoothing out) is how to actually implement [partial hydration](https://en.wikipedia.org/wiki/Hydration_(web_development)), which is bascially a fancy way of saying "add javascript to an otherwise static website." It's basically building websites that would have not been out of place 10-15 years ago when JQuery was the most advanced javascript library.
+
+I think I have an example of partial hydration working here:
+
+<div id="react-root"></div>
+<script src="/components/test.js" crossorigin defer></script>
+
+## How it's supposed to work
+
+There should be a button above that you can click that increments a counter. The basic component is borrowed from Ben Holmes' [Building The SSG I've Always Wanted: An 11ty, Vite And JAM Sandwich](https://www.smashingmagazine.com/2021/10/building-ssg-11ty-vite-jam-sandwich/) post that I've referenced before. When he wrote that post though, he seems to have been using an older version of Vite and 11ty, and his code didn't work right out of the box for me the way I expected. I was able to get a version working that basically generated a full React app using 11ty and then served it up with Vite, but 11ty 2.0 already comes with a [dev server](https://www.11ty.dev/docs/dev-server/) option.
+
+That wasn't at all what I wanted. Somehow in my professional career, I seemed to have avoided the "learning to walk" phase of writing build tools and build scripts from scratch, and came in during the "learning to run" phase where entire frameworks existed that would handle the compiling of code into javascript that can easily run in the browser. I'm sure there are plenty of people out there who wouldn't have had any of the problems I encountered, but I was surprised at just how **hard** it was to find a simple explanation or guide of the history of web development that would help teach me to walk.
+
+## Rollup.js
+
+I ended up digging into how Vite compiles the React code into a single javascript file, which led me to [Rollup.js](https://rollupjs.org/). Rollup is basically a competitor of Webpack, so if you really know Webpack, Gulp, Rollup, or some other such library, then you probably know how Rollup works.
