@@ -5,7 +5,9 @@
 		"build": "npm run build:11ty && npm run build:rollup",
 		"build:11ty": "npx eleventy",
 		"build:rollup": "npx rollup -c rollup.config.mjs",
-		"dev": "npx eleventy --serve"
+		"dev": "(npm run dev:rollup) & npm run dev:11ty",
+		"dev:11ty": "npx eleventy --serve",
+		"dev:rollup": "npx rollup -c rollup.config.mjs -w"
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "^2.0.1",
@@ -23,6 +25,7 @@
 		"react-dom": "^18.2.0",
 		"rollup": "^4.9.5",
 		"rollup-plugin-livereload": "^2.0.5",
+		"rollup-plugin-node-polyfills": "^0.2.1",
 		"rollup-plugin-serve": "^1.1.1",
 		"sass": "^1.63.6"
 	}
