@@ -5,7 +5,7 @@
 		"build": "npm run build:11ty && npm run build:rollup",
 		"build:11ty": "npx eleventy",
 		"build:rollup": "npx rollup -c rollup.config.mjs",
-		"dev": "(npm run dev:rollup) & npm run dev:11ty",
+		"dev": "(npm run build:rollup) & npm run dev:11ty",
 		"dev:11ty": "npx eleventy --serve",
 		"dev:rollup": "npx rollup -c rollup.config.mjs -w"
 	},
@@ -18,15 +18,14 @@
 		"@rollup/plugin-commonjs": "^25.0.7",
 		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-replace": "^5.0.5",
+		"@rollup/plugin-terser": "^0.4.4",
 		"markdown-it-attrs": "^4.1.6",
 		"markdown-it-highlightjs": "^4.0.1",
 		"normalize.css": "^8.0.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"rollup": "^4.9.5",
-		"rollup-plugin-livereload": "^2.0.5",
 		"rollup-plugin-node-polyfills": "^0.2.1",
-		"rollup-plugin-serve": "^1.1.1",
 		"sass": "^1.63.6"
 	}
 }
