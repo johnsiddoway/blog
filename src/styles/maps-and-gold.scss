@@ -12,6 +12,8 @@
 // 4: Import our custom classes. I'd like to get these all moved over to mixins
 @import "containers";
 
+@include make-button-variants($theme-colors);
+
 body {
 	display: flex;
 	flex-direction: column;
