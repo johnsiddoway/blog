@@ -20,10 +20,9 @@ First of all, let me say that Vite seems to be a perfect fit for what I'm lookin
 
 One thing that took me quite a while to figure out (and I'm still working on smoothing out) is how to actually implement [partial hydration](https://en.wikipedia.org/wiki/Hydration_(web_development)), which is bascially a fancy way of saying "add javascript to an otherwise static website." It's basically building websites that would have not been out of place 10-15 years ago when JQuery was the most advanced javascript library.
 
-I think I have an example of partial hydration working here:
+I think I *finally* have an example of partial hydration working here:
 
-<div id="react-root"></div>
-<script src="/components/test.js" crossorigin defer></script>
+{% react "src/components/TimesWeMispronouncedVite.jsx" %}
 
 ## How it's supposed to work
 
@@ -33,4 +32,4 @@ That wasn't at all what I wanted. Somehow in my professional career, I seemed to
 
 ## Rollup.js
 
-I ended up digging into how Vite compiles the React code into a single javascript file, which led me to [Rollup.js](https://rollupjs.org/). Rollup is basically a competitor of Webpack, so if you really know Webpack, Gulp, Rollup, or some other such library, then you probably know how Rollup works.
+I ended up digging into how Vite compiles the React code into a single javascript file, which led me to [Rollup.js](https://rollupjs.org/). Rollup is basically a competitor of Webpack, so if you really know Webpack, Gulp, Rollup, or some other such library, then you probably know how Rollup works. But I didn't know, so it's taken me longer than I expected to get it working the way I expected.

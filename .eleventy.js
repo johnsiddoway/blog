@@ -1,4 +1,5 @@
 const markdownItAttrs = require("markdown-it-attrs");
+const jsxPlugin = require('./jsxPlugin.js');
 const sassPlugin = require('./sassPlugin.js');
 const syntaxHighlight = require("markdown-it-highlightjs");
 
@@ -18,6 +19,7 @@ module.exports = function (eleventyConfig) {
 	// Copy anything in the src/assets folder over to ${outputDir}/assets
 	eleventyConfig.addPassthroughCopy({ "src/assets": "/assets" });
 
+	eleventyConfig.addPlugin(jsxPlugin);
 	eleventyConfig.addPlugin(sassPlugin);
 
 	eleventyConfig.amendLibrary("md", mdLib => mdLib.use(syntaxHighlight));
