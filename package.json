@@ -5,6 +5,7 @@
 		"build": "npm run build:11ty",
 		"build:11ty": "npx eleventy",
 		"build:rollup": "npx rollup -c rollup.config.mjs",
+		"clean": "rm -rf dist/ && rm -rf node_modules/",
 		"dev": "npm run dev:11ty",
 		"dev:11ty": "npx eleventy --serve",
 		"dev:rollup": "npx rollup -c rollup.config.mjs -w"
