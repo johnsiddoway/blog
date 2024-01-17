@@ -7,27 +7,30 @@ const commonjs = require('@rollup/plugin-commonjs');
 const replace = require('@rollup/plugin-replace');
 const terser = require('@rollup/plugin-terser');
 
-async function compile(componentPath, idCounter) {
+async function compile(componentPath, outputPath, idCounter) {
 	let parsed = path.parse(componentPath);
+	let outputFilePath = outputPath;
+	if (outputFilePath === null) {
+		outputFilePath = `/assets/${parsed.name}.js`;
+	}
+
 	// we'll use idCounter to generate unique IDs for each "root" div
 	// this lets us use multiple components / shortcodes on the same page 👍
 	const componentRootId = `component-root-${idCounter}`
-	const outputPath = `/assets/${parsed.name}.js`;
 	const javascriptToConvert = `import React from 'react';
 import ReactDOM from 'react-dom';
 import Component from './${componentPath}';
 ReactDOM.createRoot(document.getElementById('${componentRootId}')).render(<Component />);`;
-	console.info(`Component Path: ${componentPath}`);
-	console.info(`Parsed Name: ${parsed.name}`);
-	console.info('Javascript to Convert:');
-	console.info(javascriptToConvert);
 
-	await build(javascriptToConvert, parsed.name, outputPath);
+	console.info(`Input Path: ${componentPath}`);
+	console.info(`Output Path:${outputFilePath}`);
 
-	return `<div id="${componentRootId}"></div><script crossorigin defer src="${outputPath}"></script>`;
+	await build(javascriptToConvert, parsed.name, outputFilePath);
+
+	return `<div id="${componentRootId}"></div><script crossorigin defer src="/${outputFilePath}"></script>`;
 };
 
-async function build(javascriptToConvert, fileName, outputPath) {
+async function build(javascriptToConvert, fileName, outputFilePath) {
 
 	const tempFilePath = `./tmp_${fileName}.jsx`;
 	console.info(`Attempting to write some javascript to ${tempFilePath}`);
@@ -35,7 +38,7 @@ async function build(javascriptToConvert, fileName, outputPath) {
 	console.info(`Wrote some stuff to ${tempFilePath}`);
 
 	const outputOptions = {
-		file: `dist/${outputPath}`,
+		file: `dist/${outputFilePath}`,
 		format: "iife",
 		sourcemap: false,
 	};
@@ -63,10 +66,11 @@ async function build(javascriptToConvert, fileName, outputPath) {
 			]
 		});
 
-		// an array of file names this bundle depends on
-		console.log(bundle.watchFiles);
+		await bundle.write(outputOptions);
 
-		await generateOutputs(bundle, outputOptions);
+		// an array of file names this bundle depends on
+		// console.log(bundle.watchFiles);
+		// await generateOutputs(bundle, outputOptions);
 	} catch (error) {
 		// do some error reporting
 		console.error(error);
@@ -128,9 +132,9 @@ async function generateOutputs(bundle, outputOptions) {
 module.exports = function (eleventyConfig) {
 	let idCounter = 0;
 
-	eleventyConfig.addAsyncShortcode('react', async function (componentPath) {
+	eleventyConfig.addAsyncShortcode('react', async function (inputPath, outputPath) {
 		idCounter += 1;
-		return await compile(componentPath, idCounter);
+		return await compile(inputPath, outputPath, idCounter);
 	});
 
 	eleventyConfig.on('beforeBuild', function () {
