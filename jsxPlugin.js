@@ -21,7 +21,9 @@ module.exports = function (eleventyConfig) {
 
 			let bundle = null;
 			let parsed = path.parse(inputPath);
-			let output = null;
+			if (parsed.name.startsWith('_')) {
+				return;
+			}
 			const outputPath = `${parsed.dir.replace('./src/', 'dist/')}/index.js`;
 			const outputOptions = {
 				file: outputPath,
@@ -50,22 +52,22 @@ module.exports = function (eleventyConfig) {
 						}),
 						nodeResolve({
 							browser: true,
-							// extensions: [".js", ".jsx", ".ts", ".tsx"],
-							// dedupe: ['react', 'react-dom'],
+							extensions: [".js", ".jsx", ".ts", ".tsx"],
+							dedupe: ['react', 'react-dom'],
 						}),
 						commonjs(),
 						babel({
-							// exclude: "**/node_modules/**",
+							exclude: "**/node_modules/**",
 							presets: ["@babel/preset-env", "@babel/preset-react"],
 							babelHelpers: 'bundled',
-							// extensions: [".js", ".jsx", ".ts", ".tsx"],
+							extensions: [".js", ".jsx", ".ts", ".tsx"],
 						}),
 						scss({ fileName: `index.css` }),
 						terser(),
 					]
 				});
 
-				output = await bundle.write(outputOptions);
+				await bundle.write(outputOptions);
 			} catch (error) {
 				// do some error reporting
 				console.error(error);
