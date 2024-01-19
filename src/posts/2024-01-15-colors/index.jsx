@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ColorPicker, useColor } from "react-color-palette";
-import SwatchPanel from './swatch-panel.jsx';
+import SwatchPanel from './_swatch-panel.jsx';
 import './index.scss';
 import "react-color-palette/css";
 
