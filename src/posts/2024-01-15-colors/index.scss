@@ -1,4 +1,5 @@
 @import "../../styles/_variables.scss";
+@import "../../styles/mixins/custom";
 
 html {
     --color-0: #{$red};
@@ -21,6 +22,16 @@ $test-colors: 'color-0', 'color-1', 'color-2', 'color-3', 'color-4', 'color-5', 
     .#{$name} {
         background-color: var(--#{$name});
     }
+}
+
+#react-root {
+    @include make-flex($column-gap: 0.5rem, $align-items: inherit);
+
+    > * {
+        flex-grow: 1;
+    }
+
+    margin-bottom: 0.5rem;
 }
 
 .swatch {
