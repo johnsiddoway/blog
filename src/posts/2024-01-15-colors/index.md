@@ -8,6 +8,4 @@ links:
  - <script type="module" defer src="index.js"></script>
 ---
 
-This is a test
-
 <div id="react-root"></div>
