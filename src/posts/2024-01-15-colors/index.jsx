@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 export function Component() {
-    return <div>Hello from React!</div>
+	return <div>Hello from React!</div>
 }
 
-ReactDOM.createRoot(document.getElementById('react-root')).render(<Component />);
+createRoot(document.getElementById('react-root')).render(<Component />);
