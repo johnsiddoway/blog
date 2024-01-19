@@ -1,6 +1,8 @@
 ---
 title: Battletech Game JSON Customizations
 date: '2022-09-24'
+layout: layout.html
+tags: posts
 ---
 BattleTech JSON Customizations
 *As of 1.7*

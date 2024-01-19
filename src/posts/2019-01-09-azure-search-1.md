@@ -2,7 +2,8 @@
 title: 'Azure Search Part 1'
 date: '2019-01-09'
 description: 'Plugging Azure Search into Pirate Radio'
-tags: azure
+layout: layout.html
+tags: posts
 ---
 ### Overview
 There are a few good "starter" guides for Azure Search, and I've linked to a few of them at the bottom. As I was writing up my experiences with following these guides, I noticed that my blog post was turning into a novella. So I have split it up into two portions: this post will cover the specifics of what I did, and the next post will be my rationale for choosing Azure, my opinions, and thoughts on the experience.

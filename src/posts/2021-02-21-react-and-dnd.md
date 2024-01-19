@@ -2,7 +2,8 @@
 title: 'React and Monsters and AWS Oh My'
 date: '2021-02-21'
 description: Learning React through a small D&D app
-tags: react aws dnd
+layout: layout.html
+tags: posts
 ---
 
 ### Overview

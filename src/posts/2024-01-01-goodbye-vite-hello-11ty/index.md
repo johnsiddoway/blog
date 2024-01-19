@@ -1,6 +1,10 @@
 ---
 title: 'Goodbye Vite, Hello 11ty'
 date: '2024-01-01'
+tags: posts
+layout: layout.html
+links:
+ - <script type="module" defer src="index.js"></script>
 ---
 
 This is the 3rd post in a series I think I'm calling "Oh my god why are there so many static site generators?" The previous entries in this series are:
@@ -22,7 +26,7 @@ One thing that took me quite a while to figure out (and I'm still working on smo
 
 I think I *finally* have an example of partial hydration working here:
 
-{% react "src/components/TimesWeMispronouncedVite.jsx" %}
+<div id="react-root"></div>
 
 ## How it's supposed to work
 

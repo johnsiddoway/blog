@@ -6,7 +6,7 @@
 		"build:11ty": "npx eleventy",
 		"build:rollup": "npx rollup -c rollup.config.mjs",
 		"clean": "rm -rf dist/ && rm -rf node_modules/",
-		"dev": "npm run build:rollup && npm run dev:11ty",
+		"dev": "npx eleventy --serve",
 		"dev:11ty": "npx eleventy --serve",
 		"dev:rollup": "npx rollup -c rollup.config.mjs -w"
 	},
@@ -28,6 +28,7 @@
 		"react-color-palette": "^7.1.0",
 		"react-dom": "^18.2.0",
 		"rollup": "^4.9.5",
-		"sass": "^1.63.6"
+		"rollup-plugin-scss": "^4.0.0",
+		"sass": "^1.70.0"
 	}
 }
