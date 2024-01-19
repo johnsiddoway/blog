@@ -8,12 +8,12 @@
 	<title>John Siddoway Blog: Maps and Gold</title>
 	<link rel="stylesheet" href="/assets/normalize.css">
 	<link rel="stylesheet" href="/maps-and-gold.css">
-	{%- if page.url contains "/posts/" -%}
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css">
-	{%- endif -%}
+	{% if page.url contains "/posts/" -%}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css">
+	{%- endif %}
 	{%- for link in links -%}
 	{{ link }}
-	{%- endfor -%}
+	{%- endfor %}
 </head>
 
 <body>
