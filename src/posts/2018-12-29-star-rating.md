@@ -2,7 +2,8 @@
 title: 'Star Rating'
 date: '2018-12-29'
 description: 'Creating a basic star rating using some custom CSS and Font Awesome 5'
-tags: css font-awesome-5
+layout: layout.html
+tags: posts
 links:
  - <link rel="stylesheet" href="/assets/star-rating.css">
  - <script type="module" crossorigin defer src="/assets/star-rating.js"></script>

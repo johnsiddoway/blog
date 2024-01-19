@@ -2,7 +2,8 @@
 title: 'Azure Search Part 2'
 date: '2019-01-10'
 description: 'Discussing my experience with Azure Search'
-tags: azure
+layout: layout.html
+tags: posts
 ---
 ### Backstory
 One of the features I considered "nice to have" in Pirate Radio was the ability to search for a specific song or songs.

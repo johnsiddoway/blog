@@ -1,6 +1,8 @@
 ---
 title: 'Vite SSR and SSG'
 date: '2023-06-29'
+layout: layout.html
+tags: posts
 ---
 
 As noted in [my previous post](/posts/2023/06/26/goodbye-next-hello-vite), my initial migration to [Vite](https://vitejs.dev/) was incomplete (in my mind) because the blog was still being built like a traditional React web app. It turns out that moving to fully static was quite easy, once I had everything else sorted out.

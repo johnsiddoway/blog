@@ -2,7 +2,8 @@
 title:  'Pirate Radio'
 date: '2019-01-08'
 description: 'A brief history on a personal project'
-tags: pirate-radio
+layout: layout.html
+tags: posts
 ---
 
 I don't think I can (or should) talk about what I do for work here. First of all, the majority of my learnings at work these days don't feel like they have general application. Second of all, and probably more importantly, I have no idea whether or not I'd be violating any NDAs. So instead, I'm going to focus on things I learn about in my (limited) free time. When I want to practice new concepts or try implementing a feature of some sort, I try to find a way to integrate it into a personal project.
