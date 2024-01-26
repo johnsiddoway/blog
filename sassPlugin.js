@@ -19,6 +19,9 @@ module.exports = function (eleventyConfig) {
 
 		// `compile` is called once per .scss file in the input directory
 		compile: async function (inputContent, inputPath) {
+			if (inputPath.includes('/posts/')) {
+				return;
+			}
 			let parsed = path.parse(inputPath);
 			if (parsed.name.startsWith("_")) {
 				return;
