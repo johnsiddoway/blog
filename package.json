@@ -2,7 +2,7 @@
 	"private": true,
 	"type": "commonjs",
 	"scripts": {
-		"build": "npm run build:11ty",
+		"build": "npx eleventy",
 		"build:11ty": "npx eleventy",
 		"build:rollup": "npx rollup -c rollup.config.mjs",
 		"clean": "rm -rf dist/ && rm -rf node_modules/",
@@ -21,6 +21,7 @@
 		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-replace": "^5.0.5",
 		"@rollup/plugin-terser": "^0.4.4",
+		"dayjs": "^1.11.10",
 		"markdown-it-attrs": "^4.1.6",
 		"markdown-it-highlightjs": "^4.0.1",
 		"normalize.css": "^8.0.1",
