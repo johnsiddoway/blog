@@ -35,7 +35,7 @@ module.exports = function (eleventyConfig) {
 				// create a bundle
 				bundle = await rollup({
 					input: inputPath,
-					output: outputOptions,
+					// output: outputOptions,
 					onwarn(warning, warn) {
 						if (
 							warning.code === "MODULE_LEVEL_DIRECTIVE" &&
@@ -67,7 +67,12 @@ module.exports = function (eleventyConfig) {
 					]
 				});
 
-				await bundle.write(outputOptions);
+				const { output } = await bundle.write(outputOptions);
+				const dependencies = output
+					.filter((chunkOrAsset) => chunkOrAsset.type === 'chunk')
+					.flatMap((chunkOrAsset) => chunkOrAsset.modules)
+					.map((module) => Object.keys(module));
+				this.addDependencies(inputPath, dependencies);
 			} catch (error) {
 				// do some error reporting
 				console.error(error);

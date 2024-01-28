@@ -9,7 +9,7 @@ function Component() {
 	const [color, setColor] = useColor("#F16B0E"); // #F10E23
 
 	return <>
-		<ColorPicker width={500} height={400} color={color} onChange={setColor} />
+		<ColorPicker color={color} onChange={setColor} />
 		<SwatchPanel {...{ color }} />
 	</>;
 }

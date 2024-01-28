@@ -1,5 +1,30 @@
 import React from 'react';
 
+const RED = 0.2126;
+const GREEN = 0.7152;
+const BLUE = 0.0722;
+
+const GAMMA = 2.4;
+
+const AA_CONTRAST_THRESHOLD = 4.5;
+const AAA_CONTRAST_THRESHOLD = 7;
+
+function luminance(r, g, b) {
+	var a = [r, g, b].map((v) => {
+		v /= 255;
+		return v <= 0.03928
+			? v / 12.92
+			: Math.pow((v + 0.055) / 1.055, GAMMA);
+	});
+	return a[0] * RED + a[1] * GREEN + a[2] * BLUE;
+}
+
+function contrast(rgb1, rgb2) {
+	var lum1 = luminance(...rgb1);
+	var lum2 = luminance(...rgb2);
+	return (Math.max(lum1, lum2) + 0.05) / (Math.min(lum1, lum2) + 0.05);
+}
+
 const count = 12;
 
 const range = (n) => {
@@ -41,14 +66,22 @@ export default function SwatchPanel({ color }) {
 		const rgb = hsvToRgb(hsv);
 		const hex = rgbToHex(rgb);
 
-		return <div key={index} className="swatch flex-with-gap" style={{ backgroundColor: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})` }}>
-			<div>Test {index}</div>
-			<div>{index * increments}</div>
-			<div>{hex}</div>
+		const blackContrast = contrast([rgb.r, rgb.g, rgb.b], [0, 0, 0]);
+
+		let style = { backgroundColor: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})` }
+		if (blackContrast > AAA_CONTRAST_THRESHOLD) {
+			style.color = `rgb(0, 0, 0)`;
+		} else {
+			style.color = `rgb(255, 255, 255)`;
+		}
+
+		return <div key={index} className="swatch flex-with-gap" style={style}>
+			<div>Angle: {index * increments};</div>
+			<div>Hex Code: {hex};</div>
 		</div>
 	});
 
-	return <div>
+	return <div className="swatch-panel">
 		{swatches}
 	</div>
 }

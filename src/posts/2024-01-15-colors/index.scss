@@ -27,17 +27,28 @@ $test-colors: 'color-0', 'color-1', 'color-2', 'color-3', 'color-4', 'color-5', 
 #react-root {
     @include make-flex($column-gap: 0.5rem, $align-items: inherit);
 
-    > * {
-        flex-grow: 1;
+    > .rcp {
+        flex: 1 1 100%;
     }
+	> .swatch-panel {
+		flex-grow: 2 1 100%;
+	}
 
     margin-bottom: 0.5rem;
 }
 
+.swatch-panel {
+	@include make-flex($column-gap: 0.5rem, $row-gap: 0.5rem, $align-items: flex-start, $align-content: flex-start, $flex-wrap: wrap);
+
+	> * {
+		flex: 1 1 0px;
+	}
+}
+
 .swatch {
+	min-width: 20rem;
     border: 1px solid currentColor;
     padding: 0.5rem;
-    margin-bottom: 0.5rem;
 }
 
 .mb-1 {
