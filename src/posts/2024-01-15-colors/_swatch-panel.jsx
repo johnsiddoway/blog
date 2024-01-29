@@ -53,8 +53,8 @@ const hsvToRgb = (hsv) => {
 	r = Math.round((r + m) * 255);
 	g = Math.round((g + m) * 255);
 	b = Math.round((b + m) * 255);
-
-	return { r, g, b };
+	const a = hsv.a;
+	return { r, g, b, a };
 }
 
 export default function SwatchPanel({ color }) {
@@ -68,7 +68,7 @@ export default function SwatchPanel({ color }) {
 
 		const blackContrast = contrast([rgb.r, rgb.g, rgb.b], [0, 0, 0]);
 
-		let style = { backgroundColor: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})` }
+		let style = { backgroundColor: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})` }
 		if (blackContrast > AAA_CONTRAST_THRESHOLD) {
 			style.color = `rgb(0, 0, 0)`;
 		} else {
