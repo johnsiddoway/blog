@@ -28,10 +28,10 @@ $test-colors: 'color-0', 'color-1', 'color-2', 'color-3', 'color-4', 'color-5', 
     @include make-flex($column-gap: 0.5rem, $align-items: inherit);
 
     > .rcp {
-        flex: 1 1 100%;
+        flex: 1 1 0%;
     }
 	> .swatch-panel {
-		flex-grow: 2 1 100%;
+		flex: 2 1 0%;
 	}
 
     margin-bottom: 0.5rem;
@@ -51,6 +51,6 @@ $test-colors: 'color-0', 'color-1', 'color-2', 'color-3', 'color-4', 'color-5', 
     padding: 0.5rem;
 }
 
-.mb-1 {
-    margin-bottom: 0.5rem;
+.react-colorful {
+	margin-bottom: 1rem;
 }
