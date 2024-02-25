@@ -1,4 +1,8 @@
-import React from 'react';
+import React from "react";
+import { colord, extend } from "colord";
+import a11yPlugin from "colord/plugins/a11y";
+
+extend([a11yPlugin]);
 
 const RED = 0.2126;
 const GREEN = 0.7152;
@@ -57,12 +61,14 @@ const hsvToRgb = (hsv) => {
 	return { r, g, b, a };
 }
 
-export default function SwatchPanel({ color }) {
+export function SwatchPanel({ color }) {
+	color = colord(color).toHsv();
+
 	const increments = 360 / count; // How far apart should the colors be on the color wheel?
 
 	const swatches = range(count).map((index) => {
-		const h = ((index * increments) + color.hsv.h) % 360;
-		const hsv = { ...color.hsv, h };
+		const h = ((index * increments) + color.h) % 360;
+		const hsv = { ...color, h };
 		const rgb = hsvToRgb(hsv);
 		const hex = rgbToHex(rgb);
 
