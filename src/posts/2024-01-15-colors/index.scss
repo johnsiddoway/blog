@@ -25,32 +25,70 @@ $test-colors: 'color-0', 'color-1', 'color-2', 'color-3', 'color-4', 'color-5', 
 }
 
 #react-root {
-    @include make-flex($column-gap: 0.5rem, $align-items: inherit);
+    @include make-flex($column-gap: 5rem, $align-items: inherit);
+	margin-bottom: 1rem;
 
-    > .rcp {
-        flex: 1 1 0%;
-    }
-	> .swatch-panel {
-		flex: 2 1 0%;
+	> .pickerPanel {
+		width: 10rem;
 	}
 
-    margin-bottom: 0.5rem;
+	> .swatchPanel {
+		flex: 2 2 0;
+	}
 }
 
-.swatch-panel {
+.colorPicker {
+	margin-bottom: 0.5rem;
+
+	label {
+		font-weight: bold;
+	}
+
+	.inputGroup {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		width: 100%;
+
+		input {
+			position: relative;
+			flex: 1 1 auto;
+			width: 1%;
+			min-width: 0;
+		}
+	}
+
+	.picker {
+		position: relative;
+	  }
+	  
+	  .swatch {
+		width: 2.25rem;
+		height: 100%;
+		cursor: pointer;
+		border: 1px solid currentColor;
+		border-left: 0;
+	  }
+	  
+	  .popover {
+		position: absolute;
+		top: 0;
+		left: calc(100% + 2px);
+		border-radius: 9px;
+	  }
+}
+
+.swatchPanel {
 	@include make-flex($column-gap: 0.5rem, $row-gap: 0.5rem, $align-items: flex-start, $align-content: flex-start, $flex-wrap: wrap);
 
 	> * {
 		flex: 1 1 0px;
 	}
-}
 
-.swatch {
-	min-width: 20rem;
-    border: 1px solid currentColor;
-    padding: 0.5rem;
-}
-
-.react-colorful {
-	margin-bottom: 1rem;
+	.swatch {
+		min-width: 20rem;
+		border: 1px solid currentColor;
+		padding: 0.5rem;
+	}
 }

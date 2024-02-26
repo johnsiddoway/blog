@@ -87,7 +87,7 @@ export function SwatchPanel({ color }) {
 		</div>
 	});
 
-	return <div className="swatch-panel">
+	return <div className="swatchPanel">
 		{swatches}
 	</div>
 }
