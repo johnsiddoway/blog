@@ -5,7 +5,7 @@
 }
 
 body {
-	background-color: #fcf7c3; // This is the currenty $primary color rotated 30 degrees and shifted -75% (towards white)
+	background-color: $background-color; // This is the currenty $primary color rotated 30 degrees and shifted -75% (towards white)
 	color: $foreground-color;
 	font-family: $font-family-sans-serif;
 	font-size: $font-size-base;
