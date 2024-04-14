@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useReducer, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HexAlphaColorPicker, HexColorInput } from "react-colorful";
 import './index.scss';
@@ -35,19 +35,20 @@ function ColorPicker({ color, onChange, label }) {
 			<PopoverPicker color={color} onChange={onChange} />
 		</div>
 	</div>;
-}
+};
 
-type Action =
-	| { type: 'set-foreground-color', color: string }
-	| { type: 'set-background-color', color: string }
-	| { type: 'set-theme-color', index: number, color: string }
-	| { type: 'set-theme-color-count', count: number };
-type State = {
-	foregroundColor: string;
-	backgroundColor: string;
-	themeColorCount: number;
-	themeColors: string[];
-}
+// type Action =
+// 	| { type: 'set-foreground-color', color: string }
+// 	| { type: 'set-background-color', color: string }
+// 	| { type: 'set-theme-color', index: number, color: string }
+// 	| { type: 'set-theme-color-count', count: number };
+// type State = {
+// 	foregroundColor: string;
+// 	backgroundColor: string;
+// 	themeColorCount: number;
+// 	themeColors: string[];
+// }
+
 function reducer(state, action) {
 	switch (action.type) {
 		case 'set-foreground-color':
@@ -87,7 +88,7 @@ function Component() {
 	document.body.style.backgroundColor = backgroundColor;
 
 	const themeColorPickers = [];
-	for (i = 0; i < number; i++) {
+	for (let i = 0; i < themeColorCount; i++) {
 		themeColorPickers.push(<ColorPicker color={themeColors[i]} onChange={(e) => dispatch({ type: 'set-theme-color', index: i, color: e })} />);
 	}
 
@@ -103,7 +104,7 @@ function Component() {
 			</select>
 			{themeColorPickers}
 		</div>
-		<SwatchPanel color={primary} />
+		<SwatchPanel color={themeColors[0]} />
 	</>;
 }
 
