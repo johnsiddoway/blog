@@ -1,0 +1,31 @@
+
+
+// This is what Material UI calls a "Card" or a "Paper" surface.
+// It's designed to stand out against the background by putting a border and box shadow around the content,
+// as well as use high contrast background and foreground colors to make content legible.
+@mixin make-panel($background-color: $white, $color: $dark, $border-color: $color, $box-shadow-color: $gray-700, $margin-bottom: 1rem) {
+	margin-bottom: $margin-bottom;
+	border: 1px solid $border-color;
+	background-color: $background-color;
+	color: $color;
+	box-shadow: 0.25rem 0.25rem 0.25rem 0rem $box-shadow-color;
+}
+
+// This is designed for scenarios where I want to display a table-like grid of columns.
+// Grid reference: https://css-tricks.com/snippets/css/complete-guide-grid/
+@mixin make-panel-grid($grid-template-columns: 1fr, $grid-item-padding: 0.5rem, $border-color: $dark) {
+	width: 100%;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+	grid-template-columns: $grid-template-columns;
+
+	// Prevent the last row from rendering a bottom border that doubles up with the panel border
+	&:not(:last-child) {
+		border-bottom: 1px solid $border-color;
+	}
+
+	>* {
+		padding: $grid-item-padding;
+	}
+}

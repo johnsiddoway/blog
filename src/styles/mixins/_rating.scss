@@ -1,0 +1,21 @@
+// Custom styling to help generate a 5-star rating block.
+// Uses display: flex and flex-flow: row-reverse,
+// so it's rendered in reverse order compared to how its child elements are declared.
+@mixin make-rating($color: $gray-400, $hover-color: $black) {
+	display: flex;
+	justify-content: space-evenly;
+	flex-flow: row-reverse nowrap;
+	color: $color;
+
+	input {
+		display: none;
+	}
+
+	label:hover,
+	label:hover~label,
+	input:checked+label,
+	input:checked+label~label {
+		color: $hover-color;
+		cursor: pointer;
+	}
+}

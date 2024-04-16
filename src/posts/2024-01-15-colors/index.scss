@@ -1,31 +1,8 @@
-@import "../../styles/_variables.scss";
-@import "../../styles/mixins/custom";
-
-// html {
-//     --color-0: #{$red};
-//     --color-1: #{$red};
-//     --color-2: #{$orange};
-//     --color-3: #{$yellow};
-//     --color-4: #{$chartreuse};
-//     --color-5: #{$green};
-//     --color-6: #{$spring-green};
-//     --color-7: #{$cyan};
-//     --color-8: #{$azure};
-//     --color-9: #{$blue};
-//     --color-10: #{$violet};
-//     --color-11: #{$magenta};
-//     --color-12: #{$rose};
-// }
-
-// $test-colors: 'color-0', 'color-1', 'color-2', 'color-3', 'color-4', 'color-5', 'color-6', 'color-7', 'color-8', 'color-9', 'color-10', 'color-11', 'color-12';
-// @each $name in $test-colors {
-//     .#{$name} {
-//         background-color: var(--#{$name});
-//     }
-// }
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
 #react-root {
-    @include make-flex($column-gap: 5rem, $align-items: inherit);
+	@include make-flex($column-gap: 5rem, $align-items: inherit);
 	margin-bottom: 1rem;
 
 	> .pickerPanel {

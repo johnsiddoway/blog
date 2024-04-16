@@ -1,46 +1,57 @@
-// This is additional 'baseline' config that normalize.css doesn't provide
-// Equivalent to Bootstrap's Reboot: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/_reboot.scss
-* {
+// Mostly following the styles from this blog post,
+// as I also want to keep this as un-opinionated as possible.
+// https://keithjgrant.com/posts/2024/01/my-css-resets/
+
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 }
 
 body {
-	background-color: $background-color; // This is the currenty $primary color rotated 30 degrees and shifted -75% (towards white)
-	color: $foreground-color;
-	font-family: $font-family-sans-serif;
-	font-size: $font-size-base;
-	font-weight: $font-weight-base;
-	line-height: $line-height-base;
-	text-align: start;
+	margin: unset;
 }
 
-button {
-	display: inline-block;
-	padding: 0.375rem 0.75rem;
-	background-color: transparent;
-	color: inherit;
-	@include solid-border($border-color: transparent, $property: border);
-	cursor: pointer;
+button,
+input,
+optgroup,
+textarea,
+select {
+	margin: 0;
+	font: inherit;
+}
 
-	&:disabled {
-		cursor: default;
+img,
+picture,
+svg,
+canvas {
+	display: block;
+	max-inline-size: 100%;
+	block-size: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
 	}
 }
 
-form {
-	margin-bottom: 0.5rem;
+p,
+ol,
+ul,
+dl {
+	margin-top: 0;
+	margin-bottom: 1rem;
 }
 
-hr {
-	margin: 0;
-	border: none;
-	border-top: 1px solid currentColor;
-}
-
-input,
-textarea {
-    width: 100%;
-	padding: 0.375rem;
-	line-height: 1.5;
-	@include solid-border($property: border);
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+	margin-bottom: 0;
 }

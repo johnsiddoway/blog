@@ -1,26 +1,47 @@
 // 1: Import helper files
-@import "functions";
+// @import "functions";
 @import "variables";
 @import "mixins";
 
 // 2: Import our version of normalize.css / reboot.css
 @import "reset";
 
-// 3: Import our common layout styles applied directly to elements
-@import "layout";
-
-// 4: Import our custom classes. I'd like to get these all moved over to mixins
-@import "containers";
-
-@include make-button-variants($theme-colors);
+// @include make-button-variants($theme-colors);
 
 body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	
+	background-color: $white;
+	color: $dark;
+	font-family: $font-family-sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: start;
 }
 
 header {
+	margin-bottom: 1.5rem;
+	background-color: $dark;
+	color: $light;
+
+	nav {
+		@include make-container($padding: 0.5rem 0.75rem);
+		@include make-flex($align-items: baseline, $column-gap: 1rem);
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:active,
+		&:hover {
+			color: $white;
+		}
+	}
+
 	.js-brand {
 		background: linear-gradient(#B38728, #BF953F, #FCF6BA, #BF953F, #B38728);
 		background-clip: text;
@@ -28,43 +49,20 @@ header {
 		font-weight: 600;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-	}
-
-	nav {
-		@include make-flex($justify-content: start);
+		font-size: $font-size-lg;
 	}
 }
 
-img {
-	width: 100%;
-	height: auto;
+main {
+	@include make-container();
 }
 
-// Custom CSS to let me use markdown blockquotes (">") to denote a filename before a code block.
-// I think I used a plugin for jekyll / kramdown / prismjs perhaps to do this before?
-blockquote:has(+ pre) {
-	margin: 0;
-	p {
-		display: inline-block;
-		margin: 0;
-		border-top-left-radius: 0.25rem;
-		border-top-right-radius: 0.25rem;
-		padding: 0.5rem 1rem;
-		background-color: #2b2b2b;
-		color: #f8f8f2;
-		font-style: italic;
-	}
-}
-blockquote + pre {
-	margin-top: 0;
-}
-
-.date-with-icon {
-	@include make-flex($column-gap: 0.5rem, $align-items: baseline);
-
-	svg {
-		height: 0.8rem;
-	}
+footer {
+	margin-top: auto;
+	padding: 0.5rem 0;
+	text-align: center;
+	background-color: $dark;
+	color: $light;
 }
 
 .post-list {
@@ -77,6 +75,7 @@ blockquote + pre {
 	@include make-panel();
 	@include make-flex($justify-content: space-between, $align-items: baseline);
 	padding: 1rem;
+	background-color: $light;
 	color: $primary;
 	text-decoration: none;
 
@@ -86,29 +85,5 @@ blockquote + pre {
 
 	.date-with-icon {
 		color: $dark;
-	}
-}
-
-.post {
-	.post-header {
-		@include make-flex($justify-content: space-between, $align-items: baseline);
-		@include solid-border($property: border-bottom);
-		padding-bottom: 1rem;
-
-		h1 {
-			margin: 0;
-		}
-	}
-
-	@media (min-width: map-get($grid-breakpoints, sm)) {
-		@include make-panel();
-		padding: 1rem;
-	}
-}
-
-// hack to simplify look on small screens
-@media (max-width: map-get($grid-breakpoints, sm)) {
-	body:has(.post) {
-		background-color: $white;
 	}
 }

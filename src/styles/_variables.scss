@@ -1,133 +1,145 @@
-@use "sass:color";
-@use "sass:map";
+// scss-docs-start gray-color-variables
+$white:    #fff !default;
+$gray-100: #faf9f8 !default;
+$gray-200: #efece9 !default;
+$gray-300: #e6e2de !default;
+$gray-400: #dad4ce !default;
+$gray-500: #bdb5ad !default;
+$gray-600: #7d756c !default;
+$gray-700: #575049 !default;
+$gray-800: #403a34 !default;
+$gray-900: #292521 !default;
+$black:    #000 !default;
+// scss-docs-end gray-color-variables
 
-$white: #fff !default;
-$gray-400: #ced4da !default;
-$gray-700: #495057 !default;
-$gray-900: #212529 !default;
-$black: #000 !default;
+// scss-docs-start color-variables
+$blue:    #0d6efd !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
 
-// Used https://www.canva.com/colors/color-wheel/ to come up with these colors, based on $orange as the primary input
-// I opted to darken $green using shift-color(#23F10E, 20%) to get it white to have higher contrast
-$red:          #F10E23 !default;
-$orange:       #F16B0E !default;
-$yellow:       #F1DD0E !default;
-$chartreuse:   #94F10E !default;
-$green:        #1CC10B !default; // should be #23F10E but was too light
-$spring-green: #0EF16A !default;
-$cyan:         #0EF1DC !default;
-$azure:        #0E95F1 !default;
-$blue:         #0E24F1 !default;
-$violet:       #6A0EF1 !default;
-$magenta:      #DC0EF1 !default;
-$rose:         #F10E94 !default;
+$yellow-100: tint-color($yellow, 80%) !default;
+// scss-docs-end color-variables
 
-$primary:   $orange !default;
-$danger:    $red !default;
-$info:      $azure !default;
-$success:   $green !default;
-$light:     $gray-400 !default;
-$dark:      $gray-900 !default;
+// scss-docs-start theme-color-variables
+$primary:       $orange !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-400 !default;
+$dark:          $gray-900 !default;
+// scss-docs-end theme-color-variables
 
-$background-color: $light !default;
-$foreground-color: $dark !default;
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
 
-// start color shades and helper variables
-$color-dark-scale: 40%;
-$color-light-scale: -80%;
+$enable-button-pointers: true !default;
 
-$red-dark:           shift-color($red,          $color-dark-scale);
-$red-light:          shift-color($red,          $color-light-scale);
-$orange-dark:        shift-color($orange,       $color-dark-scale);
-$orange-light:       shift-color($orange,       $color-light-scale);
-$yellow-dark:        shift-color($yellow,       $color-dark-scale);
-$yellow-light:       shift-color($yellow,       $color-light-scale);
-$chartreuse-dark:    shift-color($chartreuse,   $color-dark-scale);
-$chartreuse-light:   shift-color($chartreuse,   $color-light-scale);
-$green-dark:         shift-color($green,        $color-dark-scale);
-$green-light:        shift-color($green,        $color-light-scale);
-$spring-green-dark:  shift-color($spring-green, $color-dark-scale);
-$spring-green-light: shift-color($spring-green, $color-light-scale);
-$cyan-dark:          shift-color($cyan,         $color-dark-scale);
-$cyan-light:         shift-color($cyan,         $color-light-scale);
-$azure-dark:         shift-color($azure,        $color-dark-scale);
-$azure-light:        shift-color($azure,        $color-light-scale);
-$blue-dark:          shift-color($blue,         $color-dark-scale);
-$blue-light:         shift-color($blue,         $color-light-scale);
-$violet-dark:        shift-color($violet,       $color-dark-scale);
-$violet-light:       shift-color($violet,       $color-light-scale);
-$magenta-dark:       shift-color($magenta,      $color-dark-scale);
-$magenta-light:      shift-color($magenta,      $color-light-scale);
-$rose-dark:          shift-color($rose,         $color-dark-scale);
-$rose-light:         shift-color($rose,         $color-light-scale);
-// end color shades
-
-// start color maps
-$base-colors: (
-	'red': $red,
-	'orange': $orange,
-	'yellow': $yellow,
-	'chartreuse': $chartreuse,
-	'green': $green,
-	'spring-green': $spring-green,
-	'cyan': $cyan,
-	'azure': $azure,
-	'blue': $blue,
-	'violet': $violet,
-	'magenta': $magenta,
-	'rose': $rose
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
 ) !default;
+// scss-docs-end spacer-variables-maps
 
-$theme-colors: (
-	'primary': $primary,
-	'info':    $info,
-	'success': $success,
-	'danger':  $danger
+// Links
+//
+// Style anchor elements.
+
+$link-color:                              $primary !default;
+$link-decoration:                         underline !default;
+$link-shade-percentage:                   20% !default;
+$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+$link-hover-decoration:                   null !default;
+
+$stretched-link-pseudo-element:           after !default;
+$stretched-link-z-index:                  1 !default;
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom: $spacer !default;
+
+// scss-docs-start border-variables
+$border-width:                1px !default;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
 ) !default;
+$border-style:                solid !default;
+$border-color:                currentColor !default;
+$border-color-translucent:    rgba($black, .175) !default;
+// scss-docs-end border-variables
 
-$dark-colors: (
-	'red-dark': $red-dark,
-	'orange-dark': $orange-dark,
-	'yellow-dark': $yellow-dark,
-	'chartreuse-dark': $chartreuse-dark,
-	'green-dark': $green-dark,
-	'spring-green-dark': $spring-green-dark,
-	'cyan-dark': $cyan-dark,
-	'azure-dark': $azure-dark,
-	'blue-dark': $blue-dark,
-	'violet-dark': $violet-dark,
-	'magenta-dark': $magenta-dark,
-	'rose-dark': $rose-dark
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// scss-docs-start font-variables
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      "Open Sans", "Source Sans Pro", "PingFang SC", "Microsoft YaHei", sans-serif;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// stylelint-enable value-keyword-case
+$font-family-base:            $font-family-sans-serif !default;
+$font-family-code:            $font-family-monospace !default;
+
+// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
+// $font-size-base affects the font size of the body text
+$font-size-root:              null !default;
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * .875 !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-medium:          500 !default;
+$font-weight-semibold:        600 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+$font-weight-base:            $font-weight-normal !default;
+
+$line-height-base:            1.5 !default;
+$line-height-sm:              1.25 !default;
+$line-height-lg:              2 !default;
+
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+// scss-docs-end font-variables
+
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
 ) !default;
-
-$light-colors: (
-	'red-light': $red-light,
-	'orange-light': $orange-light,
-	'yellow-light': $yellow-light,
-	'chartreuse-light': $chartreuse-light,
-	'green-light': $green-light,
-	'spring-green-light': $spring-green-light,
-	'cyan-light': $cyan-light,
-	'azure-light': $azure-light,
-	'blue-light': $blue-light,
-	'violet-light': $violet-light,
-	'magenta-light': $magenta-light,
-	'rose-light': $rose-light
-) !default;
-//end color maps
-
-// start fonts & typography
-$font-family-sans-serif: 'Open Sans', 'Source Sans Pro', "PingFang SC", "Microsoft YaHei", sans-serif !default;
-$font-family-monospace: 'Fira Code', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace !default;
-$headings-font-family: 'Exo 2', 'Open Sans', 'Source Sans Pro', "PingFang SC", "Microsoft YaHei", sans-serif !default;
-
-$font-size-base: 1rem !default;
-$font-size-sm: $font-size-base * .875 !default;
-$font-size-lg: $font-size-base * 1.25 !default;
-
-$font-weight-base: 400 !default;
-$line-height-base: 1.5 !default;
-// end fonts & typography
+// scss-docs-end font-sizes
 
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
@@ -152,27 +164,130 @@ $container-max-widths: (
 	4xl: 1800px) !default;
 // scss-docs-end container-max-widths
 
-$button-color: $white;
-$button-border-scale: 30%;
-$button-background-scale: 0%;
-$button-background-scale-hover: 15%;
-$button-background-scale-active: 25%;
-$button-background-scale-disabled: -30%;
+// scss-docs-start body-variables
+$body-font-family:        $font-family-base !default;
+$body-font-size:          $font-size-base !default;
+$body-font-weight:        $font-weight-normal !default;
+$body-line-height:        $line-height-base !default;
+$body-text-align:         null !default;
 
-$input-range-thumb-width: 1rem !default;
-$input-range-thumb-height: $input-range-thumb-width !default;
-$input-range-thumb-bg: $primary !default;
-$input-range-thumb-border-color: shade-color($primary, 25%) !default;
-$input-range-thumb-border-radius: 50% !default;
-$input-range-thumb-cursor: pointer !default;
-$input-range-thumb-disabled-bg: tint-color($primary, 10%) !default;
-$input-range-thumb-focus-box-shadow: 0 0 0.05rem 0.05rem $white, 0 0 0.25rem 0.25rem $primary !default;
+$body-color:              $black !default;
+$body-bg:                 $white !default;
 
-$input-range-track-height: 0.25rem !default;
-$input-range-track-width: 100% !default;
-$input-range-track-bg: $background-color !default;
-$input-range-track-border-radius: 0 !default;
-$input-range-track-cursor: none !default;
+$body-emphasis-color:     $black !default;
+// scss-docs-end body-variables
 
-$input-text-border-color: $primary !default;
-$input-text-focus-box-shadow: 0 0 0.5rem 0 tint-color($primary, 25%) !default;
+// scss-docs-start headings-variables
+$headings-margin-bottom:      $spacer * .5 !default;
+$headings-font-family:        null !default;
+$headings-font-style:         null !default;
+$headings-font-weight:        500 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              inherit !default;
+// scss-docs-end headings-variables
+
+// scss-docs-start type-variables
+$lead-font-size:              $font-size-base * 1.25 !default;
+$lead-font-weight:            300 !default;
+
+$small-font-size:             .875em !default;
+
+$sub-sup-font-size:           .75em !default;
+
+// fusv-disable
+$text-muted:                  $secondary !default; // Deprecated in 5.3.0
+// fusv-enable
+
+$initialism-font-size:        $small-font-size !default;
+
+$blockquote-margin-y:         $spacer !default;
+$blockquote-font-size:        $font-size-base * 1.25 !default;
+$blockquote-footer-color:     $gray-600 !default;
+$blockquote-footer-font-size: $small-font-size !default;
+
+$hr-margin-y:                 $spacer !default;
+$hr-color:                    inherit !default;
+
+// fusv-disable
+$hr-bg-color:                 null !default; // Deprecated in v5.2.0
+$hr-height:                   null !default; // Deprecated in v5.2.0
+// fusv-enable
+
+$hr-border-color:             null !default; // Allows for inherited colors
+$hr-border-width:             $border-width !default;
+$hr-opacity:                  .25 !default;
+
+// scss-docs-start vr-variables
+$vr-border-width:             $border-width !default;
+// scss-docs-end vr-variables
+
+$legend-margin-bottom:        .5rem !default;
+$legend-font-size:            1.5rem !default;
+$legend-font-weight:          null !default;
+
+$dt-font-weight:              $font-weight-bold !default;
+
+$list-inline-padding:         .5rem !default;
+
+$mark-padding:                .1875em !default;
+$mark-color:                  $body-color !default;
+$mark-bg:                     $yellow-100 !default;
+// scss-docs-end type-variables
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+// scss-docs-start table-variables
+$table-cell-padding-y:        .5rem !default;
+$table-cell-padding-x:        .5rem !default;
+$table-cell-padding-y-sm:     .25rem !default;
+$table-cell-padding-x-sm:     .25rem !default;
+
+$table-cell-vertical-align:   top !default;
+
+$table-color:                 $body-emphasis-color !default;
+$table-bg:                    $body-bg !default;
+$table-accent-bg:             transparent !default;
+
+$table-th-font-weight:        null !default;
+
+$table-striped-color:         $table-color !default;
+$table-striped-bg-factor:     .05 !default;
+$table-striped-bg:            rgba($body-emphasis-color, $table-striped-bg-factor) !default;
+
+$table-active-color:          $table-color !default;
+$table-active-bg-factor:      .1 !default;
+$table-active-bg:             rgba($body-emphasis-color, $table-active-bg-factor) !default;
+
+$table-hover-color:           $table-color !default;
+$table-hover-bg-factor:       .075 !default;
+$table-hover-bg:              rgba($body-emphasis-color, $table-hover-bg-factor) !default;
+
+$table-border-factor:         .2 !default;
+$table-border-width:          $border-width !default;
+$table-border-color:          $border-color !default;
+
+$table-striped-order:         odd !default;
+$table-striped-columns-order: even !default;
+
+$table-group-separator-color: currentcolor !default;
+
+$table-caption-color:         $secondary !default;
+
+$table-bg-scale:              -80% !default;
+// scss-docs-end table-variables
+
+// Code
+
+$code-font-size:                    $small-font-size !default;
+$code-color:                        $pink !default;
+
+$kbd-padding-y:                     .1875rem !default;
+$kbd-padding-x:                     .375rem !default;
+$kbd-font-size:                     $code-font-size !default;
+$kbd-color:                         $body-bg !default;
+$kbd-bg:                            $body-color !default;
+$nested-kbd-font-weight:            null !default; // Deprecated in v5.2.0, removing in v6
+
+$pre-color:                         null !default;

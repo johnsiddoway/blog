@@ -1,0 +1,28 @@
+@mixin make-flex($flex-direction: row, $flex-wrap: nowrap, $justify-content: flex-start, $align-items: stretch, $align-content: normal, $row-gap: 0, $column-gap: 0) {
+	display: flex;
+
+	@if ($flex-direction !=row) {
+		flex-direction: $flex-direction;
+	}
+
+	@if ($justify-content !=flex-start) {
+		justify-content: $justify-content;
+	}
+
+	@if ($align-items !=stretch) {
+		align-items: $align-items;
+	}
+
+	@if ($row-gap !=0) {
+		row-gap: $row-gap;
+	}
+
+	@if ($column-gap !=0) {
+		column-gap: $column-gap;
+	}
+
+	@if ($flex-wrap !=nowrap) {
+		flex-wrap: $flex-wrap;
+		align-content: $align-content;
+	}
+}

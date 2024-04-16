@@ -1,0 +1,26 @@
+@import "variables";
+@import "mixins";
+
+.post {
+	.post-header {
+		@include make-flex($justify-content: space-between, $align-items: baseline);
+		border-bottom: 1px solid currentColor;
+		padding-bottom: 1rem;
+
+		h1 {
+			margin: 0;
+		}
+	}
+
+	@media (min-width: map-get($grid-breakpoints, sm)) {
+		@include make-panel();
+		padding: 1rem;
+	}
+}
+
+// hack to simplify look on small screens
+@media (max-width: map-get($grid-breakpoints, sm)) {
+	body:has(.post) {
+		background-color: $white;
+	}
+}
