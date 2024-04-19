@@ -11,17 +11,18 @@ module.exports = function (eleventyConfig) {
 		compileOptions: {
 			permalink: function (contents, inputPath) {
 				let parsed = path.parse(inputPath);
+				const output = (inputPath.includes('posts/'))
+					? `${parsed.dir.replace('./src', '')}/${parsed.name}.css`
+					: `/${parsed.name}.css`;
+				console.info(`${inputPath} -> ${output}`);
 				return (data) => {
-					return `/${parsed.name}.css`;
+					return output;
 				}
 			}
 		},
 
 		// `compile` is called once per .scss file in the input directory
 		compile: async function (inputContent, inputPath) {
-			if (inputPath.includes('/posts/')) {
-				return;
-			}
 			let parsed = path.parse(inputPath);
 			if (parsed.name.startsWith("_")) {
 				return;

@@ -75,15 +75,18 @@ footer {
 	@include make-panel();
 	@include make-flex($justify-content: space-between, $align-items: baseline);
 	padding: 1rem;
-	background-color: $light;
-	color: $primary;
 	text-decoration: none;
 
 	h1, h2 {
 		margin: 0;
+		color: $primary;
 	}
 
 	.date-with-icon {
 		color: $dark;
 	}
+}
+
+body:has(.post-list-item) {
+	background-color: $gray-400;
 }

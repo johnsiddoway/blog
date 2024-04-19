@@ -1,0 +1,7 @@
+@import "../../styles/variables";
+
+.btn-primary {
+	border: 1px solid $dark;
+	background-color: $primary;
+	cursor: pointer;
+}
