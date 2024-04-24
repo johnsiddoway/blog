@@ -76,14 +76,10 @@ footer {
 	@include make-flex($justify-content: space-between, $align-items: baseline);
 	padding: 1rem;
 	text-decoration: none;
+	box-shadow: 0 0 0.5rem 0 $primary;
 
 	h1, h2 {
 		margin: 0;
-		color: $primary;
-	}
-
-	.date-with-icon {
-		color: $dark;
 	}
 }
 
