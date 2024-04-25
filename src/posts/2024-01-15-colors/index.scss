@@ -1,5 +1,4 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import "@johnsiddoway/sass";
 
 #react-root {
 	@include make-flex($column-gap: 5rem, $align-items: inherit);
