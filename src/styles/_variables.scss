@@ -13,10 +13,10 @@ $black:    #000 !default;
 // scss-docs-end gray-color-variables
 
 // scss-docs-start color-variables
-$orange:  hsl(24, 100%, 50%) !default; // 9.38:1
-$green:   hsl(133, 74%, 49%) !default; // 11.08:1 Rotated primary by 90
-$blue:    hsl(193, 74%, 49%) !default; // 8.35:1 Rotated orange by 150
-$red:     hsl(358, 73%, 74%) !default; // 8.78:1 Rotated primary by -45 and lightened by 25%
+$orange:  hsl(25, 100%, 60%) !default; // 8.82:1
+$green:   hsl(120, 100%, 70%) !default; // 16.06:1 Rotated orange by 95 and lightened by 10%
+$blue:    hsl(190, 100%, 70%) !default; // 11.96:1 Rotated orange by 165 and lightened by 10%
+$red:     hsl(0, 100%, 70%) !default; // 7.34:1 Rotated orange by -25 and lightened by 10%
 // scss-docs-end color-variables
 
 // scss-docs-start theme-color-variables

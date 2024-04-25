@@ -1,18 +1,12 @@
-// 1: Import helper files
-// @import "functions";
+@import "functions";
 @import "variables";
 @import "mixins";
 
-// 2: Import our version of normalize.css / reboot.css
-@import "reset";
-
-// @include make-button-variants($theme-colors);
+@include reset-styles();
+@include make-root('body');
+@include use-default-buttons();
 
 body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	
 	background-color: $white;
 	color: $dark;
 	font-family: $font-family-sans-serif;

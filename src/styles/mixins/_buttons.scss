@@ -1,54 +1,69 @@
 @use "sass:meta";
 
+@mixin use-default-buttons() {
+	button {
+		padding: 0.375em 0.75em;
+		background-color: transparent;
+		color: inherit;
+		border: 1px solid transparent;
+		cursor: pointer;
+		font-size: 1.25rem;
+
+		&:disabled {
+			cursor: default;
+		}
+	}
+}
+
 // Based heavily on Bootstrap: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
 // This has been turned into an opt-in mixin, instead of always including the classes in the compiled css
 @mixin make-button-variants($color-map, $font-color: $white) {
 	@each $name, $color in $color-map {
 		.btn-#{$name} {
-			@include button-variant($theme-color: $color, $color: $font-color);
-        }
+			@include button-variant($theme-color: $color);
+		}
 	}
 }
 
-@mixin button-variant($theme-color,
-        $color: $button-color,
-        $border-scale: $button-border-scale,
-        $background-scale: $button-background-scale,
-        $background-scale-hover: $button-background-scale-hover,
-        $background-scale-active: $button-background-scale-active,
-        $background-scale-disabled: $button-background-scale-disabled) {
-    color: $color;
-    background-color: shift-color($theme-color, $background-scale);
-    border-color: shift-color($theme-color, $border-scale);
+@mixin button-variant($theme-color, $color: inherit, $background-scale: $button-background-scale, $background-scale-hover: $button-background-scale-hover, $background-scale-active: $button-background-scale-active, $background-scale-disabled: $button-background-scale-disabled) {
+	@if ($color != inherit) {
+		color: #{$color};
+	}
+	background-color: #{shift-color($theme-color, $background-scale)};
+	border-color: #{$dark};
 
     &:disabled {
-        background-color: shift-color($theme-color, $background-scale-disabled);
+        background-color: #{shift-color($theme-color, $background-scale-disabled)};
     }
 
-    &:focus-visible,
+	&:focus-visible {
+		box-shadow: 0 0 0.5rem 0 $dark;
+	}
+
+	&:focus-visible,
     &:hover:not([disabled]) {
         outline: none;
-        background-color: shift-color($theme-color, $background-scale-hover);
+        background-color: #{shift-color($theme-color, $background-scale-hover)};
     }
 
     &:active:not([disabled]) {
-        background-color: shift-color($theme-color, $background-scale-active);
+        background-color: #{shift-color($theme-color, $background-scale-active)};
     }
 }
 
 // Based loosely on Bootstrap's button-outline-variant: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
 // Except this version only includes a border for the :focus-visible state
-@mixin button-variant-inverted($color, $color-hover: shade-color($color, $button-background-scale-hover)) {
-	color: $color;
+@mixin button-variant-inverted($color, $color-hover: shift-color($color, $button-background-scale-hover)) {
+	color: #{$color};
 
 	&:active,
 	&:hover {
-		color: $color-hover;
+		color: #{$color-hover};
 	}
 
 	&:focus-visible {
 		outline: none;
-		border-color: $color;
+		border-color: #{$color};
 	}
 }
 

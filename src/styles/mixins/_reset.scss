@@ -1,0 +1,59 @@
+// Mostly following the styles from this blog post,
+// as I also want to keep this as un-opinionated as possible.
+// https://keithjgrant.com/posts/2024/01/my-css-resets/
+@mixin reset-styles() {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	body {
+		margin: unset;
+	}
+
+	button,
+	input,
+	optgroup,
+	textarea,
+	select {
+		margin: 0;
+		font: inherit;
+	}
+
+	img,
+	picture,
+	svg,
+	canvas {
+		display: block;
+		max-inline-size: 100%;
+		block-size: auto;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+
+	p,
+	ol,
+	ul,
+	dl {
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+
+	ol ol,
+	ul ul,
+	ol ul,
+	ul ol {
+		margin-bottom: 0;
+	}
+
+}
