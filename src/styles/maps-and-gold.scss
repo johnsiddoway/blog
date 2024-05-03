@@ -78,3 +78,23 @@ footer {
 body:has(.post-list-item) {
 	background-color: $gray-400;
 }
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: $gray-900 !important;
+		color: $light;
+	}
+
+	a {
+		color: $blue;
+	}
+
+	a:visited {
+		color: $purple;
+	}
+
+	.post-list-item {
+		background-color: $gray-300;
+		box-shadow: 0 0 1rem 0 $primary;
+	}
+}
