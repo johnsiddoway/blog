@@ -4,6 +4,10 @@
 @include make-root('body');
 @include use-default-buttons();
 
+a {
+	color: $blue;
+}
+
 body {
 	background-color: $white;
 	color: $dark;
@@ -58,43 +62,30 @@ footer {
 }
 
 .post-list {
-	max-width: 40rem;
+	width: 100%;
+	max-width: 35rem;
 	margin-left: auto;
 	margin-right: auto;
-}
+	padding: 0;
+	list-style-type: none;
 
-.post-list-item {
-	@include make-panel();
-	@include make-flex($justify-content: space-between, $align-items: baseline);
-	padding: 1rem;
-	text-decoration: none;
-	box-shadow: 0 0 0.5rem 0 $primary;
+	li {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		border-bottom: 1px solid currentColor;
+		margin-bottom: 1rem;
 
-	h1, h2 {
-		margin: 0;
+		a {
+			font-size: x-large;
+			text-decoration: none;
+		}
 	}
-}
-
-body:has(.post-list-item) {
-	background-color: $gray-400;
 }
 
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: $gray-900 !important;
 		color: $light;
-	}
-
-	a {
-		color: $blue;
-	}
-
-	a:visited {
-		color: $purple;
-	}
-
-	.post-list-item {
-		background-color: $gray-300;
-		box-shadow: 0 0 1rem 0 $primary;
 	}
 }
