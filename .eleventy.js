@@ -29,12 +29,8 @@ module.exports = function (eleventyConfig) {
 		return dayjs.utc(dateObj).format('YYYY-MM-DD');
 	});
 
-	// Put robots.txt in root
-	eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
-	eleventyConfig.addPassthroughCopy({ 'src/staticwebapp.config.json': '/staticwebapp.config.json' });
-
-	// Copy anything in the src/assets folder over to ${outputDir}/assets
-	eleventyConfig.addPassthroughCopy({ "src/assets": "/assets" });
+	// Copy anything in the /public/ folder over to ${outputDir}/
+	eleventyConfig.addPassthroughCopy({ "public": "/" });
 
 	eleventyConfig.addPlugin(jsxPlugin);
 	eleventyConfig.addPlugin(sassPlugin);
