@@ -4,6 +4,25 @@
 @include make-root('body');
 @include use-default-buttons();
 
+%post-header {
+	@include make-flex($align-items: baseline, $justify-content: space-between, $column-gap: 1rem);
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid currentColor;
+
+	a {
+		text-decoration: none;
+	}
+
+	h1 {
+		font-size: 2rem;
+		margin: 0;
+	}
+
+	time {
+		min-width: fit-content;
+	}
+}
+
 a {
 	color: $blue;
 }
@@ -49,15 +68,12 @@ main {
 
 article {
 	header {
-		@include make-flex($align-items: baseline, $justify-content: space-between, $column-gap: 1rem);
-		margin-bottom: 1.5rem;
-		border-bottom: 1px solid currentColor;
-
-		h1 {
-			margin: 0;
-			font-size: 2rem;
-		}
+		@extend %post-header;
 	}
+}
+
+code {
+	word-wrap: break-word;
 }
 
 footer {
@@ -70,26 +86,14 @@ footer {
 
 .post-list {
 	width: 100%;
-	max-width: 35rem;
+	max-width: 45rem;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0;
 	list-style-type: none;
 
 	li {
-		@include make-flex($align-items: baseline, $justify-content: space-between, $column-gap: 1rem);
-		border-bottom: 1px solid currentColor;
-		margin-bottom: 1.5rem;
-
-		a {
-			font-size: 1.5rem;
-			font-weight: 700;
-			text-decoration: none;
-		}
-
-		div {
-			min-width: fit-content;
-		}
+		@extend %post-header;
 	}
 }
 
