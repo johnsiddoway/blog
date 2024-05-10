@@ -83,25 +83,25 @@ function reducer(state, action) {
 };
 
 function Component() {
-	const [{ foregroundColor, backgroundColor, themeColorCount, themeColors }, dispatch] = useReducer(reducer, { foregroundColor: '#292521', backgroundColor: '#fff', themeColorCount: 1, themeColors: ['#daa520'] });
+	const [{ foregroundColor, backgroundColor, themeColorCount, themeColors }, dispatch] = useReducer(reducer, { foregroundColor: '#000', backgroundColor: '#fff', themeColorCount: 1, themeColors: ['#ff9933'] });
 
 	document.body.style.backgroundColor = backgroundColor;
 
 	const themeColorPickers = [];
 	for (let i = 0; i < themeColorCount; i++) {
-		themeColorPickers.push(<ColorPicker color={themeColors[i]} onChange={(e) => dispatch({ type: 'set-theme-color', index: i, color: e })} />);
+		themeColorPickers.push(<ColorPicker color={themeColors[i]} label="Theme Color" onChange={(e) => dispatch({ type: 'set-theme-color', index: i, color: e })} />);
 	}
 
 	return <>
 		<div className="pickerPanel">
 			<ColorPicker color={foregroundColor} onChange={(e) => dispatch({ type: 'set-foreground-color', color: e })} label="Text" />
 			<ColorPicker color={backgroundColor} onChange={(e) => dispatch({ type: 'set-background-color', color: e })} label="Background" />
-			<select name="count" id="count" onChange={(e) => dispatch({ type: 'set-theme-color-count', count: e.target.value })}>
+			{/* <select name="count" id="count" onChange={(e) => dispatch({ type: 'set-theme-color-count', count: e.target.value })}>
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
 				<option value="4">4</option>
-			</select>
+			</select> */}
 			{themeColorPickers}
 		</div>
 		<SwatchPanel color={themeColors[0]} />

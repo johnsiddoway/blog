@@ -9,3 +9,7 @@ links:
 ---
 
 <div id="react-root"></div>
+
+<hr>
+
+Hey look! I finally got a "real" React app running inside a specific blog post!

@@ -1,3 +1,5 @@
+@import "@johnsiddoway/sass";
+
 /* Base highlight.js */
 pre code.hljs {
   display: block;
@@ -14,14 +16,14 @@ code.hljs {
 */
 
 .hljs {
-  background: #000;
-  color: #fff;
+  background: $dark;
+  color: $light;
 }
 
 /* Yellow */
 .hljs-comment,
 .hljs-quote {
-  color: #ffff66;
+  color: $yellow;
 }
 
 /* Red */
@@ -33,7 +35,7 @@ code.hljs {
 .hljs-tag,
 .hljs-template-variable,
 .hljs-variable {
-  color: #ff3333;
+  color: $red;
 }
 
 /* Orange */
@@ -44,7 +46,7 @@ code.hljs {
 .hljs-number,
 .hljs-params,
 .hljs-type {
-  color: #ff8833;
+  color: $orange;
 }
 
 /* Yellow */
@@ -57,19 +59,19 @@ code.hljs {
 .hljs-bullet,
 .hljs-string,
 .hljs-symbol {
-  color: #33ff33;
+  color: $green;
 }
 
 /* Blue */
 .hljs-section,
 .hljs-title {
-  color: #33ddff;
+  color: $blue;
 }
 
 /* Purple */
 .hljs-keyword,
 .hljs-selector-tag {
-  color: #cc99ff;
+  color: $purple;
 }
 
 .hljs-emphasis {
