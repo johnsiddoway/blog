@@ -1,7 +1,7 @@
 ---
 title: 'Goodbye Jekyll, Hello Next.js'
 date: '2023-01-15'
-layout: layout.html
+layout: post.html
 tags: posts
 ---
 

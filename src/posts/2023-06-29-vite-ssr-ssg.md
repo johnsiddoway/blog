@@ -1,7 +1,7 @@
 ---
 title: 'Vite SSR and SSG'
 date: '2023-06-29'
-layout: layout.html
+layout: post.html
 tags: posts
 ---
 

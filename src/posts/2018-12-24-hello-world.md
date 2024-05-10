@@ -2,7 +2,7 @@
 title:  'Hello World'
 date:  '2018-12-24'
 description: 'First post'
-layout: layout.html
+layout: post.html
 tags: posts
 ---
 On October 8th 2018, [Google announced](https://www.blog.google/technology/safety-security/project-strobe/) that they would be sunsetting (turning off) Google+, effective August 31, 2019. While I wasn't an avid Google+ user, I *did* use it as an informal place to post links and articles I found useful. Then, on December 10th, [Google announced](https://www.blog.google/technology/safety-security/expediting-changes-google-plus/) that they were moving up their timetable to sunset Google+ to April 2019.

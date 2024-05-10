@@ -2,7 +2,7 @@
 title: 'Star Rating'
 date: '2018-12-29'
 description: 'Creating a basic star rating using some custom CSS and Font Awesome 5'
-layout: layout.html
+layout: post.html
 tags: posts
 links:
  - <link rel="stylesheet" href="/assets/star-rating.css">

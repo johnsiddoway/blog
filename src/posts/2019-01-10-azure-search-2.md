@@ -2,7 +2,7 @@
 title: 'Azure Search Part 2'
 date: '2019-01-10'
 description: 'Discussing my experience with Azure Search'
-layout: layout.html
+layout: post.html
 tags: posts
 ---
 ### Backstory

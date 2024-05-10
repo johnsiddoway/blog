@@ -2,7 +2,7 @@
 title: 'React and Monsters and AWS Oh My'
 date: '2021-02-21'
 description: Learning React through a small D&D app
-layout: layout.html
+layout: post.html
 tags: posts
 ---
 

@@ -2,7 +2,7 @@
 title: 'Old Javascript and CSS Snippets'
 date: '2019-02-14'
 description: 'A collection of old code snippets from my Google Plus Account'
-layout: layout.html
+layout: post.html
 tags: posts
 ---
 

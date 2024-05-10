@@ -1,7 +1,7 @@
 ---
 title: 'Goodbye Next, Hello Vite'
 date: '2023-06-26'
-layout: layout.html
+layout: post.html
 tags: posts
 ---
 

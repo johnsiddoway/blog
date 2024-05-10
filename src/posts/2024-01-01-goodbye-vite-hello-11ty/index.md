@@ -2,7 +2,7 @@
 title: 'Goodbye Vite, Hello 11ty'
 date: '2024-01-01'
 tags: posts
-layout: layout.html
+layout: post.html
 links:
  - <link rel="stylesheet" href="index.css">
  - <script type="module" defer src="index.js"></script>
