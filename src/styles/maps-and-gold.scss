@@ -39,7 +39,7 @@ header {
 	}
 
 	.js-brand {
-		background: linear-gradient(#B38728, #BF953F, #FCF6BA, #BF953F, #B38728);
+		background: linear-gradient(#ff8000, #ffb366, #ffe6cc, #ffb366, #ff8000);
 		background-clip: text;
 		color: transparent;
 		font-weight: 600;
@@ -70,15 +70,18 @@ footer {
 	list-style-type: none;
 
 	li {
-		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
+		@include make-flex($align-items: baseline, $justify-content: space-between, $column-gap: 1rem);
 		border-bottom: 1px solid currentColor;
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
 
 		a {
-			font-size: x-large;
+			font-size: 1.5rem;
+			font-weight: 700;
 			text-decoration: none;
+		}
+
+		div {
+			min-width: fit-content;
 		}
 	}
 }
