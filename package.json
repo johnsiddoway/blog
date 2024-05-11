@@ -10,6 +10,11 @@
 		"@11ty/eleventy": "^2.0.1",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@johnsiddoway/sass": "^2.0.1",
+		"@rollup/plugin-babel": "^6.0.4",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-commonjs": "^25.0.7",
+		"@rollup/plugin-replace": "^5.0.5",
+		"@rollup/plugin-terser": "^0.4.4",
 		"colord": "^2.9.3",
 		"dayjs": "^1.11.10",
 		"lightningcss": "^1.24.1",
@@ -17,6 +22,8 @@
 		"markdown-it-highlightjs": "^4.0.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
+		"rollup": "^4.17.2",
+		"rollup-plugin-scss": "^4.0.0",
 		"sass": "^1.70.0"
 	}
 }
