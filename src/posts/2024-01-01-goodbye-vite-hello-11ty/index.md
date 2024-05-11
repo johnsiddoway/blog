@@ -37,4 +37,31 @@ That wasn't at all what I wanted. Somehow in my professional career, I seemed to
 
 ## Rollup.js
 
-I ended up digging into how Vite compiles the React code into a single javascript file, which led me to [Rollup.js](https://rollupjs.org/). Rollup is basically a competitor of Webpack, so if you really know Webpack, Gulp, Rollup, or some other such library, then you probably know how Rollup works. But I didn't know, so it's taken me longer than I expected to get it working the way I expected.
+I ended up digging into how Vite compiles the React code into a single javascript file, which led me to [Rollup.js](https://rollupjs.org/). Rollup is basically a competitor of Webpack, so if you really know Webpack, Gulp, or some other such library, then you probably know how Rollup works. But I didn't know, so it's taken me longer than I expected to get it working the way I expected.
+
+The main body of the [jsx plugin](https://github.com/johnsiddoway/blog/blob/1111cf1913324e56152446094cda758e94dadb5b/jsxPlugin.js) that I wrote is mostly straight off of the Rollup docs, but it's wrapped up as an Eleventy module. I had some more trouble at some point until I realized that I only wanted this script to execute on files under `/posts/`, and I only wanted it to execute on files that did not start with an underscore, like `_module.js`. Once I was able to narrow down the scope of what my rollup script was executing against, I was able to do a better job of iterating on the actual Rollup script to finally generate a javascript file for a functional React "app".
+
+```
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addTemplateFormats(['js', 'jsx']);
+
+	eleventyConfig.addExtension(['js', 'jsx'], {
+		outputFileExtension: 'js',
+
+		// `compile` is called once per file in the input directory
+		compile: async function (inputContent, inputPath) {
+			// If we are not operating on a javascript file under /posts/, return immediately and do nothing
+			if (inputPath.indexOf('/posts/') < 0) {
+				return;
+			}
+
+			// From this point down the inputContent and inputPath are for a "valid" .js / .jsx file in a post directory
+
+			// ommitted the main body for now
+
+			// And then return ... nothing? Not sure why I decided to return nothing
+			return;
+		}
+	});
+};
+```
