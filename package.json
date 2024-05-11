@@ -28,5 +28,8 @@
 		"rollup": "^4.17.2",
 		"rollup-plugin-scss": "^4.0.0",
 		"sass": "^1.70.0"
+	},
+	"engines": {
+		"node": ">=18.0.0"
 	}
 }
