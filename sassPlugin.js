@@ -1,4 +1,5 @@
 const path = require("node:path");
+const { transform } = require("lightningcss");
 const sass = require("sass");
 
 module.exports = function (eleventyConfig) {
@@ -6,14 +7,14 @@ module.exports = function (eleventyConfig) {
 
 	// Creates the extension for use
 	eleventyConfig.addExtension("scss", {
-		outputFileExtension: "css", // optional, default: "html"
+		outputFileExtension: "min.css", // optional, default: "html"
 
 		compileOptions: {
 			permalink: function (contents, inputPath) {
 				let parsed = path.parse(inputPath);
 				const output = (inputPath.includes('posts/'))
-					? `${parsed.dir.replace('./src', '')}/${parsed.name}.css`
-					: `/${parsed.name}.css`;
+					? `${parsed.dir.replace('./src', '')}/${parsed.name}.min.css`
+					: `/${parsed.name}.min.css`;
 				console.info(`${inputPath} -> ${output}`);
 				return (data) => {
 					return output;
@@ -40,7 +41,12 @@ module.exports = function (eleventyConfig) {
 
 			// This is the render function, `data` is the full data cascade
 			return async (data) => {
-				return result.css;
+				let { code } = transform({
+					code: Buffer.from(result.css),
+					minify: true,
+					sourceMap: false,
+				});
+				return code;
 			};
 		}
 	});

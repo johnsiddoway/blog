@@ -4,7 +4,7 @@ date: '2024-01-01'
 tags: posts
 layout: post.html
 links:
- - <link rel="stylesheet" href="index.css">
+ - <link rel="stylesheet" href="index.min.css">
  - <script type="module" defer src="index.js"></script>
 ---
 
