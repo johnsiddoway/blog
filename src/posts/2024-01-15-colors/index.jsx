@@ -1,9 +1,9 @@
 import React, { useCallback, useReducer, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { HexAlphaColorPicker, HexColorInput } from "react-colorful";
-import './index.scss';
-import { useClickOutside } from './_useClickOutside';
+import { HexColorPicker } from "react-colorful";
 import { SwatchPanel } from './_swatch-panel';
+import { useClickOutside } from './_useClickOutside';
+import './index.scss';
 
 function PopoverPicker({ color, onChange }) {
 	const popover = useRef();
@@ -21,7 +21,7 @@ function PopoverPicker({ color, onChange }) {
 
 		{isOpen && (
 			<div className="popover" ref={popover}>
-				<HexAlphaColorPicker color={color} onChange={onChange} />
+				<HexColorPicker color={color} onChange={onChange} />
 			</div>
 		)}
 	</div>;
@@ -36,18 +36,6 @@ function ColorPicker({ color, onChange, label }) {
 		</div>
 	</div>;
 };
-
-// type Action =
-// 	| { type: 'set-foreground-color', color: string }
-// 	| { type: 'set-background-color', color: string }
-// 	| { type: 'set-theme-color', index: number, color: string }
-// 	| { type: 'set-theme-color-count', count: number };
-// type State = {
-// 	foregroundColor: string;
-// 	backgroundColor: string;
-// 	themeColorCount: number;
-// 	themeColors: string[];
-// }
 
 function reducer(state, action) {
 	switch (action.type) {
@@ -96,12 +84,6 @@ function Component() {
 		<div className="pickerPanel">
 			<ColorPicker color={foregroundColor} onChange={(e) => dispatch({ type: 'set-foreground-color', color: e })} label="Text" />
 			<ColorPicker color={backgroundColor} onChange={(e) => dispatch({ type: 'set-background-color', color: e })} label="Background" />
-			{/* <select name="count" id="count" onChange={(e) => dispatch({ type: 'set-theme-color-count', count: e.target.value })}>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-			</select> */}
 			{themeColorPickers}
 		</div>
 		<SwatchPanel color={themeColors[0]} />
