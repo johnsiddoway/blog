@@ -29,6 +29,40 @@ anim id est laborum.
 * List
 * Items
 
+# Buttons
+
+<div class="flex-with-gap">
+    <button>Default</button>
+    <button class="btn-primary">Primary</button>
+    <button class="btn-primary-inverted">Primary</button>
+    <button class="btn-info">Info</button>
+    <button class="btn-info-inverted">Info</button>
+    <button class="btn-success">Success</button>
+    <button class="btn-success-inverted">Success</button>
+    <button class="btn-danger">Danger</button>
+    <button class="btn-danger-inverted">Danger</button>
+    <button class="btn-orange">Orange</button>
+    <button class="btn-orange-inverted">Orange</button>
+    <button class="btn-yellow">Yellow</button>
+    <button class="btn-yellow-inverted">Yellow</button>
+    <button class="btn-green">Green</button>
+    <button class="btn-green-inverted">Green</button>
+    <button class="btn-teal">Teal</button>
+    <button class="btn-teal-inverted">Teal</button>
+    <button class="btn-cyan">Cyan</button>
+    <button class="btn-cyan-inverted">Cyan</button>
+    <button class="btn-blue">Blue</button>
+    <button class="btn-blue-inverted">Blue</button>
+    <button class="btn-indigo">Indigo</button>
+    <button class="btn-indigo-inverted">Indigo</button>
+    <button class="btn-purple">Purple</button>
+    <button class="btn-purple-inverted">Purple</button>
+    <button class="btn-pink">Pink</button>
+    <button class="btn-pink-inverted">Pink</button>
+    <button class="btn-red">Red</button>
+    <button class="btn-red-inverted">Red</button>
+</div>
+
 # Forms
 
 <form action="#">
@@ -199,14 +233,6 @@ anim id est laborum.
         vestibulum quis enim at, posuere iaculis neque.
     </p>
 </div>
-
-# Buttons
-
-<button>Default</button>
-<button class="btn-primary">Primary</button>
-<button class="btn-info">Info</button>
-<button class="btn-success">Success</button>
-<button class="btn-danger">Danger</button>
 
 # Code
 

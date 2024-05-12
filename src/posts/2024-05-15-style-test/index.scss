@@ -1,3 +1,38 @@
 @import "@johnsiddoway/sass";
 
-@include make-button-variants($theme-colors);
+@mixin all-buttons($color-map: $theme-colors) {
+	@each $name, $color in $color-map {
+		.btn-#{$name} {
+			@include button-variant($theme-color: $color);
+		}
+
+		.btn-#{$name}-inverted {
+			@include button-variant-inverted($color);
+		}
+	}
+}
+
+$all-button-colors: (
+	'primary': $orange,
+	'info': $blue,
+	'success': $success,
+	'danger': $danger,
+	'orange': $orange,
+	'yellow': $yellow,
+	'green': $green,
+	'teal': $teal,
+	'cyan': $cyan,
+	'blue': $blue,
+	'indigo': $indigo,
+	'purple': $purple,
+	'pink': $pink,
+	'red': $red,
+);
+
+@include all-buttons($all-button-colors);
+
+.flex-with-gap {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 1rem;
+}
