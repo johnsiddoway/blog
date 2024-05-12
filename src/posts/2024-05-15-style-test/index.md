@@ -152,14 +152,10 @@ anim id est laborum.
         <h2>Warning</h2>
         Are you absolutely sure?
     </article>
-    <footer>
-        <form method="dialog">
-            <fieldset class="actions">
-                <button class="secondary" value="no">No</button>
-                <button value="yes">Yes</button>
-            </fieldset>
-        </form>
-    </footer>
+    <form method="dialog">
+        <button value="no">No</button>
+        <button value="yes">Yes</button>
+    </form>
 </dialog>
 <p>Click <a href="javascript:document.querySelector('dialog').showModal()">here</a> to open the modal</p>
 
@@ -206,41 +202,27 @@ anim id est laborum.
 
 # Buttons
 
-<fieldset>
-    <button>Default (no class)</button>
-    <button class="btn">Default (.btn)</button>
-    <button class="btn-primary">Primary</button>
-    <button class="btn-info">Info</button>
-    <button class="btn-success">Success</button>
-    <button class="btn-danger">Danger</button>
-</fieldset>
+<button>Default</button>
+<button class="btn-primary">Primary</button>
+<button class="btn-info">Info</button>
+<button class="btn-success">Success</button>
+<button class="btn-danger">Danger</button>
 
 # Code
 
 Code can be displayed inline with the <code>&lt;code&gt;</code> tag, or in a block
 
-<pre><code>
-like this,
-with &lt;pre&gt; and &lt;code&gt;
-</code></pre>
+<pre><code>like this,
+with &lt;pre&gt; and &lt;code&gt;</code></pre>
 
 # Toggles
 
 Toggles should be used for actions that take effect on click, as opposed to checkboxes, which should be used for actions that take effect when a form is submitted.
 
-<fieldset>
-    <label class="toggle">
-        <input type="checkbox" name="turn-it-up-to-eleven">
-        Turn it up to eleven
-    </label>
-</fieldset>
-
-# Flash Messages
-
-<fieldset>
-    <button onclick="flash('This is a flash message')">Display message</button>
-    <button onclick="flash('This is an alert message', true)" class="alert">Display alert</button>
-</fieldset>
+<label class="toggle">
+    <input type="checkbox" name="turn-it-up-to-eleven">
+    Turn it up to eleven
+</label>
 
 # Accordions
 
@@ -275,28 +257,26 @@ The starter's sidebar follows a pattern seen in many apps. On wide screens the s
 
 This layout is achieved with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid">CSS Grid</a>, in particular <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas">grid template areas</a>. The default layout defines areas for each of the top-level layout elements, placing the <code>nav</code> in the <code>sidebar</code> area.
 
-<pre><code>
+```css
 body {
-...
-grid-template-areas: 'header header'
-                    'sidebar main'
-                    'footer footer';
+    grid-template-areas: 'header header'
+                         'sidebar main'
+                         'footer footer';
 }
 
 nav {
     grid-area: sidebar;
 }
-</code></pre>
+```
 
 On small screens, we omit the sidebar from the grid layout and position the sidebar absolutely, using the <code>left</code> property to toggle its visibility.
 
-<pre><code>
+```css
 @media screen and (max-width: 800px) {
     body {
-        ...
         grid-template-areas: 'header'
-                                'main'
-                                'footer';
+                             'main'
+                             'footer';
     }
 
     nav {
@@ -311,4 +291,4 @@ On small screens, we omit the sidebar from the grid layout and position the side
         left: 0;
     }
 }
-</code></pre>
+```

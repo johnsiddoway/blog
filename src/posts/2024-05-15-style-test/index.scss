@@ -1,7 +1,3 @@
 @import "@johnsiddoway/sass";
 
 @include make-button-variants($theme-colors);
-
-.btn {
-	border-color: currentColor;
-}
