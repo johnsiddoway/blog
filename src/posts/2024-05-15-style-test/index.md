@@ -4,6 +4,8 @@ date:  '2024-05-15'
 description: 'First post'
 layout: post.html
 tags: posts
+links:
+ - <link rel="stylesheet" href="index.min.css">
 eleventyExcludeFromCollections: true
 ---
 
@@ -205,7 +207,8 @@ anim id est laborum.
 # Buttons
 
 <fieldset>
-    <button>Default</button>
+    <button>Default (no class)</button>
+    <button class="btn">Default (.btn)</button>
     <button class="btn-primary">Primary</button>
     <button class="btn-info">Info</button>
     <button class="btn-success">Success</button>
