@@ -36,3 +36,17 @@ $all-button-colors: (
 	flex-wrap: wrap;
 	gap: 1rem 1rem;
 }
+
+form {
+	label {
+		display: flex;
+		flex-direction: column;
+	}
+
+	input,
+	select {
+		width: 100%;
+		border: 1px solid $dark;
+		padding: 0.375rem 0.75rem;
+	}
+}
