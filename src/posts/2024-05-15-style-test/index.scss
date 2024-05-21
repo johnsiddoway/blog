@@ -38,15 +38,71 @@ $all-button-colors: (
 }
 
 form {
-	label {
-		display: flex;
-		flex-direction: column;
+	margin: 0 0 1rem 0;
+	border: 0;
+	padding: 0;
+
+	fieldset {
+		margin: 0 0 0.5rem 0;
+		border: 0;
+		padding: 0;
 	}
 
-	input,
+	legend {
+		margin-bottom: 0.5em;
+		font-size: 1.5em;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 0.25em;
+		cursor: pointer;
+	}
+
+	button[type=reset],
+	button[type=submit],
+	input[type=button],
+	input[type=reset],
+	input[type=submit] {
+		padding: 0.375em 0.75em;
+		background-color: $gray-400;
+		color: inherit;
+		border: 1px solid currentColor;
+		cursor: pointer;
+
+		&:disabled {
+			opacity: 0.8;
+			cursor: not-allowed;
+		}
+	}
+
+	input:not([type=color],[type=checkbox],[type=radio],[type=range]),
 	select {
-		width: 100%;
-		border: 1px solid $dark;
-		padding: 0.375rem 0.75rem;
+		height: 2.375em;
+		padding: 0.375em 0.75em;
+		font-family: inherit;
+	}
+
+	// label {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// }
+
+	// input,
+	// select {
+	// 	width: 100%;
+	// 	border: 1px solid $dark;
+	// 	padding: 0.375rem 0.75rem;
+	// }
+
+	label:has(input[type="radio"], input[type="checkbox"]) {
+		width: fit-content;
+		display: flex;
+		column-gap: 1em;
+		cursor: pointer;
+
+		input[type="radio"], input[type="checkbox"] {
+			width: 1em;
+		}
 	}
 }

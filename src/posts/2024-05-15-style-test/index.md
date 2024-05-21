@@ -65,52 +65,126 @@ anim id est laborum.
 
 # Forms
 
-<form action="#">
+<form class="bd-example">
+  <fieldset>
+    <legend>Example legend</legend>
     <fieldset>
-        <label>
-            Name
-            <input type="text" required name="name">
-        </label>
-        <label>
-            Phone
-            <input type="tel" required name="phone">
-        </label>
-        <label>
-            Type
-            <select name="phone-type">
-                <option value="" disabled selected hidden>Select one...</option>
-                <option value="mobile">Mobile</option>
-                <option value="home">Home</option>
-                <option value="work">Work</option>
-            </select>
-        </label>
+        <label for="input">Example input</label>
+        <input type="text" id="input" placeholder="Example input">
     </fieldset>
-    <fieldset class="vertical">
-        <legend>Subscription</legend>
-        <label class="radio"><input type="radio" name="subscription" value="free">Free</label>
-        <label class="radio"><input type="radio" name="subscription" value="basic">Basic</label>
-        <label class="radio"><input type="radio" name="subscription" value="pro">Pro</label>
-    </fieldset>
-    <fieldset>
-        <label>
-            Email
-            <input type="email" required name="email">
-        </label>
-        <label>
-            Password
-            <input type="password" required name="password">
-        </label>
-    </fieldset>
-    <fieldset>
-        <label class="checkbox">
-            <input type="checkbox" name="terms-and-conditions">
-            <span>I agree to the <a href="#">terms and conditions</a></span>
-        </label>
-    </fieldset>
-    <fieldset class="actions">
-        <button class="secondary" type="button">Cancel</button>
-        <button type="submit">Submit</button>
-    </fieldset>
+    <p>
+      <label for="email">Example email</label>
+      <input type="email" id="email" placeholder="test@example.com">
+    </p>
+    <p>
+      <label for="tel">Example telephone</label>
+      <input type="tel" id="tel">
+    </p>
+    <p>
+      <label for="url">Example url</label>
+      <input type="url" id="url">
+    </p>
+    <p>
+      <label for="number">Example number</label>
+      <input type="number" id="number">
+    </p>
+    <p>
+      <label for="search">Example search</label>
+      <input type="search" id="search">
+    </p>
+    <p>
+      <label for="range">Example range</label>
+      <input type="range" id="range" min="0" max="10">
+    </p>
+    <p>
+      <label for="file">Example file input</label>
+      <input type="file" id="file">
+    </p>
+    <p>
+      <label for="select">Example select</label>
+      <select id="select">
+        <option value="">Choose...</option>
+        <optgroup label="Option group 1">
+          <option value="">Option 1</option>
+          <option value="">Option 2</option>
+          <option value="">Option 3</option>
+        </optgroup>
+        <optgroup label="Option group 2">
+          <option value="">Option 4</option>
+          <option value="">Option 5</option>
+          <option value="">Option 6</option>
+        </optgroup>
+      </select>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" value="">
+        Check this checkbox
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+        Option one is this and that
+      </label>
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        Option two is something else that's also super long to demonstrate the wrapping of these fancy form controls.
+      </label>
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+        Option three is disabled
+      </label>
+    </p>
+    <p>
+      <label for="textarea">Example textarea</label>
+      <textarea id="textarea" rows="3"></textarea>
+    </p>
+    <p>
+      <label for="date">Example date</label>
+      <input type="date" id="date">
+    </p>
+    <p>
+      <label for="time">Example time</label>
+      <input type="time" id="time">
+    </p>
+    <p>
+      <label for="password">Example password</label>
+      <input type="password" id="password">
+    </p>
+    <p>
+      <label for="datetime-local">Example datetime-local</label>
+      <input type="datetime-local" id="datetime-local">
+    </p>
+    <p>
+      <label for="week">Example week</label>
+      <input type="week" id="week">
+    </p>
+    <p>
+      <label for="month">Example month</label>
+      <input type="month" id="month">
+    </p>
+    <p>
+      <label for="color">Example color</label>
+      <input type="color" id="color">
+    </p>
+    <p>
+      <label for="output">Example output</label>
+      <output name="result" id="output">100</output>
+    </p>
+    <p>
+      <button type="submit">Button submit</button>
+      <input type="submit" value="Input submit button">
+      <input type="reset" value="Input reset button">
+      <input type="button" value="Input button">
+    </p>
+    <p>
+      <button type="submit" disabled>Button submit</button>
+      <input type="submit" value="Input submit button" disabled>
+      <input type="reset" value="Input reset button" disabled>
+      <input type="button" value="Input button" disabled>
+    </p>
+  </fieldset>
 </form>
 
 ## Inline form
