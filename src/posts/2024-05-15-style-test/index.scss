@@ -1,17 +1,5 @@
 @import "@johnsiddoway/sass";
 
-@mixin all-buttons($color-map: $theme-colors) {
-	@each $name, $color in $color-map {
-		.btn-#{$name} {
-			@include button-variant($theme-color: $color);
-		}
-
-		.btn-#{$name}-inverted {
-			@include button-variant-inverted($color);
-		}
-	}
-}
-
 $all-button-colors: (
 	'primary': $orange,
 	'info': $blue,
@@ -29,80 +17,185 @@ $all-button-colors: (
 	'red': $red,
 );
 
+@mixin all-buttons($color-map: $theme-colors) {
+	@each $name, $color in $color-map {
+		.btn-#{$name} {
+			@include button-variant($theme-color: $color);
+		}
+
+		.btn-#{$name}-inverted {
+			@include button-variant-inverted($color);
+		}
+	}
+}
+
+@mixin box-shadow($box-shadow-value: 0.25rem 0.25rem 0.25rem 0rem $gray-700) {
+	box-shadow: $box-shadow-value;
+}
+
+@mixin make-abbr($selector: 'abbr') {
+	#{$selector} {
+		text-decoration-line: none;
+		border-bottom: 1px dotted currentColor;
+		cursor: help;
+	}
+}
+
+// This is what Material UI calls a "Card" or a "Paper" surface.
+// It's designed to stand out against the background by putting a border and box shadow around the content,
+// as well as use high contrast background and foreground colors to make content legible.
+@mixin make-cards($selector: '.card', $margin-bottom: 1rem, $border-width: 1px, $border-style: solid, $border-color: currentColor, $padding: 0.375rem 0.75rem, $background-color: $white, $color: $dark, $box-shadow-value: 0.25rem 0.25rem 0.25rem 0 $gray-700) {
+	#{$selector} {
+		margin-bottom: $margin-bottom;
+		border: $border-width $border-style $border-color;
+		padding: $padding;
+		background-color: $background-color;
+		color: $color;
+		@include box-shadow($box-shadow-value);
+	}
+}
+
+@mixin make-details($selector: 'details') {
+	#{$selector} {
+		border-bottom: 1px solid currentColor;
+	
+		summary {
+			padding: 0.375rem 0.75rem;
+			cursor: pointer;
+		}
+	}
+}
+
+@mixin make-dialogs($selector: 'dialog') {
+	#{$selector} {
+		form {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@mixin make-forms($selector: 'form') {
+	#{$selector} {
+		margin: 0 0 1rem 0;
+		border: 0;
+		padding: 0;
+
+		fieldset {
+			margin: 0 0 1rem 0;
+			border: 0;
+			padding: 0;
+		}
+
+		legend {
+			margin-bottom: 0.5em;
+			font-size: 1.5em;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 0.25em;
+			cursor: pointer;
+		}
+
+		button[type=reset],
+		button[type=submit],
+		input[type=button],
+		input[type=reset],
+		input[type=submit] {
+			padding: 0.375em 0.75em;
+			color: inherit;
+			border: 1px solid currentColor;
+			cursor: pointer;
+
+			&:disabled {
+				opacity: 0.8;
+				cursor: not-allowed;
+			}
+		}
+
+		input:not([type=color],[type=checkbox],[type=radio],[type=range],[type=file]),
+		input::file-selector-button,
+		select {
+			height: 2.375em;
+			padding: 0.375em 0.75em;
+		}
+
+		input[type=file] {
+			border: 1px solid currentColor;
+			padding-right: 1em;
+
+			&::file-selector-button {
+				cursor: pointer;
+				border: 0px;
+				border-right: 1px solid currentColor;
+				margin-right: 1em;
+			}
+		}
+
+		label:has(input[type="radio"], input[type="checkbox"]) {
+			width: fit-content;
+			display: flex;
+			column-gap: 1em;
+			cursor: pointer;
+
+			input[type="radio"], input[type="checkbox"] {
+				width: 1em;
+			}
+		}
+	}
+}
+
+@mixin make-tables($selector: 'table') {
+	#{$selector} {
+		width: 100%;
+		border-collapse: collapse;
+
+		th,
+		td {
+			border-bottom: 1px solid currentColor;
+			padding: 0.375em 0.75em;
+		}
+	}
+}
+
+@mixin make-tooltips($selector: '[data-title]') {
+	#{$selector} {
+		position: relative;
+	}
+	#{$selector}:after {
+		@include box-shadow();
+		content: attr(data-title);
+		background-color: $white;
+		color: initial;
+		font-size: 1rem;
+		position: absolute;
+		padding: 0.375rem 0.75rem;
+		bottom: -1.6em;
+		left: 100%;
+		white-space: nowrap;
+		opacity: 0;
+		border: 1px solid #111111;
+		z-index: 99999;
+		visibility: hidden;
+	}
+	#{$selector}:hover:after {
+		opacity: 1;
+		transition: all 0.1s ease 0.5s;
+		visibility: visible;
+	}
+}
+
 @include all-buttons($all-button-colors);
+@include make-abbr();
+@include make-cards();
+@include make-details();
+@include make-dialogs();
+@include make-forms();
+@include make-tables();
+@include make-tooltips();
 
 .flex-with-gap {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem 1rem;
-}
-
-form {
-	margin: 0 0 1rem 0;
-	border: 0;
-	padding: 0;
-
-	fieldset {
-		margin: 0 0 0.5rem 0;
-		border: 0;
-		padding: 0;
-	}
-
-	legend {
-		margin-bottom: 0.5em;
-		font-size: 1.5em;
-	}
-
-	label {
-		display: block;
-		margin-bottom: 0.25em;
-		cursor: pointer;
-	}
-
-	button[type=reset],
-	button[type=submit],
-	input[type=button],
-	input[type=reset],
-	input[type=submit] {
-		padding: 0.375em 0.75em;
-		background-color: $gray-400;
-		color: inherit;
-		border: 1px solid currentColor;
-		cursor: pointer;
-
-		&:disabled {
-			opacity: 0.8;
-			cursor: not-allowed;
-		}
-	}
-
-	input:not([type=color],[type=checkbox],[type=radio],[type=range]),
-	select {
-		height: 2.375em;
-		padding: 0.375em 0.75em;
-		font-family: inherit;
-	}
-
-	// label {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// }
-
-	// input,
-	// select {
-	// 	width: 100%;
-	// 	border: 1px solid $dark;
-	// 	padding: 0.375rem 0.75rem;
-	// }
-
-	label:has(input[type="radio"], input[type="checkbox"]) {
-		width: fit-content;
-		display: flex;
-		column-gap: 1em;
-		cursor: pointer;
-
-		input[type="radio"], input[type="checkbox"] {
-			width: 1em;
-		}
-	}
 }

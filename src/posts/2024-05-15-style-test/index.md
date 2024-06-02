@@ -6,12 +6,11 @@ layout: post.html
 tags: posts
 links:
  - <link rel="stylesheet" href="index.min.css">
-eleventyExcludeFromCollections: true
 ---
 
-    This post is meant to be a test-bed for my personal SASS library that I plan on sharing across my personal sites. I plan on posting information on how it's supposed to work in a separate post (or maybe series of posts).
+This post is meant to be a test-bed for my personal SASS library that I plan on sharing across my personal sites. I plan on posting information on how it's supposed to work in a separate post (or maybe series of posts).
 
-    A hesitant shout-out to a recent article I read, [You Don't Need a CSS Framework](https://www.infoq.com/articles/no-need-css-framework/). I don't agree with several points made in the article, but the author's reference site, [starterapp.style](https://www.starterapp.style/), is really well laid out for showcasing how a stylesheet will render.
+A hesitant shout-out to a recent article I read, [You Don't Need a CSS Framework](https://www.infoq.com/articles/no-need-css-framework/). I don't agree with several points made in the article, but the author's reference site, [starterapp.style](https://www.starterapp.style/), is really well laid out for showcasing how a stylesheet will render.
 
 # Typography
 
@@ -65,7 +64,7 @@ anim id est laborum.
 
 # Forms
 
-<form class="bd-example">
+<form>
   <fieldset>
     <legend>Example legend</legend>
     <fieldset>
@@ -187,19 +186,6 @@ anim id est laborum.
   </fieldset>
 </form>
 
-## Inline form
-
-<form action="#">
-    <fieldset>
-        <label>
-            Search
-            <input type="search" name="query">
-        </label>
-        <button type="submit">Search</button>
-    </fieldset>
-</form>
-</section>
-
 # Tables
 
 <div class="table-scroll-wrapper">
@@ -269,9 +255,17 @@ anim id est laborum.
 
 # Tooltips
 
-<a href="javascript:{}" data-tooltip="Here is some additional info">Hover over me</a> to see a tooltip.
+<a href="javascript:{}" data-title="Here is some additional info">Hover over me</a> to see a tooltip.
 
-<a href="javascript:{}" data-tooltip="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</a> to see a tooltip with a ton of text.
+<a href="javascript:{}" data-title="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</a> to see a tooltip with a ton of text.
+
+# Abbreviations
+
+The `<abbr>` element receives basic styling to make it stand out amongst paragraph text. You can pair this with Tooltips to customize the popup.
+
+The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.
+
+The <abbr data-title="Hypertext Markup Language">HTML</abbr> abbreviation element.
 
 # Cards
 
@@ -344,7 +338,7 @@ If a group of <code>&lt;details&gt;</code> elements all have the same <code>name
     <summary>
         This is another accordion summary
     </summary>
-    <ul class="bulleted">
+    <ul>
         <li>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
         <li>Phasellus vel pulvinar orci, ac auctor urna.</li>
         <li>Nulla aliquam enim rutrum, auctor urna at, facilisis metus.</li>
