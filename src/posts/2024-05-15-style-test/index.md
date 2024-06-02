@@ -345,7 +345,7 @@ If a group of <code>&lt;details&gt;</code> elements all have the same <code>name
     </ul>
 </details>
 
-# Sidebar
+<!-- # Sidebar
 
 The starter's sidebar follows a pattern seen in many apps. On wide screens the sidebar is permanently displayed on the left side of the page and the page's content is displayed to its right. On narrower screens the sidebar is hidden by default, and is only displayed when a user clicks on the menu icon.
 
@@ -385,4 +385,4 @@ On small screens, we omit the sidebar from the grid layout and position the side
         left: 0;
     }
 }
-```
+``` -->
