@@ -188,7 +188,7 @@ anim id est laborum.
 
 # Tables
 
-<div class="table-scroll-wrapper">
+<div class="table-wrapper">
     <table>
         <thead>
         <tr>
@@ -251,13 +251,14 @@ anim id est laborum.
         <button value="yes">Yes</button>
     </form>
 </dialog>
-<p>Click <a href="javascript:document.querySelector('dialog').showModal()">here</a> to open the modal</p>
+
+Click <a href="javascript:document.querySelector('dialog').showModal()">here</a> to open the modal.
 
 # Tooltips
 
-<a href="javascript:{}" data-title="Here is some additional info">Hover over me</a> to see a tooltip.
+<span data-title="Here is some additional info">Hover over me</span> to see a tooltip.
 
-<a href="javascript:{}" data-title="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</a> to see a tooltip with a ton of text.
+<span data-title="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</span> to see a tooltip with a ton of text.
 
 # Abbreviations
 
@@ -344,45 +345,3 @@ If a group of <code>&lt;details&gt;</code> elements all have the same <code>name
         <li>Nulla aliquam enim rutrum, auctor urna at, facilisis metus.</li>
     </ul>
 </details>
-
-<!-- # Sidebar
-
-The starter's sidebar follows a pattern seen in many apps. On wide screens the sidebar is permanently displayed on the left side of the page and the page's content is displayed to its right. On narrower screens the sidebar is hidden by default, and is only displayed when a user clicks on the menu icon.
-
-This layout is achieved with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid">CSS Grid</a>, in particular <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas">grid template areas</a>. The default layout defines areas for each of the top-level layout elements, placing the <code>nav</code> in the <code>sidebar</code> area.
-
-```css
-body {
-    grid-template-areas: 'header header'
-                         'sidebar main'
-                         'footer footer';
-}
-
-nav {
-    grid-area: sidebar;
-}
-```
-
-On small screens, we omit the sidebar from the grid layout and position the sidebar absolutely, using the <code>left</code> property to toggle its visibility.
-
-```css
-@media screen and (max-width: 800px) {
-    body {
-        grid-template-areas: 'header'
-                             'main'
-                             'footer';
-    }
-
-    nav {
-        grid-area: unset;
-        position: absolute;
-        top: var(--header-height);
-        bottom: 0;
-        left: calc(-1 * var(--nav-width));
-    }
-
-    .menu-open nav {
-        left: 0;
-    }
-}
-``` -->
