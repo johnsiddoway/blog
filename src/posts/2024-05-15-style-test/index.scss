@@ -224,10 +224,10 @@ $all-button-colors: (
 		left: var(--padding);
 		width: var(--indicator-size);
 		height: var(--indicator-size);
+		border: 1px solid currentColor;
 		background-color: var(--background-color);
 		transition: 0.1s linear transform;
 		transform: translateX(0);
-		box-shadow: var(--box-shadow);
 	}
 
 	#{$selector} input:checked {
