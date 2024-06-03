@@ -194,6 +194,7 @@ $all-button-colors: (
 		flex-direction: row;
 		align-items: center;
 		gap: .75rem;
+		user-select: none;
 	}
 
 	#{$selector} input {
