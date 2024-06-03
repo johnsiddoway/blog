@@ -315,8 +315,8 @@ with &lt;pre&gt; and &lt;code&gt;</code></pre>
 Toggles should be used for actions that take effect on click, as opposed to checkboxes, which should be used for actions that take effect when a form is submitted.
 
 <label class="toggle">
-    <input type="checkbox" name="turn-it-up-to-eleven">
-    Turn it up to eleven
+	<input type="checkbox" name="turn-it-up-to-eleven">
+	Turn it up to eleven
 </label>
 
 # Accordions

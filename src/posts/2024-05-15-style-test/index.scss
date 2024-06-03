@@ -188,6 +188,57 @@ $all-button-colors: (
 	}
 }
 
+@mixin make-toggles($selector: '.toggle') {
+	#{$selector} {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: .75rem;
+	}
+
+	#{$selector} input {
+		--background-color: #{$white};
+		--toggle-background-off: #{$gray-400};
+		--toggle-background-on: #{$primary};
+		--toggle-height: 2rem;
+		--padding: 3px;
+		--border-width: 1px;
+		--indicator-size: calc(var(--toggle-height) - var(--padding) * 2 - var(--border-width) * 2);
+		--toggle-width: calc(var(--indicator-size) * 2 + var(--padding) * 2 + var(--border-width) * 2);
+		appearance: none;
+		position: relative;
+		cursor: pointer;
+		height: var(--toggle-height);
+		width: var(--toggle-width);
+		background: var(--toggle-background-off);
+		padding: var(--padding);
+		border: 1px solid currentColor;
+		transition: 0.1s linear background-color;
+	}
+	
+	#{$selector} input:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: var(--padding);
+		left: var(--padding);
+		width: var(--indicator-size);
+		height: var(--indicator-size);
+		background-color: var(--background-color);
+		transition: 0.1s linear transform;
+		transform: translateX(0);
+		box-shadow: var(--box-shadow);
+	}
+
+	#{$selector} input:checked {
+		background-color: var(--toggle-background-on);
+	}
+
+	#{$selector} input:checked:before {
+		transform: translateX(calc(var(--toggle-width) - var(--indicator-size) - var(--padding) * 2 - var(--border-width) * 2));
+	}
+}
+
 @include all-buttons($all-button-colors);
 @include make-abbr();
 @include make-cards();
@@ -195,6 +246,7 @@ $all-button-colors: (
 @include make-dialogs();
 @include make-forms();
 @include make-tables();
+@include make-toggles();
 @include make-tooltips();
 
 .flex-with-gap {
