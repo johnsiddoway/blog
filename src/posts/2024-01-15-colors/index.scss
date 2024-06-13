@@ -1,7 +1,7 @@
-@import "@johnsiddoway/sass";
+@use "@johnsiddoway/sass" as js;
 
 #react-root {
-	@include make-flex($column-gap: 5rem, $align-items: inherit);
+	@include js.make-flex($column-gap: 5rem, $align-items: inherit);
 	margin-bottom: 1rem;
 
 	> .pickerPanel {
@@ -62,7 +62,7 @@
 }
 
 .swatchPanel {
-	@include make-flex($column-gap: 0.5rem, $row-gap: 0.5rem, $align-items: flex-start, $align-content: flex-start, $flex-wrap: wrap);
+	@include js.make-flex($column-gap: 0.5rem, $row-gap: 0.5rem, $align-items: flex-start, $align-content: flex-start, $flex-wrap: wrap);
 
 	> * {
 		flex: 1 1 0px;

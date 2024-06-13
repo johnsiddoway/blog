@@ -30,8 +30,11 @@ anim id est laborum.
 
 # Buttons
 
-<div class="flex-with-gap">
+<div class="button-grid">
     <button>Default</button>
+</div>
+
+<div class="button-grid">
     <button class="btn-primary">Primary</button>
     <button class="btn-primary-inverted">Primary</button>
     <button class="btn-info">Info</button>
@@ -192,12 +195,23 @@ anim id est laborum.
     <table>
         <thead>
         <tr>
-            <th role="columnheader"></th>
-            <th role="columnheader">Heading</th>
-            <th role="columnheader">Heading</th>
-            <th role="columnheader">Heading</th>
-            <th role="columnheader">Heading</th>
-            <th role="columnheader">Heading</th>
+            <th role="columnheader" width="100px"></th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader" width="100px">Heading</th>
+            <th role="columnheader">Overflow?</th>
+            <th role="columnheader">Overflow?</th>
         </tr>
         </thead>
         <tbody>
@@ -208,6 +222,17 @@ anim id est laborum.
             <td>Cell</td>
             <td>Cell</td>
             <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Overflow Cell</td>
+            <td>Overflow Cell</td>
         </tr>
         <tr>
             <th role="rowheader">Row</th>
@@ -216,6 +241,17 @@ anim id est laborum.
             <td>Cell</td>
             <td>Cell</td>
             <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Overflow Cell</td>
+            <td>Overflow Cell</td>
         </tr>
         <tr>
             <th role="rowheader">Row</th>
@@ -224,6 +260,17 @@ anim id est laborum.
             <td>Cell</td>
             <td>Cell</td>
             <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Overflow Cell</td>
+            <td>Overflow Cell</td>
         </tr>
         </tbody>
         <tfoot>
@@ -234,6 +281,17 @@ anim id est laborum.
             <td>Total</td>
             <td>Total</td>
             <td>Total</td>
+            <td>Total</td>
+            <td>Total</td>
+            <td>Total</td>
+            <td>Total</td>
+            <td>Total</td>
+            <td>Total</td>
+            <td>Total</td>
+            <td>Total</td>
+            <td>Total</td>
+            <td>Overflow Total</td>
+            <td>Overflow Total</td>
         </tr>
         </tfoot>
     </table>

@@ -1,11 +1,14 @@
-@import "@johnsiddoway/sass";
+@use '@johnsiddoway/sass' as js;
 
-@include reset-styles();
-@include make-root('body');
-@include use-default-buttons();
+@include js.configure(
+  $reset-styles: true,
+  $root: 'body',
+);
+
+@include js.styles;
 
 %post-header {
-	@include make-flex($align-items: baseline, $justify-content: space-between, $column-gap: 1rem);
+	@include js.make-flex($align-items: baseline, $justify-content: space-between, $column-gap: 1rem);
 	margin-bottom: 1.5rem;
 	border-bottom: 1px solid currentColor;
 
@@ -24,13 +27,13 @@
 }
 
 a {
-	color: $blue;
+	color: js.$blue;
 }
 
 body {
-	background-color: $white;
-	color: $dark;
-	font-family: $font-family-sans-serif;
+	background-color: js.$white;
+	color: js.$dark;
+	font-family: js.$font-family-sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
@@ -39,15 +42,15 @@ body {
 
 header {
 	nav {
+		@include js.make-flex($align-items: baseline, $column-gap: 1rem);
 		margin-bottom: 1.5rem;
 		padding: 0.5rem 0.75rem;
-		background-color: $dark;
-		color: $light;
-		@include make-flex($align-items: baseline, $column-gap: 1rem);
+		background-color: js.$dark;
+		color: js.$light;
 	}
 
 	a {
-		color: $white;
+		color: js.$white;
 		text-decoration: none;
 	}
 
@@ -58,13 +61,13 @@ header {
 		font-weight: 700;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		font-size: $font-size-lg;
+		font-size: js.$font-size-lg;
 	}
 }
 
 main {
 	$reduced-breakpoints: 'lg','xl','2xl';
-	@include make-container($breakpoints: $reduced-breakpoints);
+	@include js.make-container($breakpoints: $reduced-breakpoints);
 }
 
 article {
@@ -81,8 +84,8 @@ footer {
 	margin-top: auto;
 	padding: 0.5rem 0;
 	text-align: center;
-	background-color: $dark;
-	color: $light;
+	background-color: js.$dark;
+	color: js.$light;
 }
 
 .post-list {
@@ -100,7 +103,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
 	body {
-		background-color: $gray-900 !important;
-		color: $light;
+		background-color: js.$gray-900 !important;
+		color: js.$light;
 	}
 }

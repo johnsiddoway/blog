@@ -1,257 +1,45 @@
-@import "@johnsiddoway/sass";
+@use "@johnsiddoway/sass" as js;
 
-$all-button-colors: (
-	'primary': $orange,
-	'info': $blue,
-	'success': $success,
-	'danger': $danger,
-	'orange': $orange,
-	'yellow': $yellow,
-	'green': $green,
-	'teal': $teal,
-	'cyan': $cyan,
-	'blue': $blue,
-	'indigo': $indigo,
-	'purple': $purple,
-	'pink': $pink,
-	'red': $red,
+@include js.configure(
+	$reset-styles: false,
+	$abbr-selector: 'abbr',
+	$buttons-make-theme-variants: true,
+	$buttons-make-theme-variants-inverted: true,
+	$buttons-use-base: true,
+	$cards-selector: '.card',
+	$details-selector: 'details',
+	$dialog-selector: 'dialog',
+	$table-selector: 'table',
+	$table-wrapper-selector: '.table-wrapper',
+	$theme-colors: (
+		'primary': js.$orange,
+		'info': js.$blue,
+		'success': js.$success,
+		'danger': js.$danger,
+		'orange': js.$orange,
+		'yellow': js.$yellow,
+		'green': js.$green,
+		'teal': js.$teal,
+		'cyan': js.$cyan,
+		'blue': js.$blue,
+		'indigo': js.$indigo,
+		'purple': js.$purple,
+		'pink': js.$pink,
+		'red': js.$red,
+	),
+	$toggle-selector: '.toggle',
+	$tooltip-selector: 'data-title',
 );
 
-@mixin all-buttons($color-map: $theme-colors) {
-	@each $name, $color in $color-map {
-		.btn-#{$name} {
-			@include button-variant($theme-color: $color);
-		}
+@include js.styles;
 
-		.btn-#{$name}-inverted {
-			@include button-variant-inverted($color);
-		}
-	}
-}
-
-@mixin box-shadow($box-shadow-value: 0.25rem 0.25rem 0.25rem 0rem $gray-700) {
-	box-shadow: $box-shadow-value;
-}
-
-@mixin make-abbr($selector: 'abbr') {
-	#{$selector} {
-		text-decoration-line: none;
-		border-bottom: 1px dotted currentColor;
-		cursor: help;
-	}
-}
-
-// This is what Material UI calls a "Card" or a "Paper" surface.
-// It's designed to stand out against the background by putting a border and box shadow around the content,
-// as well as use high contrast background and foreground colors to make content legible.
-@mixin make-cards($selector: '.card', $margin-bottom: 1rem, $border-width: 1px, $border-style: solid, $border-color: currentColor, $padding: 0.375rem 0.75rem, $background-color: $white, $color: $dark, $box-shadow-value: 0.25rem 0.25rem 0.25rem 0 $gray-700) {
-	#{$selector} {
-		margin-bottom: $margin-bottom;
-		border: $border-width $border-style $border-color;
-		padding: $padding;
-		background-color: $background-color;
-		color: $color;
-		@include box-shadow($box-shadow-value);
-	}
-}
-
-@mixin make-details($selector: 'details') {
-	#{$selector} {
-		border-bottom: 1px solid currentColor;
-	
-		summary {
-			padding: 0.375rem 0.75rem;
-			cursor: pointer;
-		}
-	}
-}
-
-@mixin make-dialogs($selector: 'dialog') {
-	#{$selector} {
-		form {
-			margin-bottom: 0;
-		}
-	}
-}
-
-@mixin make-forms($selector: 'form') {
-	#{$selector} {
-		margin: 0 0 1rem 0;
-		border: 0;
-		padding: 0;
-
-		fieldset {
-			margin: 0 0 1rem 0;
-			border: 0;
-			padding: 0;
-		}
-
-		legend {
-			margin-bottom: 0.5em;
-			font-size: 1.5em;
-		}
-
-		label {
-			display: block;
-			margin-bottom: 0.25em;
-			cursor: pointer;
-		}
-
-		button[type=reset],
-		button[type=submit],
-		input[type=button],
-		input[type=reset],
-		input[type=submit] {
-			padding: 0.375em 0.75em;
-			color: inherit;
-			border: 1px solid currentColor;
-			cursor: pointer;
-
-			&:disabled {
-				opacity: 0.8;
-				cursor: not-allowed;
-			}
-		}
-
-		input:not([type=color],[type=checkbox],[type=radio],[type=range],[type=file]),
-		input::file-selector-button,
-		select {
-			height: 2.375em;
-			padding: 0.375em 0.75em;
-		}
-
-		input[type=file] {
-			border: 1px solid currentColor;
-			padding-right: 1em;
-
-			&::file-selector-button {
-				cursor: pointer;
-				border: 0px;
-				border-right: 1px solid currentColor;
-				margin-right: 1em;
-			}
-		}
-
-		label:has(input[type="radio"], input[type="checkbox"]) {
-			width: fit-content;
-			display: flex;
-			column-gap: 1em;
-			cursor: pointer;
-
-			input[type="radio"], input[type="checkbox"] {
-				width: 1em;
-			}
-		}
-	}
-}
-
-@mixin make-tables($selector: 'table', $wrapper-selector: '.table-wrapper') {
-	#{$wrapper-selector} {
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-	}
-
-	#{$selector} {
-		max-width: 100%;
-		border-collapse: collapse;
-
-		th,
-		td {
-			border-bottom: 1px solid currentColor;
-			padding: 0.375em 0.75em;
-		}
-	}
-}
-
-@mixin make-tooltips($selector: '[data-title]', $content-selector: 'data-title') {
-	#{$selector} {
-		position:relative; /* making the .tooltip span a container for the tooltip text */
-		border-bottom:1px dashed currentColor; /* little indicater to indicate it's hoverable */
-	}
-	#{$selector}:before {
-		content: attr(#{$content-selector}); /* here's the magic */
-		position:absolute;
-		z-index: 10;
-		// Position the tooltip below the original element
-		top: 125%;
-		display:none; /* hide by default */
-		/* basic styles */
-		width: max-content;
-		max-width: calc(100dvw - 3rem);
-		border: 1px solid currentColor;
-		padding: 0.375em 0.75em;
-		background: $white;
-		@include box-shadow();
-	}
-	#{$selector}:hover:before {
-		display:block;
-	}
-}
-
-@mixin make-toggles($selector: '.toggle') {
-	#{$selector} {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: .75rem;
-		user-select: none;
-	}
-
-	#{$selector} input {
-		--background-color: #{$white};
-		--toggle-background-off: #{$gray-400};
-		--toggle-background-on: #{$primary};
-		--toggle-height: 2rem;
-		--padding: 3px;
-		--border-width: 1px;
-		--indicator-size: calc(var(--toggle-height) - var(--padding) * 2 - var(--border-width) * 2);
-		--toggle-width: calc(var(--indicator-size) * 2 + var(--padding) * 2 + var(--border-width) * 2);
-		appearance: none;
-		position: relative;
-		cursor: pointer;
-		height: var(--toggle-height);
-		width: var(--toggle-width);
-		background: var(--toggle-background-off);
-		padding: var(--padding);
-		border: 1px solid currentColor;
-		transition: 0.1s linear background-color;
-	}
-	
-	#{$selector} input:before {
-		content: '';
-		display: block;
-		position: absolute;
-		top: var(--padding);
-		left: var(--padding);
-		width: var(--indicator-size);
-		height: var(--indicator-size);
-		border: 1px solid currentColor;
-		background-color: var(--background-color);
-		transition: 0.1s linear transform;
-		transform: translateX(0);
-	}
-
-	#{$selector} input:checked {
-		background-color: var(--toggle-background-on);
-	}
-
-	#{$selector} input:checked:before {
-		transform: translateX(calc(var(--toggle-width) - var(--indicator-size) - var(--padding) * 2 - var(--border-width) * 2));
-	}
-}
-
-@include all-buttons($all-button-colors);
-@include make-abbr();
-@include make-cards();
-@include make-details();
-@include make-dialogs();
-@include make-forms();
-@include make-tables();
-@include make-toggles();
-@include make-tooltips();
-
-.flex-with-gap {
+.button-grid {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem 1rem;
+	margin-bottom: 0.5rem;
+
+	> * {
+		width: 5rem;
+	}
 }

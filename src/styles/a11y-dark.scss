@@ -1,4 +1,4 @@
-@import "@johnsiddoway/sass";
+@use "@johnsiddoway/sass/variables" as *;
 
 /* Base highlight.js */
 pre code.hljs {

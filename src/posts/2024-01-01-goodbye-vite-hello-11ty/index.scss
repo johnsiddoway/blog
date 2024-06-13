@@ -1,4 +1,4 @@
-@import "@johnsiddoway/sass";
+@use "@johnsiddoway/sass/variables" as *;
 
 .btn-primary {
 	border: 1px solid $dark;
