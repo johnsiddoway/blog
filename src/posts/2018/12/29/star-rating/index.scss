@@ -1,7 +1,9 @@
+@use "@johnsiddoway/sass" as *;
+
 .rating,
 .rating-ltr,
 .rating-single {
-    color: #fff; /* Personal choice */
+    color: $gray-300;
 }
 
 .rating,
@@ -26,5 +28,5 @@
 .rating-ltr input:checked + label,
 .rating-ltr input:checked + label ~ label,
 .rating-single input:checked + label {
-    color: #ffc107; /* Personal color choice. Lifted from Bootstrap 4 */
+    color: $primary; /* Personal color choice. */
 }

@@ -25,6 +25,7 @@ module.exports = function (eleventyConfig) {
 				return;
 			}
 			const outputPath = `${parsed.dir.replace('./src/', 'dist/')}/index.js`;
+			console.info(`${inputPath} -> ${outputPath}`);
 			const outputOptions = {
 				file: outputPath,
 				format: "iife",
