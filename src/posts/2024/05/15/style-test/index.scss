@@ -2,6 +2,7 @@
 
 @include js.configure(
 	$reset-styles: false,
+	$support-dark-mode: true,
 	$abbr-selector: 'abbr',
 	$buttons-make-theme-variants: true,
 	$buttons-make-theme-variants-inverted: true,

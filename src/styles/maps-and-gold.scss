@@ -2,6 +2,7 @@
 
 @include js.configure(
   $reset-styles: true,
+  $support-dark-mode: true,
   $root: 'body',
 );
 
@@ -31,8 +32,8 @@ a {
 }
 
 body {
-	background-color: js.$white;
-	color: js.$dark;
+	// background-color: js.$white !default;
+	// color: js.$dark !default;
 	font-family: js.$font-family-sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
@@ -98,12 +99,5 @@ footer {
 
 	li {
 		@extend %post-header;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	body {
-		background-color: js.$gray-900 !important;
-		color: js.$light;
 	}
 }
