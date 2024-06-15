@@ -1,39 +1,30 @@
-@use "@johnsiddoway/sass" as js;
+@use "@johnsiddoway/sass";
 
-@include js.configure(
+@include sass.configure(
 	$reset-styles: false,
 	$support-dark-mode: true,
-	$abbr-selector: 'abbr',
 	$buttons-make-theme-variants: true,
 	$buttons-make-theme-variants-inverted: true,
 	$buttons-use-base: true,
-	$cards-selector: '.card',
-	$forms-selector: 'form',
-	$details-selector: 'details',
-	$dialog-selector: 'dialog',
-	$table-selector: 'table',
-	$table-wrapper-selector: '.table-wrapper',
 	$theme-colors: (
-		'primary': js.$orange,
-		'info': js.$blue,
-		'success': js.$success,
-		'danger': js.$danger,
-		'orange': js.$orange,
-		'yellow': js.$yellow,
-		'green': js.$green,
-		'teal': js.$teal,
-		'cyan': js.$cyan,
-		'blue': js.$blue,
-		'indigo': js.$indigo,
-		'purple': js.$purple,
-		'pink': js.$pink,
-		'red': js.$red,
+		'primary': sass.$orange,
+		'info': sass.$blue,
+		'success': sass.$success,
+		'danger': sass.$danger,
+		'orange': sass.$orange,
+		'yellow': sass.$yellow,
+		'green': sass.$green,
+		'teal': sass.$teal,
+		'cyan': sass.$cyan,
+		'blue': sass.$blue,
+		'indigo': sass.$indigo,
+		'purple': sass.$purple,
+		'pink': sass.$pink,
+		'red': sass.$red,
 	),
-	$toggle-selector: '.toggle',
-	$tooltip-selector: 'data-title',
 );
 
-@include js.styles;
+@include sass.styles;
 
 .button-grid {
 	display: flex;
