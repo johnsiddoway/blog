@@ -1,15 +1,15 @@
-@use '@johnsiddoway/sass' as js;
+@use '@johnsiddoway/sass';
 
-@include js.configure(
-  $reset-styles: true,
+@include sass.configure(
   $support-dark-mode: true,
-  $root: 'body',
 );
 
-@include js.styles;
+$reduced-breakpoints: 'lg','xl','2xl';
+@include sass.reset-styles;
+@include sass.opinionated-layout($main-breakpoints: $reduced-breakpoints);
 
 %post-header {
-	@include js.make-flex($align-items: baseline, $justify-content: space-between, $column-gap: 1rem);
+	@include sass.make-flex($align-items: baseline, $justify-content: space-between, $column-gap: 1rem);
 	margin-bottom: 1.5rem;
 	border-bottom: 1px solid currentColor;
 
@@ -28,65 +28,53 @@
 }
 
 a {
-	color: js.$blue;
+	color: sass.$blue;
 }
 
-body {
-	// background-color: js.$white !default;
-	// color: js.$dark !default;
-	font-family: js.$font-family-sans-serif;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	text-align: start;
-}
+// body {
+// 	// background-color: js.$white !default;
+// 	// color: js.$dark !default;
+// 	font-family: js.$font-family-sans-serif;
+// 	font-size: 1rem;
+// 	font-weight: 400;
+// 	line-height: 1.5;
+// 	text-align: start;
+// }
 
-header {
-	nav {
-		@include js.make-flex($align-items: baseline, $column-gap: 1rem);
-		margin-bottom: 1.5rem;
-		padding: 0.5rem 0.75rem;
-		background-color: js.$dark;
-		color: js.$light;
-	}
+// header {
+// 	nav {
+// 		@include js.make-flex($align-items: baseline, $column-gap: 1rem);
+// 		margin-bottom: 1.5rem;
+// 		padding: 0.5rem 0.75rem;
+// 		background-color: js.$dark;
+// 		color: js.$light;
+// 	}
 
-	a {
-		color: js.$white;
-		text-decoration: none;
-	}
+// 	a {
+// 		color: js.$white;
+// 		text-decoration: none;
+// 	}
 
-	.js-brand {
-		background: linear-gradient(#ff8000, #ffb366, #ffe6cc, #ffb366, #ff8000);
-		background-clip: text;
-		color: transparent;
-		font-weight: 700;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		font-size: js.$font-size-lg;
-	}
-}
+// 	.js-brand {
+// 		background: linear-gradient(#ff8000, #ffb366, #ffe6cc, #ffb366, #ff8000);
+// 		background-clip: text;
+// 		color: transparent;
+// 		font-weight: 700;
+// 		-webkit-background-clip: text;
+// 		-webkit-text-fill-color: transparent;
+// 		font-size: js.$font-size-lg;
+// 	}
+// }
 
-main {
-	$reduced-breakpoints: 'lg','xl','2xl';
-	@include js.make-container($breakpoints: $reduced-breakpoints);
-}
+// main {
+// 	$reduced-breakpoints: 'lg','xl','2xl';
+// 	@include js.make-container($breakpoints: $reduced-breakpoints);
+// }
 
 article {
 	header {
 		@extend %post-header;
 	}
-}
-
-code {
-	word-wrap: break-word;
-}
-
-footer {
-	margin-top: auto;
-	padding: 0.5rem 0;
-	text-align: center;
-	background-color: js.$dark;
-	color: js.$light;
 }
 
 .post-list {
@@ -101,3 +89,15 @@ footer {
 		@extend %post-header;
 	}
 }
+
+code {
+	word-wrap: break-word;
+}
+
+// footer {
+// 	margin-top: auto;
+// 	padding: 0.5rem 0;
+// 	text-align: center;
+// 	background-color: js.$dark;
+// 	color: js.$light;
+// }
