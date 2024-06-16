@@ -33,7 +33,7 @@ module.exports = function (eleventyConfig) {
 	// Copy anything in the /public/ folder over to ${outputDir}/
 	eleventyConfig.addPassthroughCopy({ "public": "/" });
 	// Copy all .pngs to ${outputDir}/**/*.png; Keeps the same directory structure.
-	eleventyConfig.addPassthroughCopy("**/*.png");
+	eleventyConfig.addPassthroughCopy("src/**/*.png");
 
 	eleventyConfig.addPlugin(jsxPlugin);
 	eleventyConfig.addPlugin(sassPlugin);
