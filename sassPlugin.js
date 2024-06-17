@@ -1,8 +1,8 @@
-const path = require("node:path");
-const { transform } = require("lightningcss");
-const sass = require("sass");
+import path from "node:path";
+import { transform } from "lightningcss";
+import * as sass from "sass";
 
-module.exports = function (eleventyConfig) {
+export function sassPlugin(eleventyConfig) {
 	eleventyConfig.addTemplateFormats("scss");
 
 	// Creates the extension for use

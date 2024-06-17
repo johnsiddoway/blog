@@ -10,8 +10,8 @@ links:
 
 This is the 3rd post in a series I think I'm calling "Oh my god why are there so many static site generators?" The previous entries in this series are:
 
-* [Goodbye Jekyll Hello Nextjs](./2023-01-15-goodbye-jekyll-hello-nextjs.md)
-* [Goodbye Nextjs Hello Vite](./2023-06-26-goodbye-next-hello-vite.md)
+* [Goodbye Jekyll Hello Nextjs](posts/2023/01/15/goodbye-jekyll-hello-nextjs/index.md)
+* [Goodbye Nextjs Hello Vite](posts/2023/06/26/goodbye-next-hello-vite/index.md)
 
 # What was wrong with Vite?
 

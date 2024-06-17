@@ -1,13 +1,13 @@
 {
 	"private": true,
-	"type": "commonjs",
+	"type": "module",
 	"scripts": {
 		"build": "npx eleventy",
 		"clean": "rm -rf dist/ && rm -rf node_modules/",
 		"dev": "npx eleventy --serve"
 	},
 	"devDependencies": {
-		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy": "3.0.0-alpha.13",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@babel/preset-env": "^7.24.5",
 		"@babel/preset-react": "^7.24.1",

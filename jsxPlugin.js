@@ -1,13 +1,13 @@
-const path = require("node:path");
-const { rollup } = require("rollup");
-const babel = require('@rollup/plugin-babel');
-const { nodeResolve } = require('@rollup/plugin-node-resolve');
-const commonjs = require('@rollup/plugin-commonjs');
-const replace = require('@rollup/plugin-replace');
-const terser = require('@rollup/plugin-terser');
-const scss = require('rollup-plugin-scss');
+import path from "node:path";
+import { rollup } from "rollup";
+import babel from "@rollup/plugin-babel";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import replace from "@rollup/plugin-replace";
+import terser from "@rollup/plugin-terser";
+import scss from "rollup-plugin-scss";
 
-module.exports = function (eleventyConfig) {
+export function jsxPlugin(eleventyConfig) {
 	eleventyConfig.addTemplateFormats(['js', 'jsx']);
 
 	eleventyConfig.addExtension(['js', 'jsx'], {

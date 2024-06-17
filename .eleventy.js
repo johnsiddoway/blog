@@ -1,14 +1,15 @@
-const dayjs = require('dayjs');
-const utc = require('dayjs/plugin/utc');
-const anchor = require("markdown-it-anchor");
-const attributes = require("markdown-it-attrs");
-const highlightjs = require("markdown-it-highlightjs");
-const jsxPlugin = require('./jsxPlugin.js');
-const sassPlugin = require('./sassPlugin.js');
+import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc.js";
+import anchor from "markdown-it-anchor";
+import attributes from "markdown-it-attrs";
+import highlightjs from "markdown-it-highlightjs";
+import { jsxPlugin } from "./jsxPlugin.js";
+import { sassPlugin } from "./sassPlugin.js";
 
 dayjs.extend(utc);
 
-module.exports = function (eleventyConfig) {
+export default async function (eleventyConfig) {
 	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("head", (array, n) => {
 		if (!Array.isArray(array) || array.length === 0) {
@@ -37,6 +38,7 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addPlugin(jsxPlugin);
 	eleventyConfig.addPlugin(sassPlugin);
+	eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
 	eleventyConfig.amendLibrary("md", mdLib => mdLib.use(attributes).use(anchor).use(highlightjs));
 
