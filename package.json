@@ -4,7 +4,9 @@
 	"scripts": {
 		"build": "npx eleventy",
 		"clean": "rm -rf dist/ && rm -rf node_modules/",
-		"dev": "npx eleventy --serve"
+		"dev": "npx eleventy --serve",
+		"lint": "eslint .",
+		"release": "npm run build && npm run lint"
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "3.0.0-alpha.13",
