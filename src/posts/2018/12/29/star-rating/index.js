@@ -13,8 +13,8 @@ class StarRating {
 		// 2. attach an event handler to all of the possible inputs
 		//      to change the displayed value
 		let inputs = document.getElementById(inputId).getElementsByTagName('input');
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].onchange = function () {
+		for (var input of inputs) {
+			input.onchange = function () {
 				valueElement.innerHTML = this.value;
 			}
 		}
@@ -22,6 +22,6 @@ class StarRating {
 }
 
 // create new instance when this file is loaded
-var sr = new StarRating();
+new StarRating();
 
 console.info('Star Rating loaded');

@@ -11,14 +11,17 @@
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@babel/preset-env": "^7.24.5",
 		"@babel/preset-react": "^7.24.1",
+		"@eslint/js": "^9.5.0",
 		"@johnsiddoway/sass": "^3.0.6",
 		"@rollup/plugin-babel": "^6.0.4",
 		"@rollup/plugin-commonjs": "^25.0.7",
 		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-replace": "^5.0.5",
 		"@rollup/plugin-terser": "^0.4.4",
+		"@types/eslint__js": "^8.42.3",
 		"colord": "^2.9.3",
 		"dayjs": "^1.11.10",
+		"eslint": "^8.57.0",
 		"lightningcss": "^1.24.1",
 		"markdown-it-anchor": "^8.6.7",
 		"markdown-it-attrs": "^4.1.6",
@@ -28,7 +31,9 @@
 		"react-dom": "^18.2.0",
 		"rollup": "^4.17.2",
 		"rollup-plugin-scss": "^4.0.0",
-		"sass": "^1.70.0"
+		"sass": "^1.70.0",
+		"typescript": "^5.4.5",
+		"typescript-eslint": "^7.13.1"
 	},
 	"engines": {
 		"node": ">=18.0.0"

@@ -1,4 +1,5 @@
 import path from "node:path";
+import { Buffer } from 'node:buffer';
 import { transform } from "lightningcss";
 import * as sass from "sass";
 
@@ -16,7 +17,7 @@ export function sassPlugin(eleventyConfig) {
 					? `${parsed.dir.replace('./src', '')}/${parsed.name}.min.css`
 					: `/${parsed.name}.min.css`;
 				console.info(`${inputPath} -> ${output}`);
-				return (data) => {
+				return () => {
 					return output;
 				}
 			}
@@ -40,7 +41,7 @@ export function sassPlugin(eleventyConfig) {
 			this.addDependencies(inputPath, result.loadedUrls);
 
 			// This is the render function, `data` is the full data cascade
-			return async (data) => {
+			return async () => {
 				let { code } = transform({
 					code: Buffer.from(result.css),
 					minify: true,
