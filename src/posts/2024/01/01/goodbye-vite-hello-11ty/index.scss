@@ -1,7 +1,10 @@
-@use "@johnsiddoway/sass/variables" as *;
+@use "@johnsiddoway/sass";
 
-.btn-primary {
-	border: 1px solid $dark;
-	background-color: $primary;
-	cursor: pointer;
-}
+@include sass.configure(
+	$theme-colors: (
+		'primary': sass.$primary,
+	),
+);
+
+@include sass.button-base;
+@include sass.themed-buttons;

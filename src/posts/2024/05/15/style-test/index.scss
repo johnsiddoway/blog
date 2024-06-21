@@ -1,11 +1,6 @@
 @use "@johnsiddoway/sass";
 
 @include sass.configure(
-	$reset-styles: false,
-	$support-dark-mode: true,
-	$buttons-make-theme-variants: true,
-	$buttons-make-theme-variants-inverted: true,
-	$buttons-use-base: true,
 	$theme-colors: (
 		'primary': sass.$orange,
 		'info': sass.$blue,
@@ -24,7 +19,15 @@
 	),
 );
 
-@include sass.styles;
+@include sass.all-buttons;
+@include sass.abbreviations;
+@include sass.cards;
+@include sass.details;
+@include sass.dialogs;
+@include sass.forms;
+@include sass.tables;
+@include sass.toggles;
+@include sass.tooltips;
 
 .button-grid {
 	display: flex;
