@@ -1,4 +1,4 @@
-@use "@johnsiddoway/sass/variables" as *;
+@use "@johnsiddoway/sass";
 
 /* Base highlight.js */
 pre code.hljs {
@@ -16,14 +16,14 @@ code.hljs {
 */
 
 .hljs {
-  background: $gray-800;
-  color: $light;
+  background: sass.$gray-800;
+  color: sass.$light;
 }
 
 /* Yellow */
 .hljs-comment,
 .hljs-quote {
-  color: $yellow;
+  color: sass.$yellow;
 }
 
 /* Red */
@@ -35,7 +35,7 @@ code.hljs {
 .hljs-tag,
 .hljs-template-variable,
 .hljs-variable {
-  color: $red;
+  color: sass.$red;
 }
 
 /* Orange */
@@ -46,7 +46,7 @@ code.hljs {
 .hljs-number,
 .hljs-params,
 .hljs-type {
-  color: $orange;
+  color: sass.$orange;
 }
 
 /* Yellow */
@@ -59,19 +59,19 @@ code.hljs {
 .hljs-bullet,
 .hljs-string,
 .hljs-symbol {
-  color: $green;
+  color: sass.$green;
 }
 
 /* Blue */
 .hljs-section,
 .hljs-title {
-  color: $blue;
+  color: sass.$blue;
 }
 
 /* Purple */
 .hljs-keyword,
 .hljs-selector-tag {
-  color: $purple;
+  color: sass.$purple;
 }
 
 .hljs-emphasis {
@@ -79,7 +79,7 @@ code.hljs {
 }
 
 .hljs-strong {
-  font-weight: 700;
+  font-weight: sass.$font-weight-bold;
 }
 
 @media screen and (-ms-high-contrast: active) {
@@ -102,6 +102,6 @@ code.hljs {
   
   .hljs-keyword,
   .hljs-selector-tag {
-    font-weight: 700;
+    font-weight: sass.$font-weight-bold;
   }
 }

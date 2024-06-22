@@ -19,8 +19,8 @@
 	),
 );
 
-@include sass.all-buttons;
 @include sass.abbreviations;
+@include sass.buttons;
 @include sass.cards;
 @include sass.details;
 @include sass.dialogs;
