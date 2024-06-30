@@ -10,8 +10,9 @@ $layout-main-breakpoints: 'lg','xl','2xl';
 	src: url('/OpenSans.ttf') format('truetype');
 }
 
-@include sass.reset-styles;
-@include sass.base-layout;
+@include sass.reset;
+@include sass.default-layout;
+@include sass.default-theme;
 
 header .brand {
 	background: linear-gradient(#ff8000, #ffb366, #ffe6cc, #ffb366, #ff8000);
