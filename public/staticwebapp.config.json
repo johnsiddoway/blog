@@ -1,7 +1,8 @@
 {
 	"globalHeaders": {
-		"content-security-policy": "default-src 'self'; img-src *;",
-		"Strict-Transport-Security": "max-age=15768000"
+		"content-security-policy": "default-src https:",
+		"Strict-Transport-Security": "max-age=15768000",
+		"X-Frame-Options": "DENY"
 	},
 	"responseOverrides": {
 		"404": {
