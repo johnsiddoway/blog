@@ -8,6 +8,7 @@ $layout-main-breakpoints: 'lg','xl','2xl';
 	font-style: normal;
 	font-weight: 400;
 	src: url('/OpenSans.ttf') format('truetype');
+	font-display: swap;
 }
 
 @include sass.reset;
@@ -40,7 +41,7 @@ header .brand {
 }
 
 a {
-	color: sass.$blue;
+	color: #0073e6; // custom dark blue
 }
 
 article {
