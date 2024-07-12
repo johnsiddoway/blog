@@ -1,6 +1,6 @@
 {
 	"globalHeaders": {
-		"content-security-policy": "default-src 'none'; form-action 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self';",
+		"content-security-policy": "default-src 'none'; font-src 'self'; form-action 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self';",
 		"Strict-Transport-Security": "max-age=15768000",
 		"X-Frame-Options": "DENY"
 	},
