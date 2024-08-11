@@ -6,6 +6,7 @@ layout: post.html
 tags: posts
 links:
  - <link rel="stylesheet" href="index.min.css">
+ - <script type="module" defer src="index.js"></script>
 ---
 
 This post is meant to be a test-bed for my personal SASS library that I plan on sharing across my personal sites. I plan on posting information on how it's supposed to work in a separate post (or maybe series of posts).
@@ -299,7 +300,7 @@ anim id est laborum.
 
 # Modals
 
-<dialog>
+<dialog id="modal-example">
     <article>
         <h2>Warning</h2>
         Are you absolutely sure?
@@ -310,7 +311,20 @@ anim id est laborum.
     </form>
 </dialog>
 
-Click <a href="javascript:document.querySelector('dialog').showModal()">here</a> to open the modal.
+<div popover id="popover-example">
+	<article>
+        <h2>Warning</h2>
+        Are you absolutely sure?
+    </article>
+    <form method="dialog">
+        <button value="no">No</button>
+        <button value="yes">Yes</button>
+    </form>
+</div>
+
+<button type="button" data-modal="modal-example">Open Dialog</button>
+
+<button type="button" popovertarget="popover-example">Open Popover</button>
 
 # Tooltips
 
