@@ -316,10 +316,8 @@ anim id est laborum.
         <h2>Warning</h2>
         Are you absolutely sure?
     </article>
-    <form method="dialog">
-        <button value="no">No</button>
-        <button value="yes">Yes</button>
-    </form>
+    <button value="no" popovertarget="popover-example" popovertargetaction="hide">No</button>
+	<button value="yes" popovertarget="popover-example" popovertargetaction="hide">Yes</button>
 </div>
 
 <button type="button" data-modal="modal-example">Open Dialog</button>

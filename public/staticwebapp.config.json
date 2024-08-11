@@ -1,8 +1,7 @@
 {
 	"globalHeaders": {
-		"content-security-policy": "default-src 'none'; font-src 'self'; form-action 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self';",
-		"Strict-Transport-Security": "max-age=15768000",
-		"X-Frame-Options": "DENY"
+		"content-security-policy": "default-src 'none'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self';",
+		"Strict-Transport-Security": "max-age=15768000"
 	},
 	"responseOverrides": {
 		"404": {
