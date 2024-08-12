@@ -300,10 +300,10 @@ anim id est laborum.
 
 # Modals
 
-<dialog id="modal-example">
+<dialog id="dialog-example">
     <article>
-        <h2>Warning</h2>
-        Are you absolutely sure?
+        <h2>Dialog Example</h2>
+        This is a <code>dialog</code> example.
     </article>
     <form method="dialog">
         <button value="no">No</button>
@@ -311,15 +311,15 @@ anim id est laborum.
     </form>
 </dialog>
 
-<button type="button" data-modal="modal-example">Open Dialog</button>
+<button type="button" data-dialog="dialog-example">Open Dialog</button>
 
 <div popover id="popover-non-modal">
     <article>
         <h2>Non-Modal Popover</h2>
-        Are you absolutely sure?
+        This is a <code>&lt;div popover="auto"&gt;popover&lt;/div&gt;</code> example.
+        You can click anywhere outside this popover to close it, or click the button.
     </article>
-    <button value="no" popovertarget="popover-non-modal" popovertargetaction="hide">No</button>
-    <button value="yes" popovertarget="popover-non-modal" popovertargetaction="hide">Yes</button>
+    <button popovertarget="popover-non-modal" popovertargetaction="hide">Close</button>
 </div>
 
 <button type="button" popovertarget="popover-non-modal">Open Non-Modal Popover</button>
@@ -327,12 +327,13 @@ anim id est laborum.
 <div id="popover-modal" popover="manual">
     <article>
         <h2>Modal Popover</h2>
+        This is a `<div popover="manual">popover</div>` example.
     </article>
     <button value="no" popovertarget="popover-modal" popovertargetaction="hide">No</button>
     <button value="yes" popovertarget="popover-modal" popovertargetaction="hide">Yes</button>
 </div>
 
-<button type="button" popovertarget="popover-modal">Open Non-Modal Popover</button>
+<button type="button" popovertarget="popover-modal">Open Modal Popover</button>
 
 # Tooltips
 
