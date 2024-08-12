@@ -24,7 +24,6 @@
 @include sass.cards;
 @include sass.details;
 @include sass.dialogs;
-@include sass.dialogs($selector: '[popover]');
 @include sass.forms;
 @include sass.tables;
 @include sass.toggles;

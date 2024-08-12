@@ -311,18 +311,28 @@ anim id est laborum.
     </form>
 </dialog>
 
-<div popover id="popover-example">
-	<article>
-        <h2>Warning</h2>
-        Are you absolutely sure?
-    </article>
-    <button value="no" popovertarget="popover-example" popovertargetaction="hide">No</button>
-	<button value="yes" popovertarget="popover-example" popovertargetaction="hide">Yes</button>
-</div>
-
 <button type="button" data-modal="modal-example">Open Dialog</button>
 
-<button type="button" popovertarget="popover-example">Open Popover</button>
+<div popover id="popover-non-modal">
+    <article>
+        <h2>Non-Modal Popover</h2>
+        Are you absolutely sure?
+    </article>
+    <button value="no" popovertarget="popover-non-modal" popovertargetaction="hide">No</button>
+    <button value="yes" popovertarget="popover-non-modal" popovertargetaction="hide">Yes</button>
+</div>
+
+<button type="button" popovertarget="popover-non-modal">Open Non-Modal Popover</button>
+
+<div id="popover-modal" popover="manual">
+    <article>
+        <h2>Modal Popover</h2>
+    </article>
+    <button value="no" popovertarget="popover-modal" popovertargetaction="hide">No</button>
+    <button value="yes" popovertarget="popover-modal" popovertargetaction="hide">Yes</button>
+</div>
+
+<button type="button" popovertarget="popover-modal">Open Non-Modal Popover</button>
 
 # Tooltips
 
