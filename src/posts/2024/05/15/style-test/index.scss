@@ -31,6 +31,13 @@
 @include sass.toggle;
 @include sass.tooltip;
 
+button {
+	--btn-background-color: transparent;
+	--btn-color: inherit;
+	--btn-border-color: currentColor;
+	box-shadow: .25rem .25rem .25rem 0rem currentColor;
+}
+
 .button-grid {
 	display: flex;
 	flex-wrap: wrap;

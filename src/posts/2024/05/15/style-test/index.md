@@ -337,9 +337,9 @@ anim id est laborum.
 
 # Tooltips
 
-<span data-title="Here is some additional info">Hover over me</span> to see a tooltip.
+<span data-tooltip="Here is some additional info">Hover over me</span> to see a tooltip.
 
-<span data-title="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</span> to see a tooltip with a ton of text.
+<span data-tooltip="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</span> to see a tooltip with a ton of text.
 
 # Abbreviations
 
@@ -347,7 +347,7 @@ The `<abbr>` element receives basic styling to make it stand out amongst paragra
 
 The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.
 
-The <abbr data-title="Hypertext Markup Language">HTML</abbr> abbreviation element.
+The <abbr data-tooltip="Hypertext Markup Language">HTML</abbr> abbreviation element.
 
 # Cards
 
