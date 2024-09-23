@@ -1,33 +1,35 @@
 @use "@johnsiddoway/sass";
 
-@include sass.configure(
-	$theme-colors: (
-		'primary': sass.$orange,
-		'info': sass.$blue,
-		'success': sass.$success,
-		'danger': sass.$danger,
-		'orange': sass.$orange,
-		'yellow': sass.$yellow,
-		'green': sass.$green,
-		'teal': sass.$teal,
-		'cyan': sass.$cyan,
-		'blue': sass.$blue,
-		'indigo': sass.$indigo,
-		'purple': sass.$purple,
-		'pink': sass.$pink,
-		'red': sass.$red,
-	),
-);
+// @include sass.configure(
+// 	$theme-colors: (
+// 		'primary': sass.$orange,
+// 		'info': sass.$blue,
+// 		'success': sass.$success,
+// 		'danger': sass.$danger,
+// 		'orange': sass.$orange,
+// 		'yellow': sass.$yellow,
+// 		'green': sass.$green,
+// 		'teal': sass.$teal,
+// 		'cyan': sass.$cyan,
+// 		'blue': sass.$blue,
+// 		'indigo': sass.$indigo,
+// 		'purple': sass.$purple,
+// 		'pink': sass.$pink,
+// 		'red': sass.$red,
+// 	),
+// );
 
-@include sass.abbreviations;
+@include sass.abbr;
 @include sass.buttons;
 @include sass.cards;
 @include sass.details;
-@include sass.dialogs;
-@include sass.forms;
-@include sass.tables;
-@include sass.toggles;
-@include sass.tooltips;
+@include sass.dialog;
+@include sass.inputs;
+@include sass.form;
+@include sass.label;
+@include sass.select;
+@include sass.toggle;
+@include sass.tooltip;
 
 .button-grid {
 	display: flex;

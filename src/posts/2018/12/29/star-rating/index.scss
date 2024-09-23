@@ -3,7 +3,7 @@
 .rating,
 .rating-ltr,
 .rating-single {
-    color: $gray-300;
+    color: $gray-70;
 }
 
 .rating,
@@ -28,5 +28,5 @@
 .rating-ltr input:checked + label,
 .rating-ltr input:checked + label ~ label,
 .rating-single input:checked + label {
-    color: $primary; /* Personal color choice. */
+    color: $orange-60; /* Personal color choice. */
 }

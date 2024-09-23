@@ -16,14 +16,14 @@ code.hljs {
 */
 
 .hljs {
-  background: sass.$gray-800;
+  background: sass.$gray-20;
   color: sass.$light;
 }
 
 /* Yellow */
 .hljs-comment,
 .hljs-quote {
-  color: sass.$yellow;
+  color: sass.$yellow-60;
 }
 
 /* Red */
@@ -35,7 +35,7 @@ code.hljs {
 .hljs-tag,
 .hljs-template-variable,
 .hljs-variable {
-  color: sass.$red;
+  color: sass.$red-60;
 }
 
 /* Orange */
@@ -46,7 +46,7 @@ code.hljs {
 .hljs-number,
 .hljs-params,
 .hljs-type {
-  color: sass.$orange;
+  color: sass.$orange-60;
 }
 
 /* Yellow */
@@ -59,19 +59,19 @@ code.hljs {
 .hljs-bullet,
 .hljs-string,
 .hljs-symbol {
-  color: sass.$green;
+  color: sass.$green-60;
 }
 
 /* Blue */
 .hljs-section,
 .hljs-title {
-  color: sass.$blue;
+  color: sass.$blue-60;
 }
 
 /* Purple */
 .hljs-keyword,
 .hljs-selector-tag {
-  color: sass.$purple;
+  color: sass.$purple-60;
 }
 
 .hljs-emphasis {
