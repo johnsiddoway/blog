@@ -1,50 +1,33 @@
 @use "@johnsiddoway/sass";
 
-// @include sass.configure(
-// 	$theme-colors: (
-// 		'primary': sass.$orange,
-// 		'info': sass.$blue,
-// 		'success': sass.$success,
-// 		'danger': sass.$danger,
-// 		'orange': sass.$orange,
-// 		'yellow': sass.$yellow,
-// 		'green': sass.$green,
-// 		'teal': sass.$teal,
-// 		'cyan': sass.$cyan,
-// 		'blue': sass.$blue,
-// 		'indigo': sass.$indigo,
-// 		'purple': sass.$purple,
-// 		'pink': sass.$pink,
-// 		'red': sass.$red,
-// 	),
-// );
-
 @include sass.abbr;
 @include sass.buttons;
 @include sass.cards;
 @include sass.details;
-@include sass.dialog;
 @include sass.inputs;
 @include sass.form;
 @include sass.label;
+@include sass.popover-auto;
+@include sass.popover-manual;
 @include sass.select;
+@include sass.table;
 @include sass.toggle;
 @include sass.tooltip;
 
 button {
-	--btn-background-color: transparent;
-	--btn-color: inherit;
-	--btn-border-color: currentColor;
-	box-shadow: .25rem .25rem .25rem 0rem currentColor;
+    --btn-background-color: transparent;
+    --btn-color: inherit;
+    --btn-border-color: currentColor;
+    box-shadow: .25rem .25rem .25rem 0rem currentColor;
 }
 
 .button-grid {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem 1rem;
-	margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1rem;
+    margin-bottom: 0.5rem;
 
-	> * {
-		width: 5rem;
-	}
+    > * {
+        width: 5rem;
+    }
 }
