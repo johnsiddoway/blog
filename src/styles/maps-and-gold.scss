@@ -28,6 +28,7 @@ $layout-main-breakpoints: 'lg','xl','2xl';
     --on-surface: #{sass.$black};
 
     --border-color: currentColor;
+    --border-style: solid;
     --border-width: 1px;
 
     --surface-box-shadow: #{sass.$surface-box-shadow};
