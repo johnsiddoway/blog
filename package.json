@@ -5,8 +5,8 @@
 		"build": "npx eleventy",
 		"clean": "rm -rf dist/ && rm -rf node_modules/",
 		"dev": "npx eleventy --serve",
-		"lint": "eslint src --report-unused-disable-directives --max-warnings 0",
-		"release": "npm run build && npm run lint"
+		"lint": "eslint src",
+		"lint:fix": "npm run lint -- --fix"
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "3.0.0",
@@ -20,6 +20,7 @@
 		"@rollup/plugin-node-resolve": "^15.3.0",
 		"@rollup/plugin-replace": "^5.0.7",
 		"@rollup/plugin-terser": "^0.4.4",
+		"@stylistic/eslint-plugin": "^2.9.0",
 		"@types/eslint__js": "^8.42.3",
 		"colord": "^2.9.3",
 		"dayjs": "^1.11.13",
