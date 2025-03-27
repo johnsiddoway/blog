@@ -1,18 +1,19 @@
-@use "@johnsiddoway/sass";
+@use "@johnsiddoway/sass" as *;
 
-@include sass.abbr;
-@include sass.buttons;
-@include sass.cards;
-@include sass.details;
-@include sass.inputs;
-@include sass.form;
-@include sass.label;
-@include sass.popover-auto;
-@include sass.popover-manual;
-@include sass.select;
-@include sass.table;
-@include sass.toggle;
-@include sass.tooltip;
+@include abbr;
+@include buttons;
+@include cards;
+@include details;
+@include inputs;
+@include form;
+@include label;
+@include popover-auto;
+@include popover-manual;
+@include select;
+@include table;
+@include textarea;
+@include toggle;
+@include tooltip;
 
 button {
     --btn-background-color: transparent;
