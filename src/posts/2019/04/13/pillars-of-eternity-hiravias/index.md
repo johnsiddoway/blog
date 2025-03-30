@@ -1,5 +1,5 @@
 ---
-title: Pillars of Eternity - Eder Build
+title: Pillars of Eternity - Hiravias Build
 date: '2019-04-13'
 layout: post.html
 tags: posts
