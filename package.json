@@ -14,7 +14,7 @@
         "@babel/preset-env": "^7.26.0",
         "@babel/preset-react": "^7.25.9",
         "@eslint/js": "^9.13.0",
-        "@johnsiddoway/sass": "^4.3.7",
+        "@johnsiddoway/sass": "^4.3.8",
         "@rollup/plugin-babel": "^6.0.4",
         "@rollup/plugin-commonjs": "^25.0.8",
         "@rollup/plugin-node-resolve": "^15.3.0",
