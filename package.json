@@ -1,43 +1,19 @@
 {
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "build": "npx eleventy",
-        "clean": "rm -rf dist/ && rm -rf node_modules/",
-        "dev": "npx eleventy --serve",
-        "lint": "eslint src",
-        "lint:fix": "npm run lint -- --fix"
-    },
-    "devDependencies": {
-        "@11ty/eleventy": "3",
-        "@11ty/eleventy-plugin-syntaxhighlight": "5",
-        "@babel/preset-env": "7",
-        "@babel/preset-react": "7",
-        "@eslint/js": "9",
-        "@johnsiddoway/sass": "*",
-        "@rollup/plugin-babel": "6",
-        "@rollup/plugin-commonjs": "28",
-        "@rollup/plugin-node-resolve": "16",
-        "@rollup/plugin-replace": "6",
-        "@rollup/plugin-terser": "0",
-        "@stylistic/eslint-plugin": "5",
-        "colord": "2",
-        "dayjs": "1",
-        "eslint": "9",
-        "lightningcss": "1",
-        "markdown-it-anchor": "9",
-        "markdown-it-attrs": "4",
-        "markdown-it-highlightjs": "4",
-        "react": "19",
-        "react-colorful": "5",
-        "react-dom": "19",
-        "rollup": "4",
-        "rollup-plugin-scss": "4",
-        "sass": "1",
-        "typescript": "5",
-        "typescript-eslint": "8"
-    },
-    "engines": {
-        "node": ">=18.0.0"
-    }
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "My personal blog.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "clean": "rm -rf dist/ && rm -rf node_modules/",
+    "dev": "npx @11ty/eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "johnsiddoway",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
 }
