@@ -6,14 +6,13 @@
   "scripts": {
     "build": "npx @11ty/eleventy",
     "clean": "rm -rf dist/ && rm -rf node_modules/",
-    "dev": "npx @11ty/eleventy --serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx @11ty/eleventy --serve"
   },
   "keywords": [],
   "author": "johnsiddoway",
   "license": "ISC",
   "type": "module",
-  "dependencies": {
+  "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
   }
 }
