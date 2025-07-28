@@ -3,4 +3,15 @@ layout: layout.html
 permalink: archive.html
 ---
 
-Archive Page
+{% assign posts = collections.posts | reverse %}
+
+<ul class="post-list">
+    {% for post in posts %}
+    <li>
+        <a href="{{ post.url }}">
+            <h1>{{ post.data.title }}</h1>
+        </a>
+        <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+    </li>
+    {% endfor %}
+</ul>
