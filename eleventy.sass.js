@@ -13,7 +13,7 @@ export default function sassPlugin(eleventyConfig) {
         useLayouts: false,
 
         compileOptions: {
-            permalink: function (contents, inputPath) {
+            permalink: function (inputContent, inputPath) {
                 let parsed = path.parse(inputPath);
                 const output = (inputPath.includes("posts/"))
                     ? `${parsed.dir.replace("./src", "")}/${parsed.name}.${outputFileExtension}`
