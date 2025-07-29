@@ -1,7 +1,7 @@
 import path from "node:path";
 import * as sass from "sass";
 
-const outputFileExtension = "css";
+const outputFileExtension = "min.css";
 
 export default function sassPlugin(eleventyConfig) {
     eleventyConfig.addTemplateFormats("scss");
@@ -32,6 +32,7 @@ export default function sassPlugin(eleventyConfig) {
             }
 
             let result = sass.compileString(inputContent, {
+                style: "compressed",
                 loadPaths: [
                     "./node_modules",
                     parsed.dir || ".",

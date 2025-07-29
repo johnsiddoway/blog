@@ -7,8 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Personal blog for John Siddoway" />
     <meta name="generator" content="{{ eleventy.generator }}" />
-    <link rel="stylesheet" href="/maps-and-gold.css" />
     <title>John Siddoway Blog: Maps and Gold</title>
+    <link rel="stylesheet" href="/maps-and-gold.min.css" />
+    {%- if page.url contains "/posts/" -%}
+    <link rel="stylesheet" href="/a11y-dark.min.css" />
+    {%- endif %}
+    {%- for link in links -%}
+    {{ link }}
+    {%- endfor %}
 </head>
 
 <body>

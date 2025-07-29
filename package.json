@@ -15,7 +15,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@eslint/js": "^9.32.0",
-    "@johnsiddoway/sass": "^4.3.8",
+    "@johnsiddoway/sass": "*",
     "@stylistic/eslint-plugin": "^5.2.2",
     "eslint": "^9.32.0",
     "sass": "^1.89.2",
