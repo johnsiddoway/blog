@@ -20,7 +20,6 @@
     "@stylistic/eslint-plugin": "^5.2.2",
     "colord": "^2.9.3",
     "esbuild": "^0.25.8",
-    "esbuild-sass-plugin": "^3.3.1",
     "eslint": "^9.32.0",
     "markdown-it-highlightjs": "^4.2.0",
     "react": "^19.1.1",

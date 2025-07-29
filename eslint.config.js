@@ -12,9 +12,13 @@ export default tseslint.config(
     tseslint.configs.recommended,
     // https://eslint.style/guide/config-presets
     // https://github.com/eslint-stylistic/eslint-stylistic/blob/main/packages/eslint-plugin/configs/customize.ts
-    stylistic.configs.customize({
-        indent: 4,
-        quotes: "double",
-        semi: true,
-    }),
+    {
+        name: "Stylistic Recmmended",
+        files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+        ...stylistic.configs.customize({
+            indent: 4,
+            quotes: "double",
+            semi: true,
+        }),
+    },
 );

@@ -1,6 +1,5 @@
 import path from "node:path";
 import esbuild from "esbuild";
-import { sassPlugin } from "esbuild-sass-plugin";
 
 export default function jsxPlugin(eleventyConfig) {
     eleventyConfig.addTemplateFormats(["js", "jsx"]);
@@ -28,7 +27,6 @@ export default function jsxPlugin(eleventyConfig) {
                     minify: true,
                     bundle: true,
                     write: false,
-                    plugins: [sassPlugin()],
                 });
 
                 return output.outputFiles[0].text;
