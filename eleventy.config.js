@@ -1,3 +1,4 @@
+import highlightjs from "markdown-it-highlightjs";
 import sassPlugin from "./eleventy.sass.js";
 
 export default async function (eleventyConfig) {
@@ -20,6 +21,9 @@ export default async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/**/*.png");
 
     eleventyConfig.addPlugin(sassPlugin);
+
+    eleventyConfig.amendLibrary("md", mdLib => mdLib
+        .use(highlightjs));
 
     return {
         dir: {

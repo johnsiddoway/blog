@@ -18,6 +18,7 @@
     "@johnsiddoway/sass": "*",
     "@stylistic/eslint-plugin": "^5.2.2",
     "eslint": "^9.32.0",
+    "markdown-it-highlightjs": "^4.2.0",
     "sass": "^1.89.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0"
