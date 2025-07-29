@@ -1,4 +1,5 @@
 import highlightjs from "markdown-it-highlightjs";
+import jsxPlugin from "./eleventy.jsx.js";
 import sassPlugin from "./eleventy.sass.js";
 
 export default async function (eleventyConfig) {
@@ -20,6 +21,7 @@ export default async function (eleventyConfig) {
     // Copy all .pngs to ${outputDir}/**/*.png; Keeps the same directory structure.
     eleventyConfig.addPassthroughCopy("src/**/*.png");
 
+    eleventyConfig.addPlugin(jsxPlugin);
     eleventyConfig.addPlugin(sassPlugin);
 
     eleventyConfig.amendLibrary("md", mdLib => mdLib
