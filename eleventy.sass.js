@@ -30,10 +30,6 @@ export default function sassPlugin(eleventyConfig) {
             if (parsed.name.startsWith("_")) {
                 return;
             }
-            // // Don't compile files inside the posts directory
-            // if (inputPath.indexOf("/posts/") >= 0) {
-            //     return;
-            // }
             let result = sass.compileString(inputContent, {
                 style: "compressed",
                 loadPaths: [
