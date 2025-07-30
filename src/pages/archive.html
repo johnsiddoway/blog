@@ -1,0 +1,14 @@
+---
+layout: layout.html
+permalink: archive.html
+---
+<ul class="post-list">
+    {% for post in collections.posts reversed %}
+    <li>
+        <a href="{{ post.url }}">
+            <h1>{{ post.data.title }}</h1>
+        </a>
+        <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+    </li>
+    {% endfor %}
+</ul>
