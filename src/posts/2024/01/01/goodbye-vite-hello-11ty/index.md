@@ -13,15 +13,15 @@ This is the 3rd post in a series I think I'm calling "Oh my god why are there so
 * [Goodbye Jekyll Hello Nextjs](posts/2023/01/15/goodbye-jekyll-hello-nextjs/index.md)
 * [Goodbye Nextjs Hello Vite](posts/2023/06/26/goodbye-next-hello-vite/index.md)
 
-# What was wrong with Vite?
+## What was wrong with Vite?
 
 First of all, let me say that Vite seems to be a perfect fit for what I'm looking for in a Single Page Application (SPA) that uses React. It works pretty much straight out of the box, it only has a few opinionated ways of structuring and writing your code, and it has great documentation. However, for my blog it wasn't quite what I was looking for because Vite seemed to want to build a javascript app rather than "opt into" the javascript. I wanted something that would start with simply converting Markdown to HTML, and would let me slowly add javascript where necessary.
 
-# Enter 11ty
+## Enter 11ty
 
 [11ty](https://11ty.dev/) seemed to be exactly what I was looking for. It starts off **very** simple, but supports the basic functionality that I was looking for; it converts [Markdown to HTML](https://www.11ty.dev/docs/languages/markdown/) using [markdown-it](https://www.npmjs.com/package/markdown-it), and has support for [layouts](https://www.11ty.dev/docs/layouts/) so each blog post can remain simple markdown files. This made it relatively straightforward to convert from Vite to 11ty and have most of the site working exactly the same as before.
 
-# Partial Hydration
+## Partial Hydration
 
 One thing that took me quite a while to figure out (and I'm still working on smoothing out) is how to actually implement [partial hydration](https://en.wikipedia.org/wiki/Hydration_(web_development)), which is bascially a fancy way of saying "add javascript to an otherwise static website." It's basically building websites that would have not been out of place 10-15 years ago when JQuery was the most advanced javascript library.
 
@@ -41,7 +41,7 @@ I ended up digging into how Vite compiles the React code into a single javascrip
 
 The main body of the [jsx plugin](https://github.com/johnsiddoway/blog/blob/1111cf1913324e56152446094cda758e94dadb5b/jsxPlugin.js) that I wrote is mostly straight off of the Rollup docs, but it's wrapped up as an Eleventy module. I had some more trouble at some point until I realized that I only wanted this script to execute on files under `/posts/`, and I only wanted it to execute on files that did not start with an underscore, like `_module.js`. Once I was able to narrow down the scope of what my rollup script was executing against, I was able to do a better job of iterating on the actual Rollup script to finally generate a javascript file for a functional React "app".
 
-```
+```javascript
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addTemplateFormats(['js', 'jsx']);
 

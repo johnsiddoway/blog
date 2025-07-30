@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { useEffect } from "react";
 
 // Improved version of https://usehooks.com/useOnClickOutside/

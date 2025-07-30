@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React, { useCallback, useReducer, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { HexColorPicker } from "react-colorful";
@@ -32,7 +31,7 @@ function PopoverPicker({ color, onChange }) {
 function ColorPicker({ color, onChange, label }) {
     return (
         <div className="colorPicker">
-            <label for={label}>{label}</label>
+            <label htmlFor={label}>{label}</label>
             <div className="inputGroup">
                 <input id={label} value={color} onChange={e => onChange(e.target.value)} />
                 <PopoverPicker color={color} onChange={onChange} />

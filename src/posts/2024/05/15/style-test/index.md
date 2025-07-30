@@ -13,7 +13,7 @@ This post is meant to be a test-bed for my personal SASS library that I plan on 
 
 A hesitant shout-out to a recent article I read, [You Don't Need a CSS Framework](https://www.infoq.com/articles/no-need-css-framework/). I don't agree with several points made in the article, but the author's reference site, [starterapp.style](https://www.starterapp.style/), is really well laid out for showcasing how a stylesheet will render.
 
-# Typography
+## Typography
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
@@ -29,7 +29,7 @@ anim id est laborum.
 * List
 * Items
 
-# Buttons
+## Buttons
 
 <div class="button-grid">
     <button>Default</button>
@@ -66,7 +66,7 @@ anim id est laborum.
     <button class="btn-red-inverted">Red</button>
 </div>
 
-# Forms
+## Forms
 
 <form>
   <fieldset>
@@ -190,7 +190,7 @@ anim id est laborum.
   </fieldset>
 </form>
 
-# Tables
+## Tables
 
 <div class="table-wrapper">
     <table>
@@ -298,7 +298,7 @@ anim id est laborum.
     </table>
 </div>
 
-# Modals
+## Modals
 
 <dialog id="dialog-example">
     <article>
@@ -335,13 +335,13 @@ anim id est laborum.
 
 <button type="button" popovertarget="popover-modal">Open Modal Popover</button>
 
-# Tooltips
+## Tooltips
 
 <span data-tooltip="Here is some additional info">Hover over me</span> to see a tooltip.
 
 <span data-tooltip="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</span> to see a tooltip with a ton of text.
 
-# Abbreviations
+## Abbreviations
 
 The `<abbr>` element receives basic styling to make it stand out amongst paragraph text. You can pair this with Tooltips to customize the popup.
 
@@ -349,7 +349,7 @@ The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.
 
 The <abbr data-tooltip="Hypertext Markup Language">HTML</abbr> abbreviation element.
 
-# Cards
+## Cards
 
 <div class="card">
     <h2>Lorem ipsum</h2>
@@ -384,14 +384,14 @@ The <abbr data-tooltip="Hypertext Markup Language">HTML</abbr> abbreviation elem
     </p>
 </div>
 
-# Code
+## Code
 
 Code can be displayed inline with the <code>&lt;code&gt;</code> tag, or in a block
 
 <pre><code>like this,
 with &lt;pre&gt; and &lt;code&gt;</code></pre>
 
-# Toggles
+## Toggles
 
 Toggles should be used for actions that take effect on click, as opposed to checkboxes, which should be used for actions that take effect when a form is submitted.
 
@@ -400,7 +400,7 @@ Toggles should be used for actions that take effect on click, as opposed to chec
 	Turn it up to eleven
 </label>
 
-# Accordions
+## Accordions
 
 If a group of <code>&lt;details&gt;</code> elements all have the same <code>name</code> attribute, most browsers will only allow one of them to be open at a time. Firefox <a href="https://caniuse.com/mdn-html_elements_details_name">doesn't support this</a>, but it's supported by most other browsers, and degrades relatively gracefully.
 

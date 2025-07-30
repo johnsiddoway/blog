@@ -48,12 +48,12 @@ lens.style.backgroundImage = "url('" + this.src + "')";
 
 This is only half of it though. Turns out, we need to inject this element somewhere on the page. I decided to do this in two steps: create a parent div wrapping the original image, and then inject the lens into that same wrapper. I did it after the original image, but order doesn't matter.
 
-**Before:**
+> Before
 ```html
 <img src="...">
 ```
 
-**After:**
+> After
 ```html
 <div>
     <img src="...">
@@ -70,28 +70,28 @@ At this point, we have a full-size copy of the same image on the page, albeit hi
 
 Once we have these three pieces of information, we can calculate the value of the fourth piece of information, the X,Y coordinate we are solving for.
 
-**1**
-```
+> 1
+```bash
 MOUSE POSITION          DESIRED VALUE
 -------------------  =  -------------------
 SHRUNKEN IMAGE SIZE     ORIGINAL IMAGE SIZE
 ```
 
-**2**
-```
+> 2
+```bash
 MOUSE * ORIGINAL IMAGE SIZE     DESIRED VALUE * ORIGINAL IMAGE SIZE
 ---------------------------  =  -----------------------------------
 SHRUNKEN IMAGE SIZE             ORIGINAL IMAGE SIZE
 ```
 
-**3**
-```
+> 3
+```bash
 (MOUSE * ORIGINAL IMAGE SIZE / SHRUNKEN IMAGE SIZE) = DESIRED VALUE
 ```
 
 This isn't exactly the final answer either. If we stopped here, you'd notice two problems: 1) the position of the mouse is in the upper-left corner of the lens, not in the center; 2) as you move the mouse around the image the image moves *opposite* of our mouse.  The second problem is easier to solve than the other: multiply our value by -1. The first problem requires us to pull in another value, the rendered size of the lens. Once we have this, we can adjust the lens positioning by 50% of this value.
 
-**4**
-```
+> 4
+```bash
 (MOUSE * ORIGINAL IMAGE / SHRUNKEN IMAGE - (LENS SIZE / 2)) * -1 = DESIRED VALUE
 ```

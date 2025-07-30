@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 class StarRating {
     constructor() {
         this.printValue("example-one", "example-one-value");

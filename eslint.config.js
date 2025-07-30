@@ -1,24 +1,29 @@
-// @ts-check
-
-import eslint from "@eslint/js";
-import stylistic from "@stylistic/eslint-plugin";
-import { globalIgnores } from "eslint/config";
+import js from "@eslint/js";
+import globals from "globals";
 import tseslint from "typescript-eslint";
+import pluginReact from "eslint-plugin-react";
+import json from "@eslint/json";
+import markdown from "@eslint/markdown";
+import css from "@eslint/css";
+import { defineConfig, globalIgnores } from "eslint/config";
 
-// https://typescript-eslint.io/getting-started
-export default tseslint.config(
-    globalIgnores(["dist/"]),
-    eslint.configs.recommended,
+export default defineConfig([
+    globalIgnores(["dist/", "package.json", "package-lock.json"]),
+    { files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.browser } },
     tseslint.configs.recommended,
-    // https://eslint.style/guide/config-presets
-    // https://github.com/eslint-stylistic/eslint-stylistic/blob/main/packages/eslint-plugin/configs/customize.ts
     {
-        name: "Stylistic Recmmended",
-        files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
-        ...stylistic.configs.customize({
-            indent: 4,
-            quotes: "double",
-            semi: true,
-        }),
+        files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
+        settings: {
+            react: {
+                version: "detect"
+            }
+        },
+        ...pluginReact.configs.flat.recommended,
+        rules: {
+            "react/prop-types": ['off'],
+        }
     },
-);
+    { files: ["**/*.json"], plugins: { json }, language: "json/json", extends: ["json/recommended"] },
+    { files: ["**/*.md"], plugins: { markdown }, language: "markdown/commonmark", extends: ["markdown/recommended"] },
+    { files: ["**/*.css"], plugins: { css }, language: "css/css", extends: ["css/recommended"] },
+]);
