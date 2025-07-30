@@ -14,7 +14,7 @@ While I usually use Microsoft Azure cloud services for personal development, I f
 
 [This article](https://www.stevejgordon.co.uk/credential-loading-and-the-aws-sdk-for-dotnet-deep-dive) does a great job of showing what your code looks like with and without these defaults:
 
-{.mb-0}**Without Defaults**
+> Without Defaults
 ```csharp
 public class Startup
 {
@@ -29,7 +29,7 @@ public class Startup
 }
 ```
 
-**With Defaults**
+> With Defaults
 ```csharp
 public class Startup
 {
@@ -40,7 +40,7 @@ public class Startup
 }
 ```
 
-**With Profiles**
+> With Profiles
 ```csharp
 public class Startup
 {
@@ -55,6 +55,7 @@ public class Startup
 ```
 
 For C# Web Applications, you can also leverage [ASP.NET Environment-Based Startup](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-5.0#environment-based-startup-class-and-methods) options to use different profiles based on whether you're running in development or production environments:
+
 ```csharp
 public class Startup
 {
