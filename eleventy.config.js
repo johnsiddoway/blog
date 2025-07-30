@@ -1,4 +1,5 @@
-import highlightjs from "markdown-it-highlightjs";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItHighlightJS from "markdown-it-highlightjs";
 import jsxPlugin from "./eleventy.jsx.js";
 import sassPlugin from "./eleventy.sass.js";
 
@@ -25,7 +26,8 @@ export default async function (eleventyConfig) {
     eleventyConfig.addPlugin(sassPlugin);
 
     eleventyConfig.amendLibrary("md", mdLib => mdLib
-        .use(highlightjs));
+        .use(markdownItAnchor)
+        .use(markdownItHighlightJS));
 
     return {
         dir: {
