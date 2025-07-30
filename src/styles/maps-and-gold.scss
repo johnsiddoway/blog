@@ -166,3 +166,24 @@ code {
 .mb-0 {
     margin-bottom: 0;
 }
+
+// Some posts use blockquotes right before code blocks to give them a header.
+// This concept was copied from the example for the Jekyll Clean Dark theme
+// https://pavelmakhov.com/jekyll-clean-dark/2016/10/code-syntax-highlighting/#:~:text=To%20add%20name%20to%20the%20code%20snippet
+// Instead of requiring a blockquote with a specific class,
+// I'm just checking to see if a blockquote is followed by a code block.
+blockquote:has(+ pre) {
+    margin: 1em 0 0 0;
+    padding: 0.25em 1em;
+    background-color: #{sass.$gray-10};
+    color: #{sass.$light};
+    font-style: italic;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+blockquote + pre {
+    margin-top: 0;
+}
