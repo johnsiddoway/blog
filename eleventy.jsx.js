@@ -7,12 +7,7 @@ export default function jsxPlugin(eleventyConfig) {
     eleventyConfig.addExtension(["js", "jsx"], {
         outputFileExtension: "js",
 
-        // `compile` is called once per file in the input directory
         compile: async function (inputContent, inputPath) {
-            // Don't compile files outside the posts directory
-            if (inputPath.indexOf("/posts/") <= 0) {
-                return;
-            }
             // Don’t compile file names that start with an underscore
             let parsed = path.parse(inputPath);
             if (parsed.name.startsWith("_")) {
@@ -21,7 +16,6 @@ export default function jsxPlugin(eleventyConfig) {
 
             return async () => {
                 let output = await esbuild.build({
-                    outdir: "dist",
                     target: "es2020",
                     entryPoints: [inputPath],
                     minify: true,
