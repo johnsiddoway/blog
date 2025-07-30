@@ -17,7 +17,7 @@ To reiterate: The reasons I opted to abandon Jekyll and Ruby on Rails:
 
 And so I ported this site over to Next.js. It technically worked fine, but there was something that didn't quite feel right. If you looked at the files on disc, it was something like below. If I've been reading this all correctly, there's 115 kB of javascript on every page. 27.9 kB of which is actually CSS (more on that later), so it's actually 87.1 kB of javascript. But this blog was intentionally planned to be as lean and lightweight as possible. None of that javascript is actually necessary for any of the pages to load. But I couldn't figure out how to get rid of it, short of writing a custom script to go into the `out` folder, open every `.html` file, and remove every javascript reference I didn't think I had intentionally added myself.
 
-```
+```bash
 Route (pages)                                     Size     First Load JS
 ┌ ● / (2608 ms)                                   705 B           115 kB
 ├   /_app                                         0 B            86.9 kB
@@ -59,7 +59,7 @@ Vite seemed like the best balance of "write the code my way" and "helpful featur
 
 One problem my blog currently has is that it's not *actually* a fully static site: It's a React App, so if users have Javascript disabled then none of my posts show up. And due to how I'm parsing markdown to HTML, the bundled javascript assets are **even bigger than before**. Take this example output from running `npm run build` today:
 
-```
+```bash
 vite v4.3.9 building for production...
 transforming (401) node_modules\is-extendable\index.jsnode_modules/gray-matter/lib/engines.js (43:13)
   Use of eval in "node_modules/gray-matter/lib/engines.js" is strongly discouraged as it poses security risks and may cause issues with minification.

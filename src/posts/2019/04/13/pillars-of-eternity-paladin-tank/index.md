@@ -7,7 +7,7 @@ tags: posts
 
 A very defensive build, Paladin tanks aren't interested in doing more damage than they have to. The build below dedicates several talents & abilities to buffs (Exhortations) for the party, but you may find that you need to sacrifice these in order to make your Paladin even tankier.
 
-# Stats
+## Stats
 <dl class="row">
     <dt class="col-sm-3">Might</dt>
     <dd class="col-sm-9">18+ more for the bonus to healing than the bonus to damage</dd>
@@ -36,7 +36,7 @@ A very defensive build, Paladin tanks aren't interested in doing more damage tha
     </dd>
 </dl>
 
-# Talents & Abilities
+## Talents & Abilities
 <dl class="row">
     <dt class="col-sm-3">1</dt>
     <dd class="col-sm-9">Lay on Hands</dd>
@@ -74,12 +74,12 @@ A very defensive build, Paladin tanks aren't interested in doing more damage tha
     <dd class="col-sm-9">Hold The Line / Defense Boosts (Will, Fortitude, etc) / Wound Binding</dd>
 </dl>
 
-# Gear
+## Gear
 * Weapon: Anything that debuffs on hit, or weapons with "Coordinated Attacks" enhancement
 * Shield: We dont' care about our own Accuracy, so the shield with the highest Deflection wins
 * Armor: The heaviest armor you can find. Enchantments like Second Chance are good
 
-# Final Gear
+## Final Gear
 
 <dl class="row">
     <dt>Company Captain's Hat</dt>

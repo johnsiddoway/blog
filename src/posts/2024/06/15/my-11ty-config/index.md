@@ -14,7 +14,7 @@ One benefit of switching to Eleventy was that it was so simple and lean, I had t
 
 Another example: Eleventy 2.X does not support ESM, but pretty much all of the Node code I interact with at work uses Typescript and ES6 modules.
 
-```
+```bash
 /
 |- public/
 | |- favicon.ico
@@ -32,7 +32,7 @@ Another example: Eleventy 2.X does not support ESM, but pretty much all of the N
 
 After:
 
-```
+```bash
 /
 |- public/
 | |- favicon.ico
