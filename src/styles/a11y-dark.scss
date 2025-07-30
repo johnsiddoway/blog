@@ -1,5 +1,10 @@
 @use "@johnsiddoway/sass";
 
+/*
+  Based on the a11y-dark theme: https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-dark.css
+  Manually setting colors based on theme colors
+*/
+
 /* Base highlight.js */
 pre code.hljs {
   display: block;
@@ -9,11 +14,6 @@ pre code.hljs {
 code.hljs {
   padding: 3px 5px;
 }
-
-/*!
-  Based on the a11y-dark theme: https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-dark.css
-  Manually setting colors based on theme colors
-*/
 
 .hljs {
   background: sass.$gray-20;
