@@ -1,0 +1,17 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for page in collections.posts %}
+  {%- assign draft = page.data.draft %}
+  {%- if not draft  %}
+    {%- capture absoluteUrl %}{{ page.url | htmlBaseUrl: "https://blog.johnsiddoway.net" }}{%- endcapture %}
+    <url>
+      <loc>{{ absoluteUrl }}</loc>
+      <lastmod>{{ page.date | toISODate }}</lastmod>
+    </url>
+  {%- endif %}
+{%- endfor %}
+</urlset>
