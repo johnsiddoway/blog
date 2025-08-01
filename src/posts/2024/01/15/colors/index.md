@@ -1,6 +1,6 @@
 ---
 title: 'Color Swatch Test'
-date: '2024-01-15'
+date: 2024-01-15
 tags: posts
 layout: post.html
 links:

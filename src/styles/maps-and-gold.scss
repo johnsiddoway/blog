@@ -1,32 +1,28 @@
-$layout-main-breakpoints: 'lg', 'xl', '2xl';
+$layout-main-breakpoints: "lg", "xl", "2xl";
 
-@use '@johnsiddoway/sass';
+@use "@johnsiddoway/sass";
 
 // TODO: Figure out how to fold this into sass lib?
 @font-face {
-    font-family: 'Open Sans';
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 400;
-    src: url('/OpenSans.ttf') format('truetype');
+    src: url("/OpenSans.ttf") format("truetype");
     font-display: swap;
 }
 
-@include sass.reset;
-@include sass.layout-root;
-@include sass.dl;
-
 :root {
     --primary: #{sass.$orange-60};
-    --primary-variant: #{sass.$orange-40};
-    --secondary: #{sass.$gray-60};
-    --secondary-variant: #{sass.$gray-50};
+    // --primary-variant: #{sass.$orange-40};
+    // --secondary: #{sass.$gray-60};
+    // --secondary-variant: #{sass.$gray-50};
     --background: #{sass.$white};
-    --surface: #{sass.$white};
+    // --surface: #{sass.$white};
 
-    --on-primary: #{sass.$black};
-    --on-secondary: #{sass.$black};
+    // --on-primary: #{sass.$black};
+    // --on-secondary: #{sass.$black};
     --on-background: #{sass.$black};
-    --on-surface: #{sass.$black};
+    // --on-surface: #{sass.$black};
 
     --border-color: currentColor;
     --border-style: solid;
@@ -41,9 +37,18 @@ $layout-main-breakpoints: 'lg', 'xl', '2xl';
     :root {
         --background: #{sass.$gray-10};
         --on-background: #{sass.$white};
-        --surface: #{sass.$gray-20};
-        --on-surface: #{sass.$white};
+        // --surface: #{sass.$gray-20};
+        // --on-surface: #{sass.$white};
     }
+}
+
+@include sass.reset;
+
+%flex-between {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    column-gap: 1rem; // minimum space between columns
 }
 
 body {
@@ -52,75 +57,64 @@ body {
     min-height: 100vh;
     background-color: var(--background);
     color: var(--on-background);
+    font-family: "Open Sans", "Segoe UI", "Roboto", "Fira Sans", "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: start;
+
+    > header,
+    footer {
+        background: var(--on-background);
+        color: var(--background);
+
+        a {
+            color: var(--background);
+            text-decoration: none;
+        }
+    }
 
     > header {
-        background: #{sass.$dark};
-        color: #{sass.$light};
         margin-bottom: 1.5rem;
 
         nav {
+            @extend %flex-between;
             @include sass.make-container($padding: 0.5rem 0.75rem);
-        }
 
-        nav,
-        div {
-            display: flex;
-            align-items: baseline;
-            /*justify-content: space-between;*/
-            column-gap: 1rem;
-        }
-
-        a {
-            color: sass.$light;
-            text-decoration: none;
+            div {
+                @extend %flex-between;
+            }
         }
 
         a.brand {
+            background: linear-gradient(#ff8000, #ffb366, #ffe6cc, #ffb366, #ff8000);
+            background-clip: text;
+            color: transparent;
             font-weight: sass.$font-weight-bold;
             font-size: sass.$font-size-lg;
-        }
-
-        button {
-            --btn-border-color: transparent;
-            --btn-background-color-hover: transparent;
         }
     }
 
     > main {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 5rem;
         margin-bottom: 1.5rem;
         @include sass.make-container($padding: 0 0.75rem);
 
-        > * {
-            flex: 1 1 0%;
-            max-width: 100%;
+        a {
+            color: #0073e6; // custom dark blue
         }
     }
 
     > footer {
-        background: #{sass.$dark};
-        color: #{sass.$light};
         margin-top: auto;
         padding: 0.5rem 0.75rem;
         text-align: center;
     }
 }
 
-header .brand {
-    background: linear-gradient(#ff8000, #ffb366, #ffe6cc, #ffb366, #ff8000);
-    background-clip: text;
-    color: transparent;
-}
-
 %post-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    column-gap: 1rem;
+    @extend %flex-between;
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid currentColor;
+    border-bottom: var(--border-width) var(--border-style) var(--border-color);
 
     a {
         text-decoration: none;
@@ -134,10 +128,6 @@ header .brand {
     time {
         min-width: fit-content;
     }
-}
-
-a {
-    color: #0073e6; // custom dark blue
 }
 
 article {
@@ -157,12 +147,4 @@ article {
     li {
         @extend %post-header;
     }
-}
-
-code {
-    word-wrap: break-word;
-}
-
-.mb-0 {
-    margin-bottom: 0;
 }

@@ -5,13 +5,12 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for page in collections.posts %}
-  {%- assign draft = page.data.draft %}
-  {%- if not draft  %}
-    {%- capture mappedUrl %}{{ metadata.url }}{{ page.url | url }}{%- endcapture %}
+    {%- assign draft = page.data.draft %}
+    {%- if not draft  %}
     <url>
-      <loc>{{ mappedUrl }}</loc>
-      <lastmod>{{ page.date | htmlDateString }}</lastmod>
+        <loc>{{ page.url | htmlBaseUrl }}</loc>
+        <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
     </url>
-  {%- endif %}
+    {%- endif %}
 {%- endfor %}
 </urlset>

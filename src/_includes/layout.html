@@ -10,7 +10,7 @@
     <title>John Siddoway Blog: Maps and Gold</title>
     <link rel="stylesheet" href="/maps-and-gold.min.css" />
     {%- if page.url contains "/posts/" -%}
-    <link rel="stylesheet" href="/a11y-dark.min.css" />
+    <link rel="stylesheet" href="/posts.min.css" />
     {%- endif %}
     {%- for link in links -%}
     {{ link }}
@@ -21,8 +21,11 @@
     <header>
         <nav>
             <a href="/" class="brand">Maps and Gold</a>
-            <a href="/archive/">Archive</a>
-            <a href="/about/">About</a>
+            <div>
+                <a href="/">Home</a>
+                <a href="/archive/">Archive</a>
+                <a href="/about/">About</a>
+            </div>
         </nav>
     </header>
     <main>{{ content }}</main>

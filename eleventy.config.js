@@ -1,5 +1,4 @@
 import { HtmlBasePlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
-import { DateTime } from "luxon";
 import anchor from "markdown-it-anchor";
 import highlightjs from "markdown-it-highlightjs";
 import jsxPlugin from "./eleventy.jsxPlugin.js";
@@ -18,18 +17,15 @@ export default async function (eleventyConfig) {
         return array.slice(0, n);
     });
 
-    // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-    eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-        return DateTime.fromJSDate(dateObj).toISODate();
-    });
-
     // Copy anything in the /public/ folder over to ${outputDir}/
     eleventyConfig.addPassthroughCopy({ "public": "/" });
     // Copy all .pngs to ${outputDir}/**/*.png; Keeps the same directory structure.
     eleventyConfig.addPassthroughCopy("src/**/*.png");
 
     // Used in src/pages/sitemap.xml.liquid to generate full URLs
-    eleventyConfig.addPlugin(HtmlBasePlugin);
+    eleventyConfig.addPlugin(HtmlBasePlugin, {
+        baseHref: process.env.BASE_HREF ?? eleventyConfig.pathPrefix,
+    });
     eleventyConfig.addPlugin(jsxPlugin);
     eleventyConfig.addPlugin(sassPlugin);
     eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
@@ -38,8 +34,9 @@ export default async function (eleventyConfig) {
         .use(anchor)
         .use(highlightjs));
 
+    // https://liquidjs.com/tutorials/options.html#Date, set the timezone to UTC when reading dates out of front matter
     eleventyConfig.setLiquidOptions({
-        timezoneOffset: 0 // https://liquidjs.com/tutorials/options.html#Date, set the timezone to UTC when reading dates out of front matter
+        timezoneOffset: 0 
     });
 
     eleventyConfig.setServerPassthroughCopyBehavior("passthrough");

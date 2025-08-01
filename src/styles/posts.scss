@@ -1,11 +1,41 @@
 @use "@johnsiddoway/sass";
 
-/*
-  Based on the a11y-dark theme: https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-dark.css
-  Manually setting colors based on theme colors
-*/
+.mb-0 {
+    margin-bottom: 0;
+}
 
-/* Base highlight.js */
+// Needed for the various Pillars of Eternity pages
+@include sass.dl;
+
+code {
+    word-wrap: break-word;
+}
+
+// Some posts use blockquotes right before code blocks to give them a header.
+// This concept was copied from the example for the Jekyll Clean Dark theme
+// https://pavelmakhov.com/jekyll-clean-dark/2016/10/code-syntax-highlighting/#:~:text=To%20add%20name%20to%20the%20code%20snippet
+// Instead of requiring a blockquote with a specific class,
+// I'm just checking to see if a blockquote is followed by a code block.
+blockquote:has(+ pre) {
+    margin: 1em 0 0 0;
+    padding: 0.25em 1em;
+    background-color: #{sass.$gray-10};
+    color: var(--background);
+    font-style: italic;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+blockquote + pre {
+    margin-top: 0;
+}
+
+//  Based on the a11y-dark theme: https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-dark.css
+//  Manually setting colors based on theme colors
+
+// Base highlight.js
 pre code.hljs {
   display: block;
   overflow-x: auto;
@@ -20,13 +50,13 @@ code.hljs {
   color: sass.$light;
 }
 
-/* Yellow */
+// Yellow
 .hljs-comment,
 .hljs-quote {
   color: sass.$yellow-60;
 }
 
-/* Red */
+// Red
 .hljs-deletion,
 .hljs-name,
 .hljs-regexp,
@@ -38,7 +68,7 @@ code.hljs {
   color: sass.$red-60;
 }
 
-/* Orange */
+// Orange
 .hljs-built_in,
 .hljs-link,
 .hljs-literal,
@@ -49,12 +79,12 @@ code.hljs {
   color: sass.$orange-60;
 }
 
-/* Yellow */
+// Gold
 .hljs-attribute {
   color: gold;
 }
 
-/* Green */
+// Green
 .hljs-addition,
 .hljs-bullet,
 .hljs-string,
@@ -62,13 +92,13 @@ code.hljs {
   color: sass.$green-60;
 }
 
-/* Blue */
+// Blue
 .hljs-section,
 .hljs-title {
   color: sass.$blue-60;
 }
 
-/* Purple */
+// Purple
 .hljs-keyword,
 .hljs-selector-tag {
   color: sass.$purple-60;

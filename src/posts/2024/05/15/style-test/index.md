@@ -1,6 +1,6 @@
 ---
 title:  'CSS Style Testing'
-date:  '2024-05-15'
+date:  2024-05-15
 description: 'First post'
 layout: post.html
 tags: posts
