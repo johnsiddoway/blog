@@ -1,0 +1,37 @@
+$container-breakpoints: "lg", "xl", "2xl";
+
+@use "sass:map";
+@use "@johnsiddoway/sass";
+
+%container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+%responsive-container {
+    // $breakpoints: variables.$container-breakpoints, $grid-breakpoints: variables.$container-grid-breakpoints, $max-widths: variables.$container-max-widths) {
+    @extend %container;
+
+    @each $breakpoint in $container-breakpoints {
+        @if not map.has-key($map: sass.$container-grid-breakpoints, $key: #{$breakpoint}) {
+            @debug "container-grid-breakpoints does not have an entry for #{$breakpoint}, skipping";
+        } @else if not map.has-key($map: sass.$container-max-widths, $key: #{$breakpoint}) {
+            @warn "container-max-widths does not have an entry for #{$breakpoint}, cannot create a media rule for this breakpoint";
+        } @else {
+            $grid-breakpoint: map.get(sass.$container-grid-breakpoints, #{$breakpoint});
+            $max-width: map.get(sass.$container-max-widths, #{$breakpoint});
+
+            @media (min-width: $grid-breakpoint) {
+                max-width: $max-width;
+            }
+        }
+    }
+}
+
+%flex-between {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    column-gap: 1rem; // minimum space between columns
+}

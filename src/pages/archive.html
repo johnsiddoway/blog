@@ -1,10 +1,12 @@
 ---
 layout: layout.html
 permalink: archive.html
+links:
+- <link rel="stylesheet" href="post-list.min.css">
 ---
 <ul class="post-list">
     {% for post in collections.posts reversed %}
-    <li>
+    <li class="post-header">
         <a href="{{ post.url }}">
             <h1>{{ post.data.title }}</h1>
         </a>

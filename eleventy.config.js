@@ -24,7 +24,8 @@ export default async function (eleventyConfig) {
 
     // Used in src/pages/sitemap.xml.liquid to generate full URLs
     eleventyConfig.addPlugin(HtmlBasePlugin, {
-        baseHref: process.env.BASE_HREF ?? eleventyConfig.pathPrefix,
+        // eslint-disable-next-line no-undef
+        baseHref: process.env.BASE_HREF ?? eleventyConfig.pathPrefix ?? '/',
     });
     eleventyConfig.addPlugin(jsxPlugin);
     eleventyConfig.addPlugin(sassPlugin);
