@@ -9,9 +9,11 @@
     <meta name="generator" content="{{ eleventy.generator }}" />
     <title>John Siddoway Blog: Maps and Gold</title>
     <link rel="stylesheet" href="/maps-and-gold.min.css" />
+
     {%- if page.url contains "/posts/" -%}
     <link rel="stylesheet" href="/posts.min.css" />
     {%- endif %}
+
     {%- for link in links -%}
     {{ link }}
     {%- endfor %}

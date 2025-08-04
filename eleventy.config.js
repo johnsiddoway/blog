@@ -1,10 +1,22 @@
-import { HtmlBasePlugin, InputPathToUrlTransformPlugin } from "@11ty/eleventy";
+import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import anchor from "markdown-it-anchor";
 import highlightjs from "markdown-it-highlightjs";
 import jsxPlugin from "./eleventy.jsxPlugin.js";
 import sassPlugin from "./eleventy.sassPlugin.js";
 
 export default async function (eleventyConfig) {
+    // eslint-disable-next-line no-undef
+    const baseUrl = process.env.BASE_HREF ?? eleventyConfig.pathPrefix ?? "/";
+
+    // Explicity convert a relative URL to an absolute URL for sitemap.xml.
+    // I prefer this to the HtmlBasePlugin from 11ty as I want to keep most URLs relative.
+    eleventyConfig.addFilter("absoluteUrl", (relativeUrl) => {
+        if (baseUrl === "/") {
+            return relativeUrl;
+        }
+        return new URL(relativeUrl, baseUrl);
+    });
+
     // Get the first `n` elements of a collection.
     eleventyConfig.addFilter("head", (array, n) => {
         if (!Array.isArray(array) || array.length === 0) {
@@ -22,11 +34,6 @@ export default async function (eleventyConfig) {
     // Copy all .pngs to ${outputDir}/**/*.png; Keeps the same directory structure.
     eleventyConfig.addPassthroughCopy("src/**/*.png");
 
-    // Used in src/pages/sitemap.xml.liquid to generate full URLs
-    eleventyConfig.addPlugin(HtmlBasePlugin, {
-        // eslint-disable-next-line no-undef
-        baseHref: process.env.BASE_HREF ?? eleventyConfig.pathPrefix ?? '/',
-    });
     eleventyConfig.addPlugin(jsxPlugin);
     eleventyConfig.addPlugin(sassPlugin);
     eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
