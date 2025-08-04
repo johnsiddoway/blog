@@ -8,76 +8,111 @@ tags: posts
 A very defensive build, Paladin tanks aren't interested in doing more damage than they have to. The build below dedicates several talents & abilities to buffs (Exhortations) for the party, but you may find that you need to sacrifice these in order to make your Paladin even tankier.
 
 ## Stats
-<dl class="row">
-    <dt class="col-sm-3">Might</dt>
-    <dd class="col-sm-9">18+ more for the bonus to healing than the bonus to damage</dd>
-    <dt class="col-sm-3">Constitution</dt>
-    <dd class="col-sm-9">10</dd>
-    <dt class="col-sm-3">Dexterity</dt>
-    <dd class="col-sm-9">3</dd>
-    <dt class="col-sm-3">Perception</dt>
-    <dd class="col-sm-9">3</dd>
-    <dt class="col-sm-3">Intellect</dt>
-    <dd class="col-sm-9">18++</dd>
-    <dt class="col-sm-3">Resolve</dt>
-    <dd class="col-sm-9">18++</dd>
-    <dt class="col-sm-3">Paladin Order</dt>
-    <dd class="col-sm-9"><strong>Shieldbearers of St. Elcga</strong> They have access to a couple of order-specific abilities that are pretty awesome for tanks</dd>
-    <dt class="col-sm-3">Race</dt>
-    <dd class="col-sm-9">Human, Coastal Aumaua, Wild Orlan, Pale Elf, Mountain Dwarf, Fire Godlike, Moon Godlike, Nature Godlike</dd>
-    <dt class="col-sm-3">Culture</dt>
-    <dd class="col-sm-9">Old Vailia <em>Intellect</em> / The Living Lands <em>Might</em> / Ixamitl Plains <em>Resolve</em></dd>
-    <dt class="col-sm-3">Background</dt>
-    <dd class="col-sm-9">Whatever</dd>
-    <dt class="col-sm-3">Skills</dt>
-    <dd class="col-sm-9">
-        <p class="mb-0">Lore</p>
-        <p class="mb-0">Survival <em>for the +healing bonus</em></p>
-    </dd>
-</dl>
+Might
+: 18+ *more for the bonus to healing than the bonus to damage*
+
+Constitution
+: 10
+
+Dexterity
+: 3
+
+Perception
+: 3
+
+Intellect
+: 18+
+
+Resolve
+: 18++
+
+Paladin Order
+: **Shieldbearers of St. Elcga** *They have access to a couple of order-specific abilities that are pretty awesome for tanks*
+
+Race
+: Human, Coastal Aumaua, Wild Orlan, Pale Elf, Mountain Dwarf, Fire Godlike, Moon Godlike, Nature Godlike
+: *These all have bonuses that are all roughly equivalent for tanks*
+
+Culture
+: Old Vailia *Intellect*
+: The Living Lands *Might*
+: Ixamitl Plains *Resolve*
+
+Background
+: Whatever you want
+
+Skills
+: Lore
+: Survival *for the +healing bonus*
 
 ## Talents & Abilities
-<dl class="row">
-    <dt class="col-sm-3">1</dt>
-    <dd class="col-sm-9">Lay on Hands</dd>
-    <dt class="col-sm-3">2</dt>
-    <dd class="col-sm-9">Shielding Touch <em>Shieldbearers of St Elcga</em> / ? <em>other orders</em></dd>
-    <dt class="col-sm-3">3</dt>
-    <dd class="col-sm-9">Zealous Endurance / Zealous Focus <em>If you have another party member take the cross-class ability, your paladin should take Endurance. It's better late game anyway, once everyone gets their own +Accuracy bonuses</em></dd>
-    <dt class="col-sm-3">4</dt>
-    <dd class="col-sm-9">Weapon and Shield Style</dd>
-    <dt class="col-sm-3">5</dt>
-    <dd class="col-sm-9">Flame of Devotion <em>Shieldbearers of St Elcga</em> / Liberating Exhortation <em>other orders</em></dd>
-    <dt class="col-sm-3">6</dt>
-    <dd class="col-sm-9">Sheilding Flames <em>Shieldbearers of St Elcga</em> / ? <em>other orders</em></dd>
-    <dt class="col-sm-3">7</dt>
-    <dd class="col-sm-9">Reviving Exhortation</dd>
-    <dt class="col-sm-3">8</dt>
-    <dd class="col-sm-9">Cautious Attack <em>We care more about the +Deflection than the hit to our attack speed</em></dd>
-    <dt class="col-sm-3">9</dt>
-    <dd class="col-sm-9">Reinforcing Exhortation</dd>
-    <dt class="col-sm-3">10</dt>
-    <dd class="col-sm-9">Greater Lay on Hands</dd>
-    <dt class="col-sm-3">11</dt>
-    <dd class="col-sm-9">Hastening Exhortation</dd>
-    <dt class="col-sm-3">12</dt>
-    <dd class="col-sm-9">Superior Deflection</dd>
-    <dt class="col-sm-3">13</dt>
-    <dd class="col-sm-9">Sacred Immolation <em>too good of an ability to pass up, even as a tank</em></dd>
-    <dt class="col-sm-3">14</dt>
-    <dd class="col-sm-9">Scion of Flame <em>boosts Sacred Immolation, Flames of Devotion, and the Fire Godlike's passive ability</em></dd>
-    <dt class="col-sm-3">15</dt>
-    <dd class="col-sm-9">Coordinated Attacks / Abjuration / Behold the Martyr / Liberating Exhortation / Righteous Soul / Healing Chain</dd>
-    <dt class="col-sm-3">16</dt>
-    <dd class="col-sm-9">Deep Faith</dd>
-    <dt class="col-sm-3">Others</dt>
-    <dd class="col-sm-9">Hold The Line / Defense Boosts (Will, Fortitude, etc) / Wound Binding</dd>
-</dl>
+
+1
+: Lay on Hands
+
+2
+: Shieldbearers of St Elcga: Shielding Touch
+: Other Orders: ?
+
+3
+: Zealous Endurance / Zealous Focus *If you have another party member take the cross-class ability, your paladin should take Endurance. It's better late game anyway, once everyone gets their own +Accuracy bonuses*
+
+4
+: Weapon and Shield Style
+
+5
+: Shieldbearers of St Elcga: Flame of Devotion
+: Other Orders: Liberating Exhortation
+
+6
+: Shieldbearers of St Elcga: Shielding Flames
+: Other Orders: ?
+
+7
+: Reviving Exhortation
+
+8
+: Cautious Attack *We care more about the +Deflection than the hit to our attack speed*
+
+9
+: Reinforcing Exhortation
+
+10
+: Greater Lay on Hands
+
+11
+: Hastening Exhortation
+
+12
+: Superior Deflection
+
+13
+: Sacred Immolation *too good of an ability to pass up, even as a tank*
+
+14
+: Scien of Flame *boosts Sacred Immolation, Flames of Devotion, and the Fire Godlike's passive ability*
+
+15
+: Coordinated Attacks / Abjuration / Behold the Martyr / Liberating Exhoration / Righteous Soul / Healing Chain
+
+16
+: Deep Faith
+
+Others
+: Hold the Line
+: Defensive Boosts (Will, Fortitude, etc.)
+: Wound Binding
 
 ## Gear
-* Weapon: Anything that debuffs on hit, or weapons with "Coordinated Attacks" enhancement
-* Shield: We dont' care about our own Accuracy, so the shield with the highest Deflection wins
-* Armor: The heaviest armor you can find. Enchantments like Second Chance are good
+
+Weapon
+: Anything that debuffs on hit, or weapons with "Coordinated Attacks" enhancement
+
+Shield
+: We don't care about our own Accuracy, so the shield with the highest Deflection wins
+
+Armor
+: The heaviest armor you can find. Enchantments like Second Chance are good
 
 ## Final Gear
 
@@ -98,7 +133,7 @@ A very defensive build, Paladin tanks aren't interested in doing more damage tha
     <dd>[WM2] Looted from Chief Rending-Maw of the first Lagufaeth group at Cayron's Scar.</dd>
     <dt>Gwyn's Band of Union</dt>
     <dd>[WM2] Secret urn near the Salt Well in the Halls of Presence, The Abbey of the Fallen Moon.</dd>
-    <dt>Boots of Zealous Command<dt>
+    <dt>Boots of Zealous Command</dt>
     <dd>Sold by Winfrith in Winfrith's Arms and Armory, Dyrford Village.</dd>
     <dt>Arthek's Cord</dt>
     <dd>[WM2] Bone pile under lingering soul, The Halls of Silence, The Abbey of the Fallen Moon.</dd>

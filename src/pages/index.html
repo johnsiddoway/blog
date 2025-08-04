@@ -5,18 +5,14 @@ links:
 - <link rel="stylesheet" href="/post-list.min.css">
 ---
 {% assign recent = collections.posts | reverse | head: 5 %}
-<ul class="post-list">
+<ul role="navigation">
     {% for post in recent %}
-    <li class="post-header">
-        <a href="{{ post.url }}">
-            <h1>{{ post.data.title }}</h1>
-        </a>
+    <li>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
         <time>{{ post.date | date: "%Y-%m-%d" }}</time>
     </li>
     {% endfor %}
-    <li class="post-header">
-        <a href="/archive/">
-            <h1>Archived Posts</h1>
-        </a>
+    <li>
+        <a href="/archive/">Archived Posts</a>
     </li>
 </ul>

@@ -1,5 +1,6 @@
 import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import anchor from "markdown-it-anchor";
+import deflist_plugin from "markdown-it-deflist";
 import highlightjs from "markdown-it-highlightjs";
 import jsxPlugin from "./eleventy.jsxPlugin.js";
 import sassPlugin from "./eleventy.sassPlugin.js";
@@ -40,6 +41,7 @@ export default async function (eleventyConfig) {
 
     eleventyConfig.amendLibrary("md", mdLib => mdLib
         .use(anchor)
+        .use(deflist_plugin)
         .use(highlightjs));
 
     // https://liquidjs.com/tutorials/options.html#Date, set the timezone to UTC when reading dates out of front matter

@@ -1,11 +1,39 @@
 @use "@johnsiddoway/sass";
+@use "./placeholders";
+
+article h1 {
+    @extend %post-header;
+}
 
 .mb-0 {
     margin-bottom: 0;
 }
 
 // Needed for the various Pillars of Eternity pages
-@include sass.dl;
+dl {
+    --dt-width: 15%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    dt {
+        font-weight: sass.$font-weight-bold;
+        width: var(--dt-width);
+    }
+
+    dt + dt {
+        width: 100%;
+    }
+
+    dd {
+        margin-left: 0;
+        width: calc(100% - var(--dt-width));
+    }
+
+    dd + dd {
+        margin-left: var(--dt-width);
+    }
+}
 
 code {
     word-wrap: break-word;

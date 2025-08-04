@@ -1,6 +1,10 @@
 @use "./placeholders";
 
-.post-list {
+ul {
     padding: 0;
     list-style-type: none;
+
+    li {
+        @extend %post-header;
+    }
 }
