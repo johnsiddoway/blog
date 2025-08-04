@@ -1,3 +1,4 @@
+import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import deflist_plugin from "markdown-it-deflist";
 import jsxPlugin from "./helpers/eleventy.jsxPlugin.js";
@@ -30,17 +31,21 @@ export default async function (eleventyConfig) {
     });
 
     // Copy anything in the /public/ folder over to ${outputDir}/
+    // https://www.11ty.dev/docs/plugins/syntaxhighlight/
     eleventyConfig.addPassthroughCopy({ "public": "/" });
     // Copy all .pngs to ${outputDir}/**/*.png; Keeps the same directory structure.
+    // https://www.11ty.dev/docs/plugins/inputpath-to-url/
     eleventyConfig.addPassthroughCopy("src/**/*.png");
 
     eleventyConfig.addPlugin(jsxPlugin);
     eleventyConfig.addPlugin(sassPlugin);
 
-    // Official plugins
+    // Official plugin to provide syntax highlighting via PrismJS
     eleventyConfig.addPlugin(pluginSyntaxHighlight, {
         preAttributes: { tabindex: 0 } // Allow us to tab through the page and highlight the pre block
     });
+    // Official plugin to transform relative links to other input files (under src/) into full URLs
+    eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
     eleventyConfig.amendLibrary("md", mdLib => mdLib
         .use(anchor)
