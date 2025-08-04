@@ -1,9 +1,8 @@
-import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
-import anchor from "markdown-it-anchor";
+import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import deflist_plugin from "markdown-it-deflist";
-import highlightjs from "markdown-it-highlightjs";
-import jsxPlugin from "./eleventy.jsxPlugin.js";
-import sassPlugin from "./eleventy.sassPlugin.js";
+import jsxPlugin from "./helpers/eleventy.jsxPlugin.js";
+import sassPlugin from "./helpers/eleventy.sassPlugin.js";
+import anchor from "./helpers/markdownit.anchor.js";
 
 export default async function (eleventyConfig) {
     // eslint-disable-next-line no-undef
@@ -37,16 +36,20 @@ export default async function (eleventyConfig) {
 
     eleventyConfig.addPlugin(jsxPlugin);
     eleventyConfig.addPlugin(sassPlugin);
-    eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
+
+    // Official plugins
+    eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+        preAttributes: { tabindex: 0 } // Allow us to tab through the page and highlight the pre block
+    });
 
     eleventyConfig.amendLibrary("md", mdLib => mdLib
         .use(anchor)
         .use(deflist_plugin)
-        .use(highlightjs));
+    );
 
     // https://liquidjs.com/tutorials/options.html#Date, set the timezone to UTC when reading dates out of front matter
     eleventyConfig.setLiquidOptions({
-        timezoneOffset: 0 
+        timezoneOffset: 0
     });
 
     eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
