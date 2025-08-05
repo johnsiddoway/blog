@@ -10,19 +10,17 @@ links:
  - <script type="module" defer src="index.js"></script>
 ---
 
-### Overview
-
 I touched on it briefly in a previous post. I no longer remember *why* I started looking into this, but eventually I found [this article](http://thecodeplayer.com/walkthrough/magnifying-glass-for-images-using-jquery-and-css3) with a pretty good example showing how to create a 'magnifying lens' effect on images. I didn't like a couple of things about the original, so I rewrote it as a jQuery plugin.
 
-### Working Example
+## Working Example
 
 <img class="magnify-this" src="https://images.unsplash.com/photo-1648138754688-377bbdf661d9" alt="Photo by Dave Herring on Unsplash">
 
 Photo by [Dave Herring](https://unsplash.com/@daveherring) on [Unsplash](https://unsplash.com/)
 
-### How It Works
+## How It Works
 
-#### Short Version
+### Short Version
 
 1. Use the original image (**target**) as the background in another DOM element (**lens**)
 1. Attach a mouse event listener to the target:
@@ -31,7 +29,7 @@ Photo by [Dave Herring](https://unsplash.com/@daveherring) on [Unsplash](https:/
   * Do more math to move the lens background around
 1. Attach another event listener to close the lens once the mouse leaves the target
 
-#### Long Version
+### Long Version
 
 **Step 1: Use the original image as the background in another DOM element (the lens)**
 

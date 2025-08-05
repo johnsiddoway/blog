@@ -116,31 +116,39 @@ Armor
 
 ## Final Gear
 
-<dl class="row">
-    <dt>Company Captain's Hat</dt>
-    <dd>Anslög's Compass: Sold by Ponamu Bird-Scorned.</dd>
-    <dt>Cloak of Comfort</dt>
-    <dd>Reward for The Weaver's Song, an average adventure in Caed Nua (after the Great Hall is restored).</dd>
-    <dt>Argwes Adra</dt>
-    <dd>Looted from the unique Fampyr, Cabiros in Level 8 of Endless Paths of Od Nua.</dd>
-    <dd>Enchanted with +2 PERCEPTION</dd>
-    <dt>Gauntlets of Ogre Might</dt>
-    <dd>Yenwood Field: Looted from Gathbin's corpse after defeating his army during The Battle of Yenwood Field.</dd>
-    <dd>[WM1] Russetwood: Sold by Morug outside Flames-That-Whisper Caverns, after finishing The Ogre Matron quest without killing too many ogres.</dd>
-    <dd>[WM2] Cayron's Scar: Looted from Master Diometto to the northwest.</dd>
-    <dd>Random loot item spawning in various locations (9×).</dd>
-    <dt>Iron Circle</dt>
-    <dd>[WM2] Looted from Chief Rending-Maw of the first Lagufaeth group at Cayron's Scar.</dd>
-    <dt>Gwyn's Band of Union</dt>
-    <dd>[WM2] Secret urn near the Salt Well in the Halls of Presence, The Abbey of the Fallen Moon.</dd>
-    <dt>Boots of Zealous Command</dt>
-    <dd>Sold by Winfrith in Winfrith's Arms and Armory, Dyrford Village.</dd>
-    <dt>Arthek's Cord</dt>
-    <dd>[WM2] Bone pile under lingering soul, The Halls of Silence, The Abbey of the Fallen Moon.</dd>
-    <dt>Steadfast</dt>
-    <dd>[WM2] Iron Flail Fort: Looted from or received as a reward from commander Adaryc during the quest The Iron Flail.</dd>
-    <dt>The Grey Sleeper</dt>
-    <dd>[WM1] Longwatch Falls: Pulled from a stone pedestal at the dwarven ruins.</dd>
-    <dt>Thy Clef</dt>
-    <dd>Twin Elms: Loot from Simoc in the Hall of Warriors, Elms' Reach, or reward by him for Sacrificial Bloodlines.</dd>
-</dl>
+Company Captain's Hat
+: Anslög's Compass: Sold by Ponamu Bird-Scorned
+
+Cloak of Comfort
+: Reward for The Weaver's Song, an average adventure in Caed Nua (after the Great Hall is restored)
+
+Argwes Adra
+: Looted from the unique Fampyr, Cabiros in Level 8 of Endless Paths of Od Nua
+: Enchanted with +2 PERCEPTION
+
+Gauntlets of Ogre Might
+: Yenwood Field: Looted from Gathbin's corpse after defeating his army during The Battle of Yenwood Field
+: [WM1] Russetwood: Sold by Morug outside Flames-That-Whisper Caverns, after finishing The Ogre Matron quest without killing too many ogres
+: [WM2] Cayron's Scar: Looted from Master Diometto to the northwest
+: Random loot item spawning in various locations (9×)
+
+Iron Circle
+: [WM2] Looted from Chief Rending-Maw of the first Lagufaeth group at Cayron's Scar
+
+Gwyn's Band of Union
+: [WM2] Secret urn near the Salt Well in the Halls of Presence, The Abbey of the Fallen Moon
+
+Boots of Zealous Command
+: Sold by Winfrith in Winfrith's Arms and Armory, Dyrford Village
+
+Arthek's Cord
+: [WM2] Bone pile under lingering soul, The Halls of Silence, The Abbey of the Fallen Moon
+
+Steadfast
+: [WM2] Iron Flail Fort: Looted from or received as a reward from commander Adaryc during the quest The Iron Flail
+
+The Grey Sleeper
+: [WM1] Longwatch Falls: Pulled from a stone pedestal at the dwarven ruins
+
+Thy Clef
+: Twin Elms: Loot from Simoc in the Hall of Warriors, Elms' Reach, or reward by him for Sacrificial Bloodlines

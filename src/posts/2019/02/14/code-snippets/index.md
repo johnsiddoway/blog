@@ -6,10 +6,10 @@ layout: post.html
 tags: posts
 ---
 
-### Short Stuff
+## Short Stuff
 * [CSS Tricks: Scaling SVG](https://css-tricks.com/scale-svg/)
 
-### FontAwesome and Tablesorter
+## FontAwesome and Tablesorter
 This is custom CSS for [jquery.tablesorter.js](http://tablesorter.com/docs/) using [Font Awesome](http://fontawesome.io) icons instead of tablesorters default CSS. All it does is append up or down carets depending on the sorting. Very very lightweight CSS for a lightweight JQuery plugin. Stolen from [this Stack Overflow question](http://stackoverflow.com/questions/14736496/use-font-awesome-icons-in-css).
 
 ```css
@@ -27,7 +27,7 @@ content: "\f0d8";
 }
 ```
 
-### Silhouettes and Backgrounds
+## Silhouettes and Backgrounds
 I couldn't think of a better title for this, but it's something I've seen a few places. Wasteland 2's original landing page was the first example I used. I had to go hit up the [Wayback Machine](https://archive.org/web/) to get a good snapshot of it. The header is a solid black .png with "Wasteland 2" cut out. This lets the background image to 'bleed through'. Same thing with the Battletech site; the silhouettes of the 'Mechs are layered over the other images, which are in turn layered over each other.
 
 <img src="wasteland-2.png" alt="Wasteland 2 Screenshot">
@@ -53,7 +53,7 @@ table.logo th { width: 506px; } <!-- Any good looking px, em, or % -->
 </table>
 ```
 
-### Image Zoom Magnifying Glass
+## Image Zoom Magnifying Glass
 <a href="../2019-02-15-magnify/">Updated Article</a>
 
 [Original Article](http://thecodeplayer.com/walkthrough/magnifying-glass-for-images-using-jquery-and-css3)

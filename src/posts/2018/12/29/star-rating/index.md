@@ -12,7 +12,7 @@ links:
 
 On Font Awesome's [4.7 Examples](https://fontawesome.com/v4.7.0/examples/) page, they included an example of how to implement a basic star rating using their `star` icon. They also linked out to [this great article](https://css-tricks.com/star-ratings/). When Font Awesome 5 came out, I noticed that their docs didn't include an Example page anymore, so I thought I'd recreate this simple feature.
 
-### Demo
+## Demo
 
 You can also see this on [CodePen](https://codepen.io/pezmotion/pen/RQERdm)
 
@@ -27,10 +27,10 @@ You can also see this on [CodePen](https://codepen.io/pezmotion/pen/RQERdm)
     Current Rating: <span id="example-one-value"></span>
 </div>
 
-### Explanation
+## Explanation
 There are two basic CSS features being used here. We are listing out the inputs highest to lowest value, but then setting the directionality of the items so that they render lowest to highest. This lets us use a subsequent sibling selector to style the lower values the same as the currently-selected value.
 
-#### Directionality override
+### Directionality override
 ```html
 <div class="rating">
     <input id="rating-5" type="radio" name="rating" value="5"/>
@@ -62,7 +62,7 @@ Star Ratings are typically viewed with the lowest score on the left, and the hig
     <span class="text-muted"><em>Note: this is still using the next feature. It's just had it's directonality left at the default (left-to-right)</em></span>
 </div>
 
-#### Subsequent-sibling combinator
+### Subsequent-sibling combinator
 ```css
 .rating label:hover,
 .rating label:hover ~ label,
@@ -90,7 +90,7 @@ The `.rating label:hover` line and the `.rating label:hover ~ label` are used to
     <span class="text-muted"><em>Note: this is still using the directionality feature. It's just had its selectors trimmed down to just the currently-selected rating value</em></span>
 </div>
 
-#### All Together
+### All Together
 ```html
 <div class="rating">
     <input id="rating-5" type="radio" name="rating" value="5"/>
@@ -141,7 +141,7 @@ The `.rating label:hover` line and the `.rating label:hover ~ label` are used to
     Current Rating: <span id="example-four-value"></span>
 </div>
 
-#### Javascript
+### Javascript
 If you are including the star rating in a form with an explicit `submit` button, then the currently selected value will automatically get posted along with the rest of the form inputs.  But maybe you want to do some custom event handling, like handling the rating asynchronously without reloading the page. On this page, for example, I'm displaying the currently selected rating below the stars. The javascript for that is fairly straight-forward:
 
 ```javascript
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 ```
 
-### Resources
+## Resources
 * [CodePen Version](https://codepen.io/pezmotion/pen/RQERdm)
 * [Font Awesome 4.7 Example](https://fontawesome.com/v4.7.0/examples/#custom)
 * [CSS Tricks Article](https://css-tricks.com/star-ratings/)

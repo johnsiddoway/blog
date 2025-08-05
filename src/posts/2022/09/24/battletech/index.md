@@ -7,7 +7,7 @@ tags: posts
 BattleTech JSON Customizations
 *As of 1.7*
 
-### General Sim Game Constants
+## General Sim Game Constants
 This block highlights a few places you can change:
 * How frequently Kickstarter backers and Ronin pilots show up in the Hiring Hall
 * When Loathed reputation kicks in (to address a bug with Pirates rep bottoming out)
@@ -51,7 +51,7 @@ This block highlights a few places you can change:
 }
 ```
 
-### Career Mode Random Mechs
+## Career Mode Random Mechs
 *Thanks to [Mpstark's comment on Reddit](https://www.reddit.com/r/Battletechgame/comments/bwqwkn/career_random_mech_list_thread_post_them_here_and/) for the specifics*
 
 There are multiple files under `C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH\BattleTech_Data\StreamingAssets\data\itemCollections` that are used to generate random lances on game start. The last number is weight, change to get an individual mech is the weight divided by the combined weight for that slot. So you've got a `4/11 ~= .36 = 36%` chance to get a Blackjack in slot 0.
@@ -65,7 +65,7 @@ mechdef_centurion_CN9-A,Mech,1,2
 mechdef_enforcer_ENF-4R,Mech,1,2
 ```
 
-### Changing Mech found in the Argo
+## Changing Mech found in the Argo
 You can change the 'Mech reward found inside the Argo by tweaking `milestone_202_notify_centurion.json`'s Action Results. The below example changes it from an unequipped Centurion, to one with a full weapon compliment.
 
 > milestone_202_notify_centurion.json
@@ -89,7 +89,7 @@ You can change the 'Mech reward found inside the Argo by tweaking `milestone_202
 ],
 ```
 
-### Unlocking Flashpoints and Free Roam during Career Mode
+## Unlocking Flashpoints and Free Roam during Career Mode
 *Thanks to [manuboar on Reddit](https://www.reddit.com/r/Battletechgame/comments/aw6er6/here_is_how_to_activate_the_flashpoints_and_free/)*
 
 You can update any one of the milestone files, but a good one is `milestone_305_sim_argo_start.json`, which is when you get to use the Argo. Add the following two tages: `map_travel_3` and `SYSTEM_UseFlashpoints`.
@@ -116,7 +116,7 @@ You can update any one of the milestone files, but a good one is `milestone_305_
 }]
 ```
 
-### Change Reward from Grave Robbing
+## Change Reward from Grave Robbing
 I like to add the Star League era Black Knight to the list of rewards from Grave Robbing, so that I can get all of the Star League 'Mechs through the course of the game.
 
 > milestone_423_notify_highlander.json
@@ -149,7 +149,7 @@ I like to add the Star League era Black Knight to the list of rewards from Grave
 }],
 ```
 
-### Tweak Flamer Charges
+## Tweak Flamer Charges
 At some point, Flamers were nerfed to only have 4 rounds of "ammo." This was done to reduce their abuse in PvP, but also severely hampered their capability in single player. To fix this, go find all Flamer files in `C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH\BattleTech_Data\StreamingAssets\data\weapon`:
 * `Weapon_Flamer_Flamer_0-STOCK.json`
 * `Weapon_Flamer_Flamer_1-Hotshot.json`

@@ -5,7 +5,6 @@ description: 'Plugging Azure Search into Pirate Radio'
 layout: post.html
 tags: posts
 ---
-### Overview
 There are a few good "starter" guides for Azure Search, and I've linked to a few of them at the bottom. As I was writing up my experiences with following these guides, I noticed that my blog post was turning into a novella. So I have split it up into two portions: this post will cover the specifics of what I did, and the next post will be my rationale for choosing Azure, my opinions, and thoughts on the experience.
 
 The short version:
@@ -21,10 +20,10 @@ A couple of gotchas:
 
 For my examples, I am using C#. To access Azure classes, I installed the [Microsoft.Azure.Search](https://docs.microsoft.com/en-us/azure/search/search-howto-dotnet-sdk) nuget package. If you are using a different language, you can check out the [Search API Versions](https://docs.microsoft.com/en-us/azure/search/search-api-versions) for information on how to use your language of choice.
 
-#### Create Search Service (and Index)
+## Create Search Service (and Index)
 There are several ways to create the search service and index. I found that the Azure [Portal UI](https://azure.microsoft.com/en-us/features/azure-portal/) worked great for creating the search service instance and the index definition itself. Since I would expect indexes to be long-lived, I don't think it's the sort of thing I'd find myself putting in code for reusability. If that's not your preferred method, you can use the [Command Line](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest), and probably even using raw [HTTP requests](https://docs.microsoft.com/en-us/rest/api/azure/) through Postman or something similar.
 
-#### Populate Index
+## Populate Index
 Once you have the service and index defined, you can start shoving data into it. To start, you'll end up pushing all of your existing records into the index, but once the index is set up you'll just need to figure out a way to push updates to Azure. To seed my index, I needed to first define a class that matched the format of the index model, and then push data to Azure in this format.
 
 > TrackDocument.cs
@@ -83,14 +82,14 @@ After running this script (or something like it), you should be able to see the 
 
 <img src="azure-search-01.png" alt="Azure Search Explorer">
 
-#### Integrating into our Code
+## Integrating into our Code
 Now that we've got data pushed into the index, we need to use it for real. To go from our little test code up above to code that looks a bit more like the real world, I had to make quite a bit of changes:
 * Wrap the Azure Interfaces & classes in my own interfaces
 * Store the `Service Name`, `API Key`, and `Index Name` in configuration files that are accessible in production
 * Setup the Web App Dependency Injection
 * Consume my new interface in my Controller
 
-#### Refactored Code
+## Refactored Code
 To isolate the rest of my code from understanding what's powering search externally, I put the Azure clients behind an interface which I hoped would be generic enough that I could reuse it if I decided to test out the other Search As A Service offerings later. This also meant creating a small POCO in my namespace for the search results. Again, for my use case this didn't need to be a big complex entity. I just wanted to know the current set of search results, and the total number of possible results.
 
 > SearchResult.cs
@@ -176,7 +175,7 @@ public class SearchOptions {
 }
 ```
 
-#### Integrating Into Web App
+## Integrating Into Web App
 Now that I've got the code set up in an injectable manner, I need to update my website to use the enhanced functionality. The basic steps are:
 1. Add a reference to the package
 1. Update my Startup.cs to make sure I can inject my new dependency
@@ -238,7 +237,7 @@ I could keep going and write up all the code on the UI side as well, but I decid
 
 <img src="azure-search-02.png" alt="Azure Search Explorer">
 
-#### Integrating Into Console App
+## Integrating Into Console App
 
 The Website isn't the only place I needed to make changes. I have a console app that scans my music library on disk for changes, and updates my database. I need the Search Index to get the same set of updates as well.
 
@@ -313,7 +312,7 @@ public class Processor {
 }
 ```
 
-### Resources
+## Resources
 * [Clemens Siebler's Quick Start Tutorial](https://clemenssiebler.com/azure-search-quickstart-tutorial/)
   * Great graphics and up-to-date screenshots
   * Gives a good high-level description of the various features and when/why you'd want to use them
