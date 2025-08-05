@@ -21,7 +21,7 @@
         "@eslint/js": "^9.32.0",
         "@eslint/json": "^0.13.1",
         "@eslint/markdown": "^7.1.0",
-        "@johnsiddoway/sass": "^4.3.9",
+        "@johnsiddoway/sass": "^4.4.0",
         "@stylistic/eslint-plugin": "^5.2.2",
         "colord": "^2.9.3",
         "esbuild": "^0.25.8",

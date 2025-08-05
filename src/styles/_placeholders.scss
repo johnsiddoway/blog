@@ -28,19 +28,13 @@ $container-breakpoints: "lg", "xl", "2xl";
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    column-gap: 1rem; // minimum space between columns
+    gap: 1rem; // minimum space between columns
 }
 
 %post-header {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0 0 0.85em 0;
-    border-block-end: var(--border-width) var(--border-style) var(--border-color);
     @extend %flex-between;
-
-    a {
-        text-decoration: none;
-    }
+    margin-block: 0 sass.$layout-margin-block-end;
+    border-block-end: 1px solid currentColor;
 
     time {
         min-width: fit-content;

@@ -1,12 +1,11 @@
 @use "@johnsiddoway/sass";
 @use "./placeholders";
 
-main nav div {
+article header {
     @extend %post-header;
 
-    a {
+    h1 {
+        margin: 0;
         font-size: sass.$font-size-xl;
-        font-weight: sass.$font-weight-bold;
-        text-decoration: none;
     }
 }

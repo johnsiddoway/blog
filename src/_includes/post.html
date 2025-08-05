@@ -3,9 +3,9 @@ layout: layout.html
 ---
 
 <article>
-    <h1>
-        {{ title }}
+    <header>
+        <h1>{{ title }}</h1>
         <time>{{ page.date | date: "%Y-%m-%d" }}</time>
-    </h1>
+    </header>
     {{ content }}
 </article>

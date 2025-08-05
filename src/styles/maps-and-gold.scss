@@ -14,12 +14,12 @@
     --primary: #{sass.$orange-60};
     --background: #{sass.$white};
     --on-background: #{sass.$black};
-    --border-color: currentColor;
-    --border-style: solid;
-    --border-width: 1px;
-    --surface-box-shadow: #{sass.$surface-box-shadow};
-    --box-shadow-primary: #{sass.$input-box-shadow};
-    --box-shadow-secondary: #{sass.$surface-box-shadow};
+    // --border-color: currentColor;
+    // --border-style: solid;
+    // --border-width: 1px;
+    // --surface-box-shadow: #{sass.$surface-box-shadow};
+    // --box-shadow-primary: #{sass.$input-box-shadow};
+    // --box-shadow-secondary: #{sass.$surface-box-shadow};
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,11 +37,11 @@ body {
     min-height: 100vh;
     background-color: var(--background);
     color: var(--on-background);
-    font-family: "Open Sans", "Segoe UI", "Roboto", "Fira Sans", "Helvetica Neue", sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: start;
+    font-family: sass.$font-family-sans-serif;
+    font-size: sass.$font-size-base;
+    font-weight: sass.$font-weight-base;
+    line-height: sass.$line-height-base;
+    text-align: sass.$text-align-base;
 
     > header,
     footer {
@@ -55,10 +55,10 @@ body {
     }
 
     > header {
-        margin-bottom: 1.5rem;
+        margin-block-end: sass.$layout-margin-block-end;
 
         nav {
-            padding: 0.5rem 0.75rem;
+            padding: sass.$layout-padding;
             @extend %flex-between;
             @extend %container;
 
@@ -77,18 +77,14 @@ body {
     }
 
     > main {
-        margin-bottom: 1.5rem;
-        padding: 0 0.75rem;
+        margin-block-end: sass.$layout-margin-block-end;
+        padding-inline: sass.$layout-padding-inline;
         @extend %container;
-
-        a {
-            color: #0073e6; // custom dark blue
-        }
     }
 
     > footer {
         margin-top: auto;
-        padding: 0.5rem 0.75rem;
+        padding: sass.$layout-padding;
         text-align: center;
     }
 }
