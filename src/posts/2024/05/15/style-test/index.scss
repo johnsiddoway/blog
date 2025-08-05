@@ -1,5 +1,15 @@
 @use '@johnsiddoway/sass' as *;
 
+:root {
+    --secondary: #{$gray-60};
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: currentColor;
+    --surface-box-shadow: #{$surface-box-shadow};
+    --box-shadow-primary: #{$input-box-shadow};
+    --box-shadow-secondary: #{$surface-box-shadow};
+}
+
 @include abbr;
 @include buttons;
 @include cards;
