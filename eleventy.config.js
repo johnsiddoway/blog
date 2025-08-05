@@ -1,9 +1,9 @@
 import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import deflist_plugin from "markdown-it-deflist";
-import jsxPlugin from "./helpers/eleventy.jsxPlugin.js";
-import sassPlugin from "./helpers/eleventy.sassPlugin.js";
-import anchor from "./helpers/markdownit.anchor.js";
+import deflistPlugin from "markdown-it-deflist";
+import jsxPlugin from "./eleventy.jsxPlugin.js";
+import sassPlugin from "./eleventy.sassPlugin.js";
+import anchorPlugin from "./markdownit.anchorPlugin.js";
 
 export default async function (eleventyConfig) {
     // eslint-disable-next-line no-undef
@@ -47,9 +47,16 @@ export default async function (eleventyConfig) {
     // Official plugin to transform relative links to other input files (under src/) into full URLs
     eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
+    eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
+        if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+            return false;
+        }
+        return content;
+    });
+
     eleventyConfig.amendLibrary("md", mdLib => mdLib
-        .use(anchor)
-        .use(deflist_plugin)
+        .use(anchorPlugin)
+        .use(deflistPlugin)
     );
 
     // https://liquidjs.com/tutorials/options.html#Date, set the timezone to UTC when reading dates out of front matter

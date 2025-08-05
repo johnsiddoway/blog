@@ -1,9 +1,8 @@
 ---
 title:  'My 11ty Structure'
-date:  2024-06-15
+date:  2025-06-15
 layout: post.html
 tags: posts
-eleventyExcludeFromCollections: true
 ---
 
 When I first created this blog to document stuff I've been learning, I didn't realize that I would also fall into the bucket of "devs who blog about their blog." But here I am. I started blogging using Ruby and Jekyll for a few reasons: I needed to learn Ruby for work; Jekyll was the recommended static site generator for Github Pages; and I just wanted something to get me started. Then, when my team started to adopt React for frontend development and Node js on the backend, I started looking around for a javascript-based replacement for Jekyll. I eventually settled on [Eleventy](https://www.11ty.dev/) because it did everything I wanted, and little else. After futzing around with it for a while, I think I'm ready to leave it alone for a while and fiddle around with something else.
@@ -14,6 +13,7 @@ One benefit of switching to Eleventy was that it was so simple and lean, I had t
 
 Another example: Eleventy 2.X does not support ESM, but pretty much all of the Node code I interact with at work uses Typescript and ES6 modules.
 
+> Before
 ```bash
 /
 |- public/
@@ -30,8 +30,7 @@ Another example: Eleventy 2.X does not support ESM, but pretty much all of the N
     |- 2019-02-15-magnify.md
 ```
 
-After:
-
+> After
 ```bash
 /
 |- public/
@@ -56,3 +55,13 @@ After:
             |- index.js
             |- index.md
 ```
+
+## File Size
+
+|Name|Size
+|-|-
+|favicon.png|1.4 kB
+|blog.johnsiddoway.net|1.1 kB
+|OpenSans.ttf|530 kB
+|maps-and-gold.min.css|0.9 kB
+|post-list.min.css|0.2 kB

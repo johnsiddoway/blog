@@ -11,7 +11,6 @@ const slugify = (s) =>
     );
 
 const defaultOptions = {
-    divClass: 'heading-wrapper',
     anchorClass: 'anchor-link',
 };
 
