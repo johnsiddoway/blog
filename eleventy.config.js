@@ -5,8 +5,8 @@ import jsxPlugin from "./eleventy.jsxPlugin.js";
 import sassPlugin from "./eleventy.sassPlugin.js";
 import anchorPlugin from "./markdownit.anchorPlugin.js";
 
+/* eslint-disable no-undef */
 export default async function (eleventyConfig) {
-    // eslint-disable-next-line no-undef
     const baseUrl = process.env.BASE_HREF ?? eleventyConfig.pathPrefix ?? "/";
 
     // Explicity convert a relative URL to an absolute URL for sitemap.xml.

@@ -33,7 +33,7 @@ export default function sassPlugin(eleventyConfig) {
         compileOptions: {
             permalink: function (contents, inputPath) {
                 if (inputPath.includes("/styles/")) {
-                    let parsed = path.parse(inputPath);
+                    const parsed = path.parse(inputPath);
                     return `/${parsed.name}.min.css`;
                 }
                 return;
