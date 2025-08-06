@@ -38,3 +38,4 @@ Elawen Ein
 
 Puitènte med Príncipi
 : Found in the Adra Dragon's hoard on level 15 of the Endless Paths of Od Nua during the side quest The Master Below
+{.row}

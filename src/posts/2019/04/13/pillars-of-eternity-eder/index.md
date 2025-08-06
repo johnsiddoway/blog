@@ -52,3 +52,4 @@ Ilfan Byrngar's Solace
 
 St. Ydwen's Redeemer
 : [WM1] Durgan's Battery: Looted from Urthal north of Galvino's Cabin
+{.row}

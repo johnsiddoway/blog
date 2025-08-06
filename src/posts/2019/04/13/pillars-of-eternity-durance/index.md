@@ -43,3 +43,4 @@ Girdle of Eoten Protection
 
 Gyrd Háewanes Sténes
 : Reward for A Call to Court task from Chancellor Warrin in Ducal Palace, First Fires
+{.row}

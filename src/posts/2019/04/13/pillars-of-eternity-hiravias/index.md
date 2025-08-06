@@ -46,3 +46,4 @@ Cgadob's Hazel
 
 Greenstone Staff
 : [WM1] Longwatch Falls: In the bone pile near the dwarven watchtower to the southwest, just east of the entrance
+{.row}

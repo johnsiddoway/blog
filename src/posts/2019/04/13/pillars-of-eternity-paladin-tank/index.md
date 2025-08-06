@@ -44,6 +44,7 @@ Background
 Skills
 : Lore
 : Survival *for the +healing bonus*
+{.row}
 
 ## Talents & Abilities
 
@@ -102,6 +103,7 @@ Others
 : Hold the Line
 : Defensive Boosts (Will, Fortitude, etc.)
 : Wound Binding
+{.row}
 
 ## Gear
 
@@ -113,6 +115,7 @@ Shield
 
 Armor
 : The heaviest armor you can find. Enchantments like Second Chance are good
+{.row}
 
 ## Final Gear
 
@@ -152,3 +155,4 @@ The Grey Sleeper
 
 Thy Clef
 : Twin Elms: Loot from Simoc in the Hall of Warriors, Elms' Reach, or reward by him for Sacrificial Bloodlines
+{.row}

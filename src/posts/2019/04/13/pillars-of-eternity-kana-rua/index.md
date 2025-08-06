@@ -49,3 +49,4 @@ One-Eyed Molina's Gold-Fingered Spike-Flinger
 
 The White Spire
 : Sold by Dunstan in Crucible Keep, First Fires, Defiance Bay
+{.row}

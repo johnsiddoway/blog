@@ -1,9 +1,10 @@
 import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import deflistPlugin from "markdown-it-deflist";
-import jsxPlugin from "./eleventy.jsxPlugin.js";
-import sassPlugin from "./eleventy.sassPlugin.js";
-import anchorPlugin from "./markdownit.anchorPlugin.js";
+import eleventyJsx from "./eleventy.jsxPlugin.js";
+import eleventySass from "./eleventy.sassPlugin.js";
+import markdownItAnchors from "./markdownit.anchorPlugin.js";
+import markdownItAttrs from "markdown-it-attrs";
+import markdownItDeflist from "markdown-it-deflist";
 
 /* eslint-disable no-undef */
 export default async function (eleventyConfig) {
@@ -37,8 +38,8 @@ export default async function (eleventyConfig) {
     // https://www.11ty.dev/docs/plugins/inputpath-to-url/
     eleventyConfig.addPassthroughCopy("src/**/*.png");
 
-    eleventyConfig.addPlugin(jsxPlugin);
-    eleventyConfig.addPlugin(sassPlugin);
+    eleventyConfig.addPlugin(eleventyJsx);
+    eleventyConfig.addPlugin(eleventySass);
 
     // Official plugin to provide syntax highlighting via PrismJS
     eleventyConfig.addPlugin(pluginSyntaxHighlight, {
@@ -55,8 +56,9 @@ export default async function (eleventyConfig) {
     });
 
     eleventyConfig.amendLibrary("md", mdLib => mdLib
-        .use(anchorPlugin)
-        .use(deflistPlugin)
+        .use(markdownItAnchors)
+        .use(markdownItAttrs)
+        .use(markdownItDeflist)
     );
 
     // https://liquidjs.com/tutorials/options.html#Date, set the timezone to UTC when reading dates out of front matter

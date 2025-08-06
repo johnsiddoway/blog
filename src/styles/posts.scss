@@ -15,31 +15,8 @@ article header {
     margin-bottom: 0;
 }
 
-// Needed for the various Pillars of Eternity pages
-dl {
-    --dt-width: 15%;
 
-    display: flex;
-    flex-wrap: wrap;
-
-    dt {
-        font-weight: sass.$font-weight-bold;
-        width: var(--dt-width);
-    }
-
-    dt + dt {
-        width: 100%;
-    }
-
-    dd {
-        margin-left: 0;
-        width: calc(100% - var(--dt-width));
-    }
-
-    dd + dd {
-        margin-left: var(--dt-width);
-    }
-}
+@include sass.dl;
 
 // START: Anchor Links
 .anchor-link {
@@ -58,14 +35,14 @@ dl {
 }
 
 .anchor-link .hidden:not(:focus):not(:active) {
-    border-width: 0!important;
-    clip: rect(1px,1px,1px,1px)!important;
-    height: 1px!important;
-    overflow: hidden!important;
-    padding: 0!important;
-    position: absolute!important;
-    white-space: nowrap!important;
-    width: 1px!important
+    border-width: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
 }
 // END: Anchor Links
 
