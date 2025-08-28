@@ -1,15 +1,6 @@
 @use "@johnsiddoway/sass";
 @use "./_placeholders";
 
-// TODO: Figure out how to fold this into sass lib?
-@font-face {
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 400;
-    src: url("/OpenSans.ttf") format("truetype");
-    font-display: swap;
-}
-
 :root {
     --primary: #{sass.$orange-60};
     --background: #{sass.$white};

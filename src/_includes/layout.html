@@ -17,6 +17,8 @@
     {%- for link in links -%}
     {{ link }}
     {%- endfor %}
+    <link rel="preload" href="/OpenSans.ttf" as="font" crossorigin>
+    <style>@font-face{font-family:"Open Sans";font-style:normal;font-weight:400;src:url("/OpenSans.ttf")format("truetype");font-display:swap;}</style>
 </head>
 
 <body>
