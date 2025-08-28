@@ -1,4 +1,21 @@
+@use "sass:map";
 @use "@johnsiddoway/sass";
+
+%container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    @each $breakpoint, $max-width in sass.$container-max-widths {
+        @if not map.has-key($map: sass.$container-grid-breakpoints, $key: #{$breakpoint}) {
+            @debug "container-breakpoints does not have an entry for #{$breakpoint}, skipping";
+        } @else {
+            @media (min-width: map.get(sass.$container-grid-breakpoints, #{$breakpoint})) {
+                max-width: $max-width;
+            }
+        }
+    }
+}
 
 %flex-between {
     display: flex;
